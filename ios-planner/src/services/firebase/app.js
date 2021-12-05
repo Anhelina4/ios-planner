@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -10,8 +10,8 @@ const firebaseConfig = {
   projectId: "ios-planner-709b1",
   storageBucket: "ios-planner-709b1.appspot.com",
   messagingSenderId: "556738130951",
-  appId: "1:556738130951:web:3e1efb8edab2ab9b69e6a2"
-};
+  appId: "1:556738130951:web:3e1efb8edab2ab9b69e6a2",
+}
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig)

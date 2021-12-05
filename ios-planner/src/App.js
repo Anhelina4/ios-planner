@@ -1,9 +1,8 @@
+import Navigator from "./pages/Navigator"
+import "./styles/style.css"
 
 function App() {
-  return (
-    <>
-    </>
-  );
+  return <></>
 }
 
-export default App;
+export default App

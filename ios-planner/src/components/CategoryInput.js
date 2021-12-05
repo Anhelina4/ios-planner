@@ -1,14 +1,7 @@
-import React from 'react'
+import React from "react"
 
 const CategoryInput = () => {
-    return (
-        <div>
-            
-        </div>
-    )
+  return <input />
 }
 
 export default CategoryInput
-
-
-

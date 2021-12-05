@@ -1,5 +1,3 @@
-const PATHS = {
-
-}
+const PATHS = {}
 
 export default PATHS

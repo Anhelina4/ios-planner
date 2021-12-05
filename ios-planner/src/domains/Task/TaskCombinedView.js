@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react"
 
 const TaskCombinedView = () => {
-    return (
-        <div>
-            
-        </div>
-    )
+  return (
+      <>
+      <div></div>
+
+      <input/>
+      </>
+  )
 }
 
 export default TaskCombinedView
