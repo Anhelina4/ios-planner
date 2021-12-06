@@ -1,11 +1,11 @@
 import styled from "styled-components"
 
- const ButtonItem = styled.button`
+const ButtonItem = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: ${props=>props.size ? props.size : null};
-  width: ${props=>props.size ? props.size : null};
+  height: ${props => props.size || null};
+  width: ${props => props.size || null};
   font-size: 20px;
   padding: 2px;
   background: transparent;
@@ -14,16 +14,12 @@ import styled from "styled-components"
   border-radius: 6px;
   cursor: pointer;
   &:hover {
-    background: ${props=>props.hovered ? "#ccc" : "none"};
+    background: ${props => (props.hovered ? "#ccc" : "none")};
     border-radius: 6px;
   }
   &:active {
-    background: ${props=>props.active ? "#adadad" : "none"};
+    background: ${props => (props.active ? "#adadad" : "none")};
     border-radius: 6px;
   }
 `
 export default ButtonItem
-
-
-
-
