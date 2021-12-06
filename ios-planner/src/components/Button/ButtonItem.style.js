@@ -4,43 +4,25 @@ import styled from "styled-components"
   display: flex;
   justify-content: center;
   align-items: center;
-  height: ${props=>props.size};
-  width: ${props=>props.size};
+  height: ${props=>props.size ? props.size : null};
+  width: ${props=>props.size ? props.size : null};
   font-size: 20px;
   padding: 2px;
   background: transparent;
   border: none;
   color: #4e4d4d;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   &:hover {
     background: ${props=>props.hovered ? "#ccc" : "none"};
-    border-radius: 4px;
+    border-radius: 6px;
   }
   &:active {
     background: ${props=>props.active ? "#adadad" : "none"};
-    border-radius: 4px;
+    border-radius: 6px;
   }
 `
 export default ButtonItem
-// export const ButtonSecondary = styled(ButtonPrimary)`
-//   border-radius: 50%;
-//   padding: 2px;
-//   border: 1px solid  #4e4d4d ;
-//   background: ${props=>props.outlined ? "white" : "#4e4d4d"};
-//   color: ${props=>props.outlined ? "#4e4d4d" : "white"};
-//   font-size: 12px;
-//   height: 14px;
-//   width: 14px;
-//   &:hover {
-//     background: ${props=>props.outlined ? "white" : "#4e4d4d"};;
-//     border-radius: 12px;
-//   }
-//   &:active {
-//     background: ${props=>props.outlined ? "white" : "#4e4d4d"};;
-//     border-radius: 12px;
-//   }
-// `
 
 
 
