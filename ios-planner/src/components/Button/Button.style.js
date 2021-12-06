@@ -15,11 +15,11 @@ export const ButtonPrimary = styled.button`
   cursor: pointer;
   &:hover {
     background: rgb(199, 199, 199);
-    border-radius: 12px;
+    border-radius: 4px;
   }
   &:active {
     background: rgb(161, 161, 161);
-    border-radius: 12px;
+    border-radius: 4px;
   }
 `
 
@@ -41,5 +41,7 @@ export const ButtonSecondary = styled(ButtonPrimary)`
     border-radius: 12px;
   }
 `
+
+
 
 
