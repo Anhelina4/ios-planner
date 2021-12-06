@@ -1,7 +1,7 @@
 import React from "react"
 
 const TaskInput = () => {
-  return <input/>
+  return <input />
 }
 
 export default TaskInput

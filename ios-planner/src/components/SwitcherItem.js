@@ -1,13 +1,14 @@
 import React from "react"
 
 const SwitcherItem = () => {
-  return(
-      <>
+  return (
+    <>
       <div>
-          <h3></h3>
-          
+        <div></div>
+        <div></div>
+        <h4></h4>
       </div>
-      </>
+    </>
   )
 }
 
