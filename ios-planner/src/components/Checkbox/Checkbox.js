@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Container = () => {
+const Checkbox = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Container = () => {
     )
 }
 
-export default Container
+export default Checkbox
