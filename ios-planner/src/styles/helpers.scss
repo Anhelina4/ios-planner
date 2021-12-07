@@ -23,15 +23,31 @@ $mapDir: (
     }
   }
 }
-/**/
+.m {
+    @each $size, $var in $map {
+      &-#{$size} {
+        margin: #{$var};
+      }
+    }
+  }
+/*padding*/
 .p {
-    @each $dir, $value in $mapDir {
-      &#{$dir} {
-        @each $size, $var in $map {
-          &-#{$size} {
-            margin-#{$value}: #{$var};
-          }
+  @each $dir, $value in $mapDir {
+    &#{$dir} {
+      @each $size, $var in $map {
+        &-#{$size} {
+          padding-#{$value}: #{$var};
         }
       }
     }
   }
+}
+.p {
+    @each $size, $var in $map {
+      &-#{$size} {
+        padding: #{$var};
+      }
+    }
+  }
+
+

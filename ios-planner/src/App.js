@@ -20,15 +20,16 @@ function App() {
         color="var(--color-blue)"
         fontSize="var(--text-md)"
         icon={<MdAddCircleOutline />}
+        className="ml-xxl"
       />
 
-      <Counter theme="var(--color-dark)" size="var(--text-lg)" count="0" />
-      <Counter theme="var(--color-dark-lighten1)" size="var(--text-xl)" count="0" />
-      <Counter theme="var(--color-dark-lighten2)" fontWeight="var(--text-bold)" size="var(--text-xxl)" count="0" />
-      <Counter theme="var(--color-dark-lighten3)" size="var(--text-lg)" count="0" />
-      <Counter theme="var(--color-dark-lighten4)" size="var(--text-xl)" count="0" />
-      <Counter theme="var(--color-dark-lighten5)" size="var(--text-xxl)" count="0" />
-      <Counter theme="var(--color-dark-lighten6)" count="0" />
+      <Counter color="var(--color-dark)" size="var(--text-lg)" count="0" />
+      <Counter color="var(--color-dark-lighten1)" size="var(--text-xl)" count="0" />
+      <Counter color="var(--color-dark-lighten2)" fontWeight="var(--text-bold)" size="var(--text-xxl)" count="0" />
+      <Counter color="var(--color-dark-lighten3)" size="var(--text-lg)" count="0" className="ml-xxl"/>
+      <Counter color="var(--color-dark-lighten4)" size="var(--text-xl)" count="0" />
+      <Counter color="var(--color-dark-lighten5)" size="var(--text-xxl)" count="0" />
+      <Counter color="var(--color-dark-lighten6)" count="0" />
     </>
   )
 }

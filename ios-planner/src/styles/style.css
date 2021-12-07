@@ -52,5 +52,14 @@
   --m-md: 4px;
   --m-lg: 8px;
   --m-xl: 16px;
-  --m-xxl: 32px;
+  --m-xxl: 32px;  
+  
+  /*border-radius*/
+  --br-sm: 2px;
+  --br-md: 4px;
+  --br-lg: 6px;
+  --br-xl: 8px;
+  --br-round: 50%;
 }
+@import "./helpers.css"
+

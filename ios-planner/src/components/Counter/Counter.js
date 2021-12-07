@@ -2,9 +2,9 @@ import React from "react"
 import CounterItem from "./CounterItem.style"
 
 const Counter = props => {
-  const {theme, size, fontWeight, count} = props
+  const {color, size, fontWeight, count, className} = props
   return (
-    <CounterItem theme={theme} size={size} fontWeight={fontWeight}>
+    <CounterItem color={color} size={size} fontWeight={fontWeight} className={className}>
       {count}
     </CounterItem>
   )
