@@ -11,4 +11,4 @@ export { default as SearchInput } from "./SearchInput"
 export { default as Sider } from "./Sider"
 export { default as Switcher } from "./Switcher"
 export { default as Title } from "./Title"
-
+export { default as Text } from "./Text"

@@ -4,6 +4,7 @@ const CounterItem = styled.div`
   color: ${props => props.color || "var(--color-dark-lighten2)"};
   font-size: ${props => props.size || "var(--text-xl)"};
   font-weight: ${props => props.fontWeight || "var(--text-semibold)"};
+  font-family: San Francisco ;
 `
 
 export default CounterItem

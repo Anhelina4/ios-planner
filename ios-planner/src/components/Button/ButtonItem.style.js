@@ -13,6 +13,7 @@ const ButtonItem = styled.button`
   color: ${props => props.color || null};
   border-radius: var(--br-lg);
   cursor: pointer;
+  font-family: San Francisco ;
   font-weight: ${props => props.fontWeight || "var(--text-semibold)"};
   &:hover {
     background: ${props => (props.hovered ? "var(--color-dark-lighten6)" : "none")};

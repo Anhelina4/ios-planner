@@ -1,6 +1,6 @@
 import Navigator from "./pages/Navigator"
 import "./styles/style.css"
-import { Button, Counter, SearchInput, Title } from "./components"
+import { Button, Counter, SearchInput, Title, Text } from "./components"
 import { MdAddCircleOutline, MdAddCircle, MdClose } from "react-icons/md"
 import { AiOutlinePlus, AiOutlineSearch } from "react-icons/ai"
 function App() {
@@ -33,7 +33,8 @@ function App() {
 
       
       <SearchInput icon1={<AiOutlineSearch/>} button={<Button icon={<MdAddCircle />} size="var(--btn-md)" color="var(--color-dark)" />} color="var(--color-dark)"></SearchInput>
-      <Title fontWeight="var(--title-bold)" fontSize="var(--title-md)" color="var(--color-blue)" text="New List"></Title>
+      <Title fontWeight="var(--title-bold)" fontSize="var(--title-md)" color="var(--color-blue)" font="San Francisco" text="New List"></Title>
+      <Text text="My new task" font="San Francisco"></Text>
     </>
   )
 }
