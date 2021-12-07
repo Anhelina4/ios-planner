@@ -1,6 +1,6 @@
 import Navigator from "./pages/Navigator"
 import "./styles/style.css"
-import { Button, Counter, SearchInput, Title, Text } from "./components"
+import { Button, Counter, SearchInput, Title, Text, Checkbox } from "./components"
 import { MdAddCircleOutline, MdAddCircle, MdClose } from "react-icons/md"
 import { AiOutlinePlus, AiOutlineSearch } from "react-icons/ai"
 function App() {
@@ -120,6 +120,10 @@ function App() {
         color="var(--color-dark-lighten3)"
         fontSize="var(--text-md)"
         fontWeight="var(--text-bold)"></Text>
+        <Checkbox checked={true} backgroundColor="red"></Checkbox>
+        <Checkbox backgroundColor="red" checked={false}></Checkbox>
+        <Checkbox checked={true} ></Checkbox>
+        <Checkbox/>
     </>
   )
 }

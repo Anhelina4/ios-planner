@@ -60,6 +60,20 @@
   --br-lg: 6px;
   --br-xl: 8px;
   --br-round: 50%;
+
+  /*checkbox*/
+  --checkbox-size-sm: 10px;
+  --checkbox-size-md: 14px;
+  --checkbox-size-lg: 18px;
+  
+  /*border*/
+  --b-sm: 1px;
+  --b-md: 2px;
+  --b-lg: 3px;
+
+  /*opacity*/
+  --visible: 100%;
+  --unvisible: 0%;
 }
 @import "./helpers.css"
 

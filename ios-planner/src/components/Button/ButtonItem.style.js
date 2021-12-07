@@ -13,14 +13,16 @@ const ButtonItem = styled.button`
   color: ${props => props.color || null};
   border-radius: var(--br-lg);
   cursor: pointer;
-  font-family: San Francisco ;
+  font-family: San Francisco;
   font-weight: ${props => props.fontWeight || "var(--text-semibold)"};
   &:hover {
-    background: ${props => (props.hovered ? "var(--color-dark-lighten6)" : "none")};
+    background: ${props =>
+      props.hovered ? "var(--color-dark-lighten6)" : "none"};
     border-radius: var(--br-lg);
   }
   &:active {
-    background: ${props => (props.active ? "var(--color-dark-lighten4)" : "none")};
+    background: ${props =>
+      props.active ? "var(--color-dark-lighten4)" : "none"};
     border-radius: var(--br-lg);
   }
 `
