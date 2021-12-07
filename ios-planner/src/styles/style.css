@@ -1,0 +1,65 @@
+:root {
+  /* buttons sizes */
+  --btn-sm: 14px;
+  --btn-md: 20px;
+  --btn-lg: 26px;
+
+  /* colors */
+  --color-blue: #007aff;
+  --color-red: #e42a0a;
+  --color-orange: #ff9500;
+  --color-white: #fff;
+  --color-black: #000000;
+  --color-darken: #242424; /*task-text*/
+  --color-dark-lighten1: #424243; /*category-text+title*/
+  --color-dark-lighten2: #48464a; /*counter*/
+  --color-dark-lighten3: #5b626a; /*icon*/
+  --color-dark-lighten4: #a4a2a5; /*inpsearch-text*/ /*counter-light-text*/
+  --color-dark-lighten5: #c4c2c6; /*sider-back*/ /*category-chosen*/ /*task-chosen*/
+  --color-dark-lighten6: #c5c3c7; /*switcher-back*/ /*inpsearch-back*/
+
+  /*title-sizes*/
+  --title-sm: 14px;
+  --title-md: 20px;
+  /* --title-lg: 40px; */
+
+  /*title-weight*/
+  --title-regular: 400;
+  --title-semibold: 500;
+  --title-bold: 600;
+
+  /*text-sizes*/
+  --text-sm: 12px;
+  --text-md: 14px;
+  --text-lg: 16px;
+  --text-xl: 20px;
+  --text-xxl: 40px;
+
+  /*text-weight*/
+  --text-regular: 400;
+  --text-semibold: 500;
+  --text-bold: 600;
+
+  /*paddings*/
+  --p-sm: 2px;
+  --p-md: 4px;
+  --p-lg: 8px;
+  --p-xl: 16px;
+  --p-xxl: 32px;
+
+  /*margin*/
+  --m-sm: 2px;
+  --m-md: 4px;
+  --m-lg: 8px;
+  --m-xl: 16px;
+  --m-xxl: 32px;  
+  
+  /*border-radius*/
+  --br-sm: 2px;
+  --br-md: 4px;
+  --br-lg: 6px;
+  --br-xl: 8px;
+  --br-round: 50%;
+}
+@import "./helpers.css"
+
