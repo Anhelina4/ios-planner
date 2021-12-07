@@ -12,7 +12,7 @@ export const Input = styled.input`
   margin: var(--p-md);
   font-size: var(--text-sm);
   box-sizing: border-box;
-  background:var(--color-dark-lighten6);
+  background: var(--color-dark-lighten6);
   cursor: text;
   padding-left: var(--p-xxl);
   color: ${props => props.color || "var(--color-black)"};

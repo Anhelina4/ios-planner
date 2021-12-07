@@ -24,12 +24,12 @@ $mapDir: (
   }
 }
 .m {
-    @each $size, $var in $map {
-      &-#{$size} {
-        margin: #{$var};
-      }
+  @each $size, $var in $map {
+    &-#{$size} {
+      margin: #{$var};
     }
   }
+}
 /*padding*/
 .p {
   @each $dir, $value in $mapDir {
@@ -43,11 +43,9 @@ $mapDir: (
   }
 }
 .p {
-    @each $size, $var in $map {
-      &-#{$size} {
-        padding: #{$var};
-      }
+  @each $size, $var in $map {
+    &-#{$size} {
+      padding: #{$var};
     }
   }
-
-
+}
