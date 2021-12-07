@@ -35,6 +35,8 @@ function App() {
       <SearchInput icon1={<AiOutlineSearch/>} button={<Button icon={<MdAddCircle />} size="var(--btn-md)" color="var(--color-dark)" />} color="var(--color-dark)"></SearchInput>
       <Title fontWeight="var(--title-bold)" fontSize="var(--title-md)" color="var(--color-blue)" font="San Francisco" text="New List"></Title>
       <Text text="My new task" font="San Francisco"></Text>
+      <Text text="My new task" font="San Francisco" color="var(--color-dark-lighten5)" fontSize="var(--text-lg)"></Text>
+      <Text text="My new task" font="San Francisco" color="var(--color-dark-lighten3)" fontSize="var(--text-md)" fontWeight="var(--text-bold)"></Text>
     </>
   )
 }
