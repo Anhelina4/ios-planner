@@ -1,8 +1,8 @@
 import Navigator from "./pages/Navigator"
 import "./styles/style.css"
-import { Button, Counter } from "./components"
+import { Button, Counter, SearchInput } from "./components"
 import { MdAddCircleOutline, MdAddCircle, MdClose } from "react-icons/md"
-import { AiOutlinePlus } from "react-icons/ai"
+import { AiOutlinePlus, AiOutlineSearch } from "react-icons/ai"
 function App() {
   return (
     <>
@@ -30,6 +30,8 @@ function App() {
       <Counter color="var(--color-dark-lighten4)" size="var(--text-xl)" count="0" />
       <Counter color="var(--color-dark-lighten5)" size="var(--text-xxl)" count="0" />
       <Counter color="var(--color-dark-lighten6)" count="0" />
+
+      <SearchInput icon1={<AiOutlineSearch/>} button={<Button icon={<MdAddCircle />} size="var(--btn-md)" color="var(--color-dark)" />} color="var(--color-dark)"></SearchInput>
     </>
   )
 }
