@@ -6,25 +6,29 @@ import { AiOutlinePlus } from "react-icons/ai"
 function App() {
   return (
     <>
-      <Button icon={<MdAddCircleOutline />} size="20px" />
-      <Button icon={<MdAddCircle />} size="20px" />
-      <Button icon={<MdClose />} size="20px" />
-      <Button icon={<AiOutlinePlus />} size="28px" hovered active></Button>
-      <Button text="Hello" color="#157EFB" fontSize="14px" />
+      <Button icon={<MdAddCircleOutline />} size="var(--btn-md)" color="var(--color-red)" />
+      <Button icon={<MdAddCircle />} size="var(--btn-md)" color="var(--color-orange)" />
+      <Button icon={<MdClose />} size="var(--btn-md)" color="var(--color-dark)"/>
+      <Button icon={<AiOutlinePlus />} size="var(--btn-lg)" color="var(--color-dark-lighten1)" hovered active></Button>
+      <Button icon={<AiOutlinePlus />} size="var(--btn-lg)" color="var(--color-dark-lighten2)" hovered active></Button>
+      <Button icon={<AiOutlinePlus />} size="var(--btn-lg)" color="var(--color-dark-lighten3)" hovered active></Button>
+      <Button icon={<AiOutlinePlus />} size="var(--btn-lg)" color="var(--color-dark-lighten4)"  active></Button>
+      <Button icon={<AiOutlinePlus />} size="var(--btn-lg)" color="var(--color-dark-lighten5)"  active></Button>
+      <Button icon={<AiOutlinePlus />} size="var(--btn-lg)" color="var(--color-dark-lighten6)"  active></Button>
       <Button
         text="New List"
-        color="#157EFB"
-        fontSize="14px"
+        color="var(--color-blue)"
+        fontSize="var(--text-md)"
         icon={<MdAddCircleOutline />}
       />
 
-      <Counter theme="#4e4d4d" size="16px" count="0" />
-      <Counter theme="#4e4d4d" size="20px" count="0" />
-      <Counter theme="#4e4d4d" size="40px" count="0" />
-      <Counter theme="#929292" size="16px" count="0" />
-      <Counter theme="#929292" size="20px" count="0" />
-      <Counter theme="#929292" size="40px" count="0" />
-      <Counter theme="#929292" count="0" />
+      <Counter theme="var(--color-dark)" size="var(--text-lg)" count="0" />
+      <Counter theme="var(--color-dark-lighten1)" size="var(--text-xl)" count="0" />
+      <Counter theme="var(--color-dark-lighten2)" fontWeight="var(--text-bold)" size="var(--text-xxl)" count="0" />
+      <Counter theme="var(--color-dark-lighten3)" size="var(--text-lg)" count="0" />
+      <Counter theme="var(--color-dark-lighten4)" size="var(--text-xl)" count="0" />
+      <Counter theme="var(--color-dark-lighten5)" size="var(--text-xxl)" count="0" />
+      <Counter theme="var(--color-dark-lighten6)" count="0" />
     </>
   )
 }
