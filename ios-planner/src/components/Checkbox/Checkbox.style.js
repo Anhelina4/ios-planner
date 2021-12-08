@@ -2,6 +2,7 @@ import styled, { css } from "styled-components"
 
 export const CheckboxWrapper = styled.input.attrs({ type: "checkbox" })`
   opacity: var(--opacity-0);
+  margin-right: var(--m-xl);
 `
 
 export const LabelWrapper = styled.label`
@@ -11,8 +12,8 @@ export const LabelWrapper = styled.label`
     content: "";
     position: absolute;
     display: block;
-    top: 0px;
-    left: -20px;
+    top: 2px;
+    left: -32px;
     width: var(--checkbox-outer-dot);
     height: var(--checkbox-outer-dot);
     border-radius: var(--br-round);
@@ -60,8 +61,8 @@ export const LabelWrapper = styled.label`
   &:after {
     content: "";
     position: absolute;
-    top: 4px;
-    left: -16px;
+    top: 6px;
+    left: -28px;
     width: var(--checkbox-inner-dot);
     height: var(--checkbox-inner-dot);
     border-radius: var(--br-round);
