@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components"
 
 const CounterItem = styled.div`
-  font-family: San Francisco;
   ${props =>
     props.size === "sm" &&
     css`
@@ -12,7 +11,7 @@ const CounterItem = styled.div`
   ${props =>
     props.size === "md" &&
     css`
-      color: var(--color-dark);
+      color: var(--color-dark-lighten0);
       font-weight: var(--text-bold);
       font-size: var(--text-xl);
     `}

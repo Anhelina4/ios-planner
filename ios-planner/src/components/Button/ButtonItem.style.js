@@ -5,10 +5,12 @@ export const ButtonItem = styled.button`
   justify-content: center;
   align-items: center;
   font-size: var(--text-lg);
-  color: ${props=>props.color || "var(--color-dark)"};
-  ${props=> props.color === "light" && css`
-    color: var(--color-dark-lighten1);
-  `}
+  color: ${props => props.color || "var(--color-dark)"};
+  ${props =>
+    props.color === "light" &&
+    css`
+      color: var(--color-dark-lighten1);
+    `}
   ${props =>
     props.size === "md" &&
     css`
@@ -31,12 +33,23 @@ export const ButtonItem = styled.button`
       width: var(--btn-lg);
       font-size: var(--text-xxl);
     `}
+    ${props =>
+    props.size === "md-text" &&
+    css`
+      height: var(--btn-md);
+      font-size: var(--text-lg);
+    `}
+    ${props =>
+    props.size === "sm-text" &&
+    css`
+      height: var(--btn-sm);
+      font-size: var(--text-md);
+    `}
   padding: var(--p-sm);
   background: transparent;
   border: none;
   border-radius: var(--br-lg);
   cursor: pointer;
-  font-family: San Francisco;
   font-weight: ${props => props.fontWeight || "var(--text-semibold)"};
   &:hover {
     background: ${props =>
@@ -51,7 +64,7 @@ export const ButtonItem = styled.button`
 `
 
 export const TextWrapper = styled.div`
-  display:flex;
+  display: flex;
   padding: var(--p-sm) var(--p-md);
   width: auto;
 `

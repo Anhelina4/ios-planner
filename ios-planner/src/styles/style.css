@@ -11,8 +11,9 @@
   --color-white: #fff;
   --color-black: #000000;
   --color-dark: #242424; /*task-text*/
-  --color-dark-lighten1: #424243; /*category-text+title*/
-  --color-dark-lighten2: #838484; /*counter*/
+  --color-dark-lighten0: #424243; /*category-text+title*/
+  --color-dark-lighten1: #888888; /*category-text+title*/
+  --color-dark-lighten2: #bebebe; /*counter*/
   --color-dark-lighten3: #cecfd0; /*icon*/
   --color-dark-lighten4: #d0d1d2; /*inpsearch-text*/ /*counter-light-text*/
   --color-dark-lighten5: #dadbdc; /*sider-back*/ /*category-chosen*/ /*task-chosen*/
@@ -59,6 +60,7 @@
   --br-md: 4px;
   --br-lg: 6px;
   --br-xl: 8px;
+  --br-xxl: 10px;
   --br-round: 50%;
 
   /*checkbox*/
