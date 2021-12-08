@@ -1,12 +1,13 @@
 import React from "react"
-import TextItem from "./TextItem.style"
+import TextWrapper from "./Text.style"
 
 const Text = props => {
-  const { color, size, text, font } = props
+  const { color, size, children } = props
+
   return (
-    <TextItem color={color} size={size}>
-      {text}
-    </TextItem>
+    <TextWrapper color={color} size={size}>
+      {children}
+    </TextWrapper>
   )
 }
 

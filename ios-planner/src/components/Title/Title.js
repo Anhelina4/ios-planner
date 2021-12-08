@@ -1,12 +1,13 @@
 import React from "react"
-import TitleItem from "./TitleItem.style"
+import TitleWrapper from "./Title.style"
 
 const Title = props => {
-  const { color, size, text } = props
+  const { color, size, children } = props
+
   return (
-    <TitleItem color={color} size={size}>
-      {text}
-    </TitleItem>
+    <TitleWrapper color={color} size={size}>
+      {children}
+    </TitleWrapper>
   )
 }
 

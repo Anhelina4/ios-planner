@@ -1,30 +1,48 @@
 import styled, { css } from "styled-components"
 
-const TextItem = styled.div`
-  color: ${props => props.color || "var(--color-dark)"};
-  font-size: ${props => props.fontSize || "var(--text-md)"};
-  font-weight: ${props => props.fontWeight || "var(--text-semibold)"};
+const TextWrapper = styled.div`
+  color: var(--color-dark-lighten0);
+  font-size: ${props => props.size || "var(--text-md)"};
+  line-height: var(--line-height-md);
+  font-weight: var(--text-semibold);
+  padding: var(--p-md);
+
+  ${props =>
+    props.color === "light" &&
+    css`
+      color: var(--color-dark-lighten1);
+    `}
+
+  ${props =>
+    props.color === "dark" &&
+    css`
+      color: var(--color-dark);
+    `}
 
   ${props =>
     props.size === "sm" &&
     css`
       font-size: var(--text-sm);
     `}
+
   ${props =>
     props.size === "md" &&
     css`
       font-size: var(--text-md);
     `}
+
   ${props =>
     props.size === "lg" &&
     css`
       font-size: var(--text-lg);
     `}
+
   ${props =>
     props.size === "xl" &&
     css`
       font-size: var(--text-xl);
     `}
+    
   ${props =>
     props.size === "xxl" &&
     css`
@@ -32,4 +50,4 @@ const TextItem = styled.div`
     `}
 `
 
-export default TextItem
+export default TextWrapper

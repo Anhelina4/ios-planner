@@ -1,19 +1,17 @@
 import React from "react"
-import {
-  Input,
-  InputIconLeft,
-  InputIconRight,
-  InputWrapper,
-} from "./Input.style"
+import { InputWrapper, Prefix, Sufix, InputInnerWrapper } from "./Input.style"
 
 const SearchInput = props => {
-  const { icon1, button, color } = props
+  const { prefix, sufix } = props
+
   return (
-    <InputWrapper>
-      <InputIconLeft>{icon1}</InputIconLeft>
-      <Input></Input>
-      <InputIconRight>{button}</InputIconRight>
-    </InputWrapper>
+    <>
+      <InputWrapper />
+      <InputInnerWrapper>
+        <Prefix>{prefix}</Prefix>
+        <Sufix>{sufix}</Sufix>
+      </InputInnerWrapper>
+    </>
   )
 }
 

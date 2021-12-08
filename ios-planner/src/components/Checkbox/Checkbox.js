@@ -1,15 +1,14 @@
 import React from "react"
-import { CheckboxItem, StyledCheckbox } from "./CheckboxItem.style"
+import { CheckboxWrapper, LabelWrapper } from "./Checkbox.style"
 
 const Checkbox = props => {
-  const { checked, backgroundColor } = props
+  const { checked, color } = props
+
   return (
-    <div>
-      <CheckboxItem></CheckboxItem>
-      <StyledCheckbox
-        checked={checked}
-        backgroundColor={backgroundColor}></StyledCheckbox>
-    </div>
+    <>
+      <CheckboxWrapper />
+      <LabelWrapper checked={checked} color={color} />
+    </>
   )
 }
 

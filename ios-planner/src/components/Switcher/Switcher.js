@@ -1,17 +1,22 @@
 import React from "react"
-import { SwitcherItem, DivWrapper, IconWrapper } from "./SwitcherItem.style"
-import { Counter, Text } from "../../components"
+import {
+  SwitcherWrapper,
+  IconWrapper,
+  ContainerWrapper,
+} from "./Switcher.style"
+import { Text } from "../../components"
 
 const Switcher = props => {
-  const { icon, backgroundColor } = props
+  const { icon, bg } = props
+
   return (
-    <SwitcherItem>
-      <DivWrapper style={{justifyContent: "space-between"}}>
-        <IconWrapper backgroundColor={backgroundColor} >{icon}</IconWrapper>
-        <Counter size="md" count="0"></Counter>
-      </DivWrapper>
-      <Text text="Today"></Text>
-    </SwitcherItem>
+    <SwitcherWrapper>
+      <ContainerWrapper>
+        <IconWrapper bg={bg}>{icon}</IconWrapper>
+        <Text>Today</Text>
+      </ContainerWrapper>
+      <Text size="md" children="0" />
+    </SwitcherWrapper>
   )
 }
 

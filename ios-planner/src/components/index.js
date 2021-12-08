@@ -1,7 +1,6 @@
 export { default as AppLayout } from "./AppLayout"
 export { default as Button } from "./Button"
 export { default as Checkbox } from "./Checkbox"
-export { default as Counter } from "./Counter"
 export { default as Row } from "./Grid/Row"
 export { default as Col } from "./Grid/Col"
 export { default as Container } from "./Grid/Container"

@@ -1,42 +1,30 @@
 import React from "react"
-import {ButtonItem, TextWrapper} from "./ButtonItem.style"
+import { ButtonWrapper, IconWrapper } from "./Button.style"
 
 const Button = props => {
-  const {
-    hovered,
-    active,
-    size,
-    text,
-    color,
-    fontSize,
-    icon,
-    fontWeight,
-    className,
-  } = props
-  console.log(props)
+  const { hovered, active, size, children, color, icon, className } = props
+
   return (
     <>
-      {icon && text ? (
-        <ButtonItem
-        color={color}
+      {icon && children ? (
+        <ButtonWrapper
+          color={color}
           hovered={hovered}
           active={active}
           size={size}
-          fontSize={fontSize}
           className={className}>
-          <TextWrapper>{icon}</TextWrapper>
-          <TextWrapper>{text}</TextWrapper>
-        </ButtonItem>
+          <IconWrapper>{icon}</IconWrapper>
+          {children}
+        </ButtonWrapper>
       ) : (
-        <ButtonItem
-        color={color}
+        <ButtonWrapper
+          color={color}
           hovered={hovered}
           active={active}
           size={size}
-          fontSize={fontSize}
           className={className}>
-          {icon || text}
-        </ButtonItem>
+          {icon || children}
+        </ButtonWrapper>
       )}
     </>
   )
