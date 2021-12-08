@@ -1,10 +1,28 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 const CounterItem = styled.div`
-  color: ${props => props.color || "var(--color-dark-lighten2)"};
-  font-size: ${props => props.size || "var(--text-xl)"};
-  font-weight: ${props => props.fontWeight || "var(--text-semibold)"};
-  font-family: San Francisco ;
+  font-family: San Francisco;
+  ${props =>
+    props.size === "sm" &&
+    css`
+      color: var(--color-dark-lighten2);
+      font-weight: var(--text-regular);
+      font-size: var(--text-md);
+    `}
+  ${props =>
+    props.size === "md" &&
+    css`
+      color: var(--color-dark);
+      font-weight: var(--text-bold);
+      font-size: var(--text-xl);
+    `}
+${props =>
+    props.size === "lg" &&
+    css`
+      color: var(--color-dark-lighten2);
+      font-weight: var(--text-bold);
+      font-size: var(--text-xxl);
+    `}
 `
 
 export default CounterItem

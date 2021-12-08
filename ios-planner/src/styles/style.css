@@ -10,13 +10,13 @@
   --color-orange: #ff9500;
   --color-white: #fff;
   --color-black: #000000;
-  --color-darken: #242424; /*task-text*/
+  --color-dark: #242424; /*task-text*/
   --color-dark-lighten1: #424243; /*category-text+title*/
-  --color-dark-lighten2: #48464a; /*counter*/
-  --color-dark-lighten3: #5b626a; /*icon*/
-  --color-dark-lighten4: #a4a2a5; /*inpsearch-text*/ /*counter-light-text*/
-  --color-dark-lighten5: #c4c2c6; /*sider-back*/ /*category-chosen*/ /*task-chosen*/
-  --color-dark-lighten6: #c5c3c7; /*switcher-back*/ /*inpsearch-back*/
+  --color-dark-lighten2: #838484; /*counter*/
+  --color-dark-lighten3: #cecfd0; /*icon*/
+  --color-dark-lighten4: #d0d1d2; /*inpsearch-text*/ /*counter-light-text*/
+  --color-dark-lighten5: #dadbdc; /*sider-back*/ /*category-chosen*/ /*task-chosen*/
+  --color-dark-lighten6: #e7e8e9; /*switcher-back*/ /*inpsearch-back*/
 
   /*title-sizes*/
   --title-sm: 14px;

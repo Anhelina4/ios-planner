@@ -1,5 +1,5 @@
 import React from "react"
-import ButtonItem from "./ButtonItem.style"
+import {ButtonItem, TextWrapper} from "./ButtonItem.style"
 
 const Button = props => {
   const {
@@ -13,28 +13,27 @@ const Button = props => {
     fontWeight,
     className,
   } = props
+  console.log(props)
   return (
     <>
       {icon && text ? (
         <ButtonItem
+        color={color}
           hovered={hovered}
           active={active}
           size={size}
-          color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight}
           className={className}>
-          {icon}
-          {text}
+          <TextWrapper>{icon}</TextWrapper>
+          <TextWrapper>{text}</TextWrapper>
         </ButtonItem>
       ) : (
         <ButtonItem
+        color={color}
           hovered={hovered}
           active={active}
           size={size}
-          color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight}
           className={className}>
           {icon || text}
         </ButtonItem>

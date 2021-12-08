@@ -6,7 +6,9 @@ const Checkbox = props => {
   return (
     <div>
       <CheckboxItem></CheckboxItem>
-      <StyledCheckbox checked={checked} backgroundColor={backgroundColor}></StyledCheckbox>
+      <StyledCheckbox
+        checked={checked}
+        backgroundColor={backgroundColor}></StyledCheckbox>
     </div>
   )
 }

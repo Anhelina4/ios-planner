@@ -11,7 +11,7 @@ const SearchInput = props => {
   return (
     <InputWrapper>
       <InputIconLeft>{icon1}</InputIconLeft>
-      <Input color={color}></Input>
+      <Input ></Input>
       <InputIconRight>{button}</InputIconRight>
     </InputWrapper>
   )

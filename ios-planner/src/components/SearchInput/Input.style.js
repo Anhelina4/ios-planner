@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Input = styled.input`
+export const Input = styled.input.attrs({placeholder: "Search"})`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,10 +12,10 @@ export const Input = styled.input`
   margin: var(--p-md);
   font-size: var(--text-sm);
   box-sizing: border-box;
-  background: var(--color-dark-lighten6);
+  background: var(--color-dark-lighten5);
   cursor: text;
   padding-left: var(--p-xxl);
-  color: ${props => props.color || "var(--color-black)"};
+  color: var(--color-dark-lighten2);
   &:hover {
     background: var(--color-dark-lighten5);
   }
