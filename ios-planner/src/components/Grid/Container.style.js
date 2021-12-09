@@ -5,7 +5,8 @@ const ContainerWrapper = styled.div`
   margin-bottom: 1.5rem;
   margin-right: auto;
   margin-left: auto;
-  background: beige;
+  background: orange;
+
   ${props =>
     props.variant === "container" &&
     css`
@@ -24,10 +25,9 @@ const ContainerWrapper = styled.div`
       @media (min-width: 1400px) {
         max-width: 1320px;
       }
-      
     `}
 
-    ${props =>
+  ${props =>
     props.variant === "container-sm" &&
     css`
       @media (min-width: 576px) {
@@ -45,7 +45,6 @@ const ContainerWrapper = styled.div`
       @media (min-width: 1400px) {
         max-width: 1320px;
       }
-      
     `}
 
     ${props =>
@@ -63,7 +62,6 @@ const ContainerWrapper = styled.div`
       @media (min-width: 1400px) {
         max-width: 1320px;
       }
-      
     `}
 
     ${props =>
@@ -78,7 +76,6 @@ const ContainerWrapper = styled.div`
       @media (min-width: 1400px) {
         max-width: 1320px;
       }
-      
     `}
 
 
@@ -91,7 +88,6 @@ const ContainerWrapper = styled.div`
       @media (min-width: 1400px) {
         max-width: 1320px;
       }
-      
     `}
 
     ${props =>
@@ -100,14 +96,12 @@ const ContainerWrapper = styled.div`
       @media (min-width: 1400px) {
         max-width: 1320px;
       }
-      
     `}
 
     ${props =>
     props.variant === "container-fluid" &&
     css`
       width: 100%;
-      
     `}
 `
 

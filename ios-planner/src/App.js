@@ -91,7 +91,11 @@ function App() {
       <Container variant="container-fluid">container-fluid</Container>
       {/* Grid.Row */}
       <Row></Row>
-      <Container><Row></Row></Container>
+      <Container>
+        <Row>Hey</Row>
+        <Row>Jude</Row>
+        <Row>Again</Row>
+        </Container>
 
       {/* Grid.cols */}
     </>
