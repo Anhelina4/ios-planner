@@ -1,45 +1,44 @@
 import styled from "styled-components"
 
-export const Input = styled.input`
+export const InputWrapper = styled.input.attrs({ placeholder: "Search" })`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
   width: 100%;
-  border-radius: var(--br-lg);
+  border-radius: var(--border-radius-lg);
   border: none;
   padding: var(--p-md);
-  margin: var(--p-md);
+  margin: var(--m-md);
   font-size: var(--text-sm);
+  line-height: var(--lh-sm);
   box-sizing: border-box;
-  background: var(--color-dark-lighten6);
+  background: var(--color-dark-lighten5);
   cursor: text;
   padding-left: var(--p-xxl);
-  color: ${props => props.color || "var(--color-black)"};
+  color: var(--color-dark-lighten0);
   &:hover {
     background: var(--color-dark-lighten5);
   }
   &:focus {
     outline: none;
     cursor: default;
-    border-radius: var(--br-md);
+    border-radius: var(--border-radius-md);
     box-shadow: 0px 0px 0px 4px rgb(79, 143, 238, 0.84);
-    transition-property: border;
-    transition-duration: 0.1s;
-    transition-timing-function: ease-in;
+    transition: border 0.1s ease-in;
   }
 `
-export const InputIconLeft = styled.div`
+export const Prefix = styled.div`
   position: absolute;
-  top: 3px;
-  left: 8px;
+  top: -25px;
+  left: 10px;
 `
-export const InputIconRight = styled.div`
+export const Sufix = styled.div`
   position: absolute;
-  top: 1px;
-  right: 0px;
+  top: -25px;
+  right: 1px;
 `
 
-export const InputWrapper = styled.div`
+export const InputInnerWrapper = styled.div`
   position: relative;
 `

@@ -10,17 +10,18 @@
   --color-orange: #ff9500;
   --color-white: #fff;
   --color-black: #000000;
-  --color-darken: #242424; /*task-text*/
-  --color-dark-lighten1: #424243; /*category-text+title*/
-  --color-dark-lighten2: #48464a; /*counter*/
-  --color-dark-lighten3: #5b626a; /*icon*/
-  --color-dark-lighten4: #a4a2a5; /*inpsearch-text*/ /*counter-light-text*/
-  --color-dark-lighten5: #c4c2c6; /*sider-back*/ /*category-chosen*/ /*task-chosen*/
-  --color-dark-lighten6: #c5c3c7; /*switcher-back*/ /*inpsearch-back*/
+  --color-dark: #242424; /*task-text*/
+  --color-dark-lighten0: #424243; /*category-text+title*/
+  --color-dark-lighten1: #888888; /*category-text+title*/
+  --color-dark-lighten2: #bebebe; /*counter*/
+  --color-dark-lighten3: #cecfd0; /*icon*/
+  --color-dark-lighten4: #d0d1d2; /*inpsearch-text*/ /*counter-light-text*/
+  --color-dark-lighten5: #dadbdc; /*sider-back*/ /*category-chosen*/ /*task-chosen*/
+  --color-dark-lighten6: #e7e8e9; /*switcher-back*/ /*inpsearch-back*/
 
   /*title-sizes*/
-  --title-sm: 14px;
   --title-md: 20px;
+  --title-lg: 30px;
   /* --title-lg: 40px; */
 
   /*title-weight*/
@@ -32,8 +33,8 @@
   --text-sm: 12px;
   --text-md: 14px;
   --text-lg: 16px;
-  --text-xl: 20px;
-  --text-xxl: 40px;
+  --text-xl: 24px;
+  --text-xxl: 34px;
 
   /*text-weight*/
   --text-regular: 400;
@@ -41,6 +42,7 @@
   --text-bold: 600;
 
   /*paddings*/
+  --p-none: 0px;
   --p-sm: 2px;
   --p-md: 4px;
   --p-lg: 8px;
@@ -48,18 +50,38 @@
   --p-xxl: 32px;
 
   /*margin*/
+  --m-none: 0px;
   --m-sm: 2px;
   --m-md: 4px;
   --m-lg: 8px;
   --m-xl: 16px;
-  --m-xxl: 32px;  
-  
-  /*border-radius*/
-  --br-sm: 2px;
-  --br-md: 4px;
-  --br-lg: 6px;
-  --br-xl: 8px;
-  --br-round: 50%;
-}
-@import "./helpers.css"
+  --m-xxl: 32px;
 
+  /*border-radius*/
+  --border-radius-sm: 2px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 6px;
+  --border-radius-xl: 8px;
+  --border-radius-xxl: 10px;
+  --border-radius-round: 50%;
+
+  /*checkbox*/
+  --checkbox-inner-dot: 10px;
+  --checkbox-outer-dot: 14px;
+  --checkbox-max-width: 12px;
+
+  /*border*/
+  --border-sm: 1px;
+  --border-md: 2px;
+  --border-lg: 3px;
+
+  /*opacity*/
+  --opacity-100: 100%;
+  --opacity-0: 0%;
+
+  /*line-height*/
+  --lh-sm: 1.25;
+  --lh-md: 1.5;
+  --lh-lg: 2;
+}
+@import "./helpers.css";

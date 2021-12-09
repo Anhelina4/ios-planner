@@ -1,10 +1,10 @@
 import React from 'react'
+import  ContainerWrapper  from "./Container.style"
 
-const Container = () => {
+const Container = (props) => {
+    const {children, variant} = props
     return (
-        <div>
-            
-        </div>
+        <ContainerWrapper variant={variant}>{children}</ContainerWrapper>
     )
 }
 

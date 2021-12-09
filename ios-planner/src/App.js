@@ -1,125 +1,103 @@
 import Navigator from "./pages/Navigator"
 import "./styles/style.css"
-import { Button, Counter, SearchInput, Title, Text } from "./components"
+import {
+  Button,
+  SearchInput,
+  Title,
+  Text,
+  Checkbox,
+  Switcher,
+  Container,
+  Row,
+  Col
+} from "./components"
 import { MdAddCircleOutline, MdAddCircle, MdClose } from "react-icons/md"
-import { AiOutlinePlus, AiOutlineSearch } from "react-icons/ai"
+import { AiFillCloseCircle, AiOutlineSearch, AiFillFlag } from "react-icons/ai"
+import { BsCalendar3, BsCalendarDate, BsInboxFill } from "react-icons/bs"
 function App() {
   return (
     <>
+      {/* Buttons  */}
+      default --------------------------------------
+      <Button children="Default Button" />
+      <Button icon={<MdAddCircleOutline />} size="md" />
+      <Button icon={<MdAddCircle />} size="md" />
+      <Button icon={<MdClose />} size="md" />
+      <Button children="Blue" color="blue" size="lg" />
+      <Button children="Red" color="red" size="md" />
+      <Button children="Orange" color="orange" size="sm" />
       <Button
+        size="md"
+        variant="secondary"
+        children="Light Button"
         icon={<MdAddCircleOutline />}
-        size="var(--btn-md)"
-        color="var(--color-red)"
       />
-      <Button
-        icon={<MdAddCircle />}
-        size="var(--btn-md)"
-        color="var(--color-orange)"
-      />
-      <Button
-        icon={<MdClose />}
-        size="var(--btn-md)"
-        color="var(--color-dark)"
-      />
-      <Button
-        icon={<AiOutlinePlus />}
-        size="var(--btn-lg)"
-        color="var(--color-dark-lighten1)"
-        hovered
-        active></Button>
-      <Button
-        icon={<AiOutlinePlus />}
-        size="var(--btn-lg)"
-        color="var(--color-dark-lighten2)"
-        hovered
-        active></Button>
-      <Button
-        icon={<AiOutlinePlus />}
-        size="var(--btn-lg)"
-        color="var(--color-dark-lighten3)"
-        hovered
-        active></Button>
-      <Button
-        icon={<AiOutlinePlus />}
-        size="var(--btn-lg)"
-        color="var(--color-dark-lighten4)"
-        active></Button>
-      <Button
-        icon={<AiOutlinePlus />}
-        size="var(--btn-lg)"
-        color="var(--color-dark-lighten5)"
-        active></Button>
-      <Button
-        icon={<AiOutlinePlus />}
-        size="var(--btn-lg)"
-        color="var(--color-dark-lighten6)"
-        active></Button>
-      <Button
-        text="New List"
-        color="var(--color-blue)"
-        fontSize="var(--text-md)"
-        icon={<MdAddCircleOutline />}
-        className="ml-xxl"
-      />
-
-      <Counter color="var(--color-dark)" size="var(--text-lg)" count="0" />
-      <Counter
-        color="var(--color-dark-lighten1)"
-        size="var(--text-xl)"
-        count="0"
-      />
-      <Counter
-        color="var(--color-dark-lighten2)"
-        fontWeight="var(--text-bold)"
-        size="var(--text-xxl)"
-        count="0"
-      />
-      <Counter
-        color="var(--color-dark-lighten3)"
-        size="var(--text-lg)"
-        count="0"
-        className="ml-xxl"
-      />
-      <Counter
-        color="var(--color-dark-lighten4)"
-        size="var(--text-xl)"
-        count="0"
-      />
-      <Counter
-        color="var(--color-dark-lighten5)"
-        size="var(--text-xxl)"
-        count="0"
-      />
-      <Counter color="var(--color-dark-lighten6)" count="0" />
-
+      <Button variant="primary">Dark Button</Button>
+      {/* Text */}
+      default --------------------------------------
+      <Text>Default Text</Text>
+      <Text children="0" size="xxl" variant="primary" />
+      <Text children="0" size="lg" variant="secondary" />
+      <Text children="0" size="xl" variant="disabled" />
+      <Text children="My new task" size="xl" variant="primary" />
+      <Text children="My new task" size="md" variant="secondary" />
+      <Text children="My new task" size="lg" variant="disabled" />
+      <Text children="My new task" size="lg" color="red" />
+      <Text children="My new task" size="lg" color="orange" />
+      <Text children="My new task" size="lg" color="blue" />
+      <Text children="My new task" size="lg" />
+      {/* InputSearch */}
+      default --------------------------------------
+      <SearchInput />
       <SearchInput
-        icon1={<AiOutlineSearch />}
-        button={
-          <Button
-            icon={<MdAddCircle />}
-            size="var(--btn-md)"
-            color="var(--color-dark)"
-          />
-        }
-        color="var(--color-dark)"></SearchInput>
-      <Title
-        fontWeight="var(--title-bold)"
-        fontSize="var(--title-md)"
-        color="var(--color-blue)"
-        font="San Francisco"
-        text="New List"></Title>
-      <Text text="My new task" font="San Francisco"></Text>
-      <Text
-        text="My new task"
-        font="San Francisco"
-        color="var(--color-dark-lighten5)"
-        fontSize="var(--text-lg)"></Text>
-      <Text
-        text="My new task"
-        font="San Francisco"
-        color="var(--color-dark-lighten3)"
-        fontSize="var(--text-md)"
-        fontWeight="var(--text-bold)"></Text>
+        prefix={<AiOutlineSearch />}
+        sufix={<Button icon={<AiFillCloseCircle />} />}
+      />
+      {/* Title */}
+      default --------------------------------------
+      <Title>Default Title</Title>
+      <Title size="md" children="New List" />
+      <Title size="md" children="New List" color="red" />
+      <Title size="lg" children="New List" color="orange" />
+      <Title size="lg" children="New List" variant="primary" />
+      <Title size="lg" children="New List" variant="secondary" />
+      <Title size="lg" children="New List" variant="disabled" />
+      {/* Checkbox */}
+      <Checkbox />
+      <Checkbox checked={true} color="red" />
+      <Checkbox checked={true} color="orange" />
+      <Checkbox checked={true} variant="primary" />
+      <Checkbox checked={true} variant="secondary" />
+      <Checkbox checked={false} />
+      <Checkbox checked={true} />
+      {/* Switcher */}
+      <div>
+        <br />
+      </div>
+      default --------------------------------------
+      <Switcher />
+      <Switcher icon={<BsCalendar3 />} variant="blue" />
+      <Switcher icon={<BsCalendarDate />} variant="red" />
+      <Switcher icon={<BsInboxFill />} variant="dark-grey" />
+      <Switcher icon={<AiFillFlag />} variant="orange" />
+      <Switcher icon={<AiFillFlag />} variant="light-grey" />
+      {/* Grid.Containers */}
+      <Container variant="container">container</Container>
+      <Container variant="container-sm">sm</Container>
+      <Container variant="container-md">md</Container>
+      <Container variant="container-lg">lg</Container>
+      <Container variant="container-xl">xl</Container>
+      <Container variant="container-xxl">xxl</Container>
+      <Container variant="container-fluid">container-fluid</Container>
+      {/* Grid.Row */}
+      <Row></Row>
+      <Container>
+        <Row>Hey</Row>
+        <Row>Jude</Row>
+        <Row>Again</Row>
+        </Container>
+
+      {/* Grid.cols */}
     </>
   )
 }
