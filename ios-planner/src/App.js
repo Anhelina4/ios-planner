@@ -8,6 +8,8 @@ import {
   Checkbox,
   Switcher,
   Container,
+  Row,
+  Col
 } from "./components"
 import { MdAddCircleOutline, MdAddCircle, MdClose } from "react-icons/md"
 import { AiFillCloseCircle, AiOutlineSearch, AiFillFlag } from "react-icons/ai"
@@ -87,6 +89,11 @@ function App() {
       <Container variant="container-xl">xl</Container>
       <Container variant="container-xxl">xxl</Container>
       <Container variant="container-fluid">container-fluid</Container>
+      {/* Grid.Row */}
+      <Row></Row>
+      <Container><Row></Row></Container>
+
+      {/* Grid.cols */}
     </>
   )
 }

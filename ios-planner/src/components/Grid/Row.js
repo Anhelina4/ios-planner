@@ -1,10 +1,9 @@
 import React from 'react'
+import RowWrapper from './Row.style'
 
 const Row = () => {
     return (
-        <div>
-            
-        </div>
+       <RowWrapper>Row</RowWrapper>
     )
 }
 
