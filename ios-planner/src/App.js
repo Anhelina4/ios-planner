@@ -7,6 +7,7 @@ import {
   Text,
   Checkbox,
   Switcher,
+  Container,
 } from "./components"
 import { MdAddCircleOutline, MdAddCircle, MdClose } from "react-icons/md"
 import { AiFillCloseCircle, AiOutlineSearch, AiFillFlag } from "react-icons/ai"
@@ -30,21 +31,19 @@ function App() {
         icon={<MdAddCircleOutline />}
       />
       <Button variant="primary">Dark Button</Button>
-
       {/* Text */}
       default --------------------------------------
       <Text>Default Text</Text>
       <Text children="0" size="xxl" variant="primary" />
       <Text children="0" size="lg" variant="secondary" />
-      <Text children="0" size="xl" variant="disabled"/>
+      <Text children="0" size="xl" variant="disabled" />
       <Text children="My new task" size="xl" variant="primary" />
       <Text children="My new task" size="md" variant="secondary" />
-      <Text children="My new task" size="lg" variant="disabled"/>
-      <Text children="My new task" size="lg" color="red"/>
-      <Text children="My new task" size="lg" color="orange"/>
-      <Text children="My new task" size="lg" color="blue"/>
+      <Text children="My new task" size="lg" variant="disabled" />
+      <Text children="My new task" size="lg" color="red" />
+      <Text children="My new task" size="lg" color="orange" />
+      <Text children="My new task" size="lg" color="blue" />
       <Text children="My new task" size="lg" />
-
       {/* InputSearch */}
       default --------------------------------------
       <SearchInput />
@@ -52,7 +51,6 @@ function App() {
         prefix={<AiOutlineSearch />}
         sufix={<Button icon={<AiFillCloseCircle />} />}
       />
-
       {/* Title */}
       default --------------------------------------
       <Title>Default Title</Title>
@@ -62,8 +60,6 @@ function App() {
       <Title size="lg" children="New List" variant="primary" />
       <Title size="lg" children="New List" variant="secondary" />
       <Title size="lg" children="New List" variant="disabled" />
-
-
       {/* Checkbox */}
       <Checkbox />
       <Checkbox checked={true} color="red" />
@@ -72,18 +68,33 @@ function App() {
       <Checkbox checked={true} variant="secondary" />
       <Checkbox checked={false} />
       <Checkbox checked={true} />
-
       {/* Switcher */}
       <div>
-        <br/>
+        <br />
       </div>
-      default -------------------------------------- 
+      default --------------------------------------
       <Switcher />
       <Switcher icon={<BsCalendar3 />} variant="blue" />
       <Switcher icon={<BsCalendarDate />} variant="red" />
       <Switcher icon={<BsInboxFill />} variant="dark-grey" />
       <Switcher icon={<AiFillFlag />} variant="orange" />
       <Switcher icon={<AiFillFlag />} variant="light-grey" />
+      {/* Grid.Containers */}
+      <div className="container-sm">
+        100% wide until small breakpoint
+      </div>
+      <div className="container-md">
+        100% wide until medium breakpoint
+      </div>
+      <div className="container-lg">
+        100% wide until large breakpoint
+      </div>
+      <div className="container-xl">
+        100% wide until extra large breakpoint
+      </div>
+      <div className="container-xxl">
+        100% wide until extra extra large breakpoint
+      </div>
     </>
   )
 }
