@@ -80,21 +80,13 @@ function App() {
       <Switcher icon={<AiFillFlag />} variant="orange" />
       <Switcher icon={<AiFillFlag />} variant="light-grey" />
       {/* Grid.Containers */}
-      <div className="container-sm">
-        100% wide until small breakpoint
-      </div>
-      <div className="container-md">
-        100% wide until medium breakpoint
-      </div>
-      <div className="container-lg">
-        100% wide until large breakpoint
-      </div>
-      <div className="container-xl">
-        100% wide until extra large breakpoint
-      </div>
-      <div className="container-xxl">
-        100% wide until extra extra large breakpoint
-      </div>
+      <Container variant="container">container</Container>
+      <Container variant="container-sm">sm</Container>
+      <Container variant="container-md">md</Container>
+      <Container variant="container-lg">lg</Container>
+      <Container variant="container-xl">xl</Container>
+      <Container variant="container-xxl">xxl</Container>
+      <Container variant="container-fluid">container-fluid</Container>
     </>
   )
 }
