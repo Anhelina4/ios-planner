@@ -6,7 +6,7 @@ export const SwitcherWrapper = styled.div`
   align-items: center;
   padding: var(--p-md);
   background: var(--color-dark-lighten2);
-  border-radius: var(--br-xxl);
+  border-radius: var(--border-radius-xxl);
 `
 
 export const IconWrapper = styled.div`
@@ -15,28 +15,34 @@ export const IconWrapper = styled.div`
   align-items: center;
   margin-top: var(--m-md);
   margin-left: var(--m-md);
-  border-radius: var(--br-round);
+  border-radius: var(--border-radius-round);
   height: var(--btn-lg);
   width: var(--btn-lg);
   color: var(--color-white);
   background-color: var(--color-blue);
 
   ${props =>
-    props.bg === "red" &&
+    props.variant === "red" &&
     css`
       background-color: var(--color-red);
     `}
 
   ${props =>
-    props.bg === "orange" &&
+    props.variant === "orange" &&
     css`
       background-color: var(--color-orange);
     `}
 
     ${props =>
-    props.bg === "dark" &&
+    props.variant === "dark-grey" &&
     css`
       background-color: var(--color-dark);
+    `}
+
+    ${props =>
+    props.variant === "light-grey" &&
+    css`
+      background-color: var(--color-dark-lighten1);
     `}
 `
 

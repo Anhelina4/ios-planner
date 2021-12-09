@@ -2,10 +2,10 @@ import React from "react"
 import TitleWrapper from "./Title.style"
 
 const Title = props => {
-  const { color, size, children } = props
+  const { color, variant, size, children, className } = props
 
   return (
-    <TitleWrapper color={color} size={size}>
+    <TitleWrapper variant={variant} color={color} size={size} className={className}>
       {children}
     </TitleWrapper>
   )

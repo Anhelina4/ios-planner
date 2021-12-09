@@ -9,60 +9,81 @@ import {
   Switcher,
 } from "./components"
 import { MdAddCircleOutline, MdAddCircle, MdClose } from "react-icons/md"
-import { AiOutlinePlus, AiOutlineSearch, AiFillFlag } from "react-icons/ai"
+import { AiFillCloseCircle, AiOutlineSearch, AiFillFlag } from "react-icons/ai"
 import { BsCalendar3, BsCalendarDate, BsInboxFill } from "react-icons/bs"
 function App() {
   return (
     <>
       {/* Buttons  */}
+      default --------------------------------------
+      <Button children="Default Button" />
       <Button icon={<MdAddCircleOutline />} size="md" />
       <Button icon={<MdAddCircle />} size="md" />
       <Button icon={<MdClose />} size="md" />
-      <Button children="Text" color="blue" size="lg" />
-      <Button children="Text" color="red" size="md" />
-      <Button children="Text" color="orange" size="sm" />
+      <Button children="Blue" color="blue" size="lg" />
+      <Button children="Red" color="red" size="md" />
+      <Button children="Orange" color="orange" size="sm" />
       <Button
         size="md"
-        color="light"
-        children="New List"
+        variant="secondary"
+        children="Light Button"
         icon={<MdAddCircleOutline />}
       />
+      <Button variant="primary">Dark Button</Button>
 
       {/* Text */}
-      <Text children="0" size="xxl" color="dark" />
-      <Text children="0" size="xl" />
-      <Text children="0" size="lg" color="light" />
-      <Text children="My new task" size="xl" color="dark" />
+      default --------------------------------------
+      <Text>Default Text</Text>
+      <Text children="0" size="xxl" variant="primary" />
+      <Text children="0" size="lg" variant="secondary" />
+      <Text children="0" size="xl" variant="disabled"/>
+      <Text children="My new task" size="xl" variant="primary" />
+      <Text children="My new task" size="md" variant="secondary" />
+      <Text children="My new task" size="lg" variant="disabled"/>
+      <Text children="My new task" size="lg" color="red"/>
+      <Text children="My new task" size="lg" color="orange"/>
+      <Text children="My new task" size="lg" color="blue"/>
       <Text children="My new task" size="lg" />
-      <Text children="My new task" size="md" color="light" />
 
       {/* InputSearch */}
+      default --------------------------------------
+      <SearchInput />
       <SearchInput
         prefix={<AiOutlineSearch />}
-        sufix={<Button icon={<MdAddCircle />} />}
+        sufix={<Button icon={<AiFillCloseCircle />} />}
       />
 
       {/* Title */}
+      default --------------------------------------
+      <Title>Default Title</Title>
       <Title size="md" children="New List" />
       <Title size="md" children="New List" color="red" />
       <Title size="lg" children="New List" color="orange" />
-      <Title size="lg" children="New List" color="dark" />
-      <Title size="lg" children="New List" color="light" />
+      <Title size="lg" children="New List" variant="primary" />
+      <Title size="lg" children="New List" variant="secondary" />
+      <Title size="lg" children="New List" variant="disabled" />
+
 
       {/* Checkbox */}
+      <Checkbox />
       <Checkbox checked={true} color="red" />
       <Checkbox checked={true} color="orange" />
-      <Checkbox checked={true} color="dark" />
-      <Checkbox checked={true} color="light" />
+      <Checkbox checked={true} variant="primary" />
+      <Checkbox checked={true} variant="secondary" />
       <Checkbox checked={false} />
       <Checkbox checked={true} />
-      <Checkbox />
 
       {/* Switcher */}
-      <Switcher icon={<BsCalendar3 />} bg="blue" />
-      <Switcher icon={<BsCalendarDate />} bg="red" />
-      <Switcher icon={<BsInboxFill />} bg="dark" />
-      <Switcher icon={<AiFillFlag />} bg="orange" />
+      <div>
+        <br/>
+      </div>
+      default -------------------------------------- 
+      <Switcher />
+      <Switcher icon={<BsCalendar3 />} variant="blue" />
+      <Switcher icon={<BsCalendarDate />} variant="red" />
+      <Switcher icon={<BsInboxFill />} variant="dark-grey" />
+      <Switcher icon={<AiFillFlag />} variant="orange" />
+      <Switcher icon={<AiFillFlag />} variant="light-grey" />
     </>
   )
 }

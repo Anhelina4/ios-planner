@@ -6,12 +6,12 @@ export const InputWrapper = styled.input.attrs({ placeholder: "Search" })`
   align-items: center;
   flex-grow: 1;
   width: 100%;
-  border-radius: var(--br-lg);
+  border-radius: var(--border-radius-lg);
   border: none;
   padding: var(--p-md);
   margin: var(--m-md);
   font-size: var(--text-sm);
-  line-height: var(--line-height-sm);
+  line-height: var(--lh-sm);
   box-sizing: border-box;
   background: var(--color-dark-lighten5);
   cursor: text;
@@ -23,7 +23,7 @@ export const InputWrapper = styled.input.attrs({ placeholder: "Search" })`
   &:focus {
     outline: none;
     cursor: default;
-    border-radius: var(--br-md);
+    border-radius: var(--border-radius-md);
     box-shadow: 0px 0px 0px 4px rgb(79, 143, 238, 0.84);
     transition: border 0.1s ease-in;
   }

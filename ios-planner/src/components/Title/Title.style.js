@@ -5,7 +5,7 @@ const TitleWrapper = styled.h2`
   font-size: var(--title-md);
   padding: var(--p-md);
   margin: var(--m-md) var(--m-none);
-
+  line-height: var(--lh-md);
   ${props =>
     props.size === "md" &&
     css`
@@ -31,16 +31,23 @@ const TitleWrapper = styled.h2`
     `}
 
     ${props =>
-    props.color === "dark" &&
+    props.variant === "primary" &&
     css`
       color: var(--color-dark);
     `}
 
     ${props =>
-    props.color === "light" &&
+    props.variant === "secondary" &&
+    css`
+      color: var(--color-dark-lighten0);
+    `}
+
+    ${props =>
+    props.variant === "disabled" &&
     css`
       color: var(--color-dark-lighten1);
     `}
 `
+
 
 export default TitleWrapper

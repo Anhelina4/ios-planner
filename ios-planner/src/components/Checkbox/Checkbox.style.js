@@ -1,8 +1,9 @@
 import styled, { css } from "styled-components"
 
-export const CheckboxWrapper = styled.input.attrs({ type: "checkbox" })`
+export const CheckboxWrapper = styled.input.attrs({ variant: "checkbox" })`
   opacity: var(--opacity-0);
   margin-right: var(--m-xl);
+  max-width: var(--checkbox-max-width);
 `
 
 export const LabelWrapper = styled.label`
@@ -12,14 +13,15 @@ export const LabelWrapper = styled.label`
     content: "";
     position: absolute;
     display: block;
-    top: 2px;
-    left: -32px;
+    top: 4px;
+    left: -35px;
     width: var(--checkbox-outer-dot);
     height: var(--checkbox-outer-dot);
-    border-radius: var(--br-round);
+    border-radius: var(--border-radius-round);
     background: var(--color-white);
     cursor: pointer;
-    border: var(--b-md) solid var(--color-blue);
+    border: var(--border-md) solid var(--color-blue);
+    color: var(--color-blue);
 
     ${props =>
       props.size === "md" &&
@@ -46,26 +48,26 @@ export const LabelWrapper = styled.label`
       `}
 
     ${props =>
-      props.color === "dark" &&
-      css`
-        border-color: var(--color-dark);
-      `}
-
-    ${props =>
-      props.color === "light" &&
+      props.variant === "secondary" &&
       css`
         border-color: var(--color-dark-lighten1);
+      `}
+
+      ${props =>
+      props.variant === "primary" &&
+      css`
+        border-color: var(--color-dark);
       `}
   }
 
   &:after {
     content: "";
     position: absolute;
-    top: 6px;
-    left: -28px;
+    top: 8px;
+    left: -31px;
     width: var(--checkbox-inner-dot);
     height: var(--checkbox-inner-dot);
-    border-radius: var(--br-round);
+    border-radius: var(--border-radius-round);
     cursor: pointer;
     background: ${props =>
       props.checked
@@ -73,9 +75,9 @@ export const LabelWrapper = styled.label`
           ? "var(--color-red)"
           : props.color === "orange"
           ? "var(--color-orange)"
-          : props.color === "dark"
+          : props.variant === "primary"
           ? "var(--color-dark)"
-          : props.color === "light"
+          : props.variant === "secondary"
           ? "var(--color-dark-lighten1)"
           : "var(--color-blue)"
         : null};

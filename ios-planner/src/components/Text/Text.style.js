@@ -3,20 +3,44 @@ import styled, { css } from "styled-components"
 const TextWrapper = styled.div`
   color: var(--color-dark-lighten0);
   font-size: ${props => props.size || "var(--text-md)"};
-  line-height: var(--line-height-md);
+  line-height: var(--lh-md);
   font-weight: var(--text-semibold);
   padding: var(--p-md);
 
   ${props =>
-    props.color === "light" &&
+    props.variant === "primary" &&
     css`
-      color: var(--color-dark-lighten1);
+      color: var(--color-dark);
     `}
 
   ${props =>
-    props.color === "dark" &&
+    props.variant === "secondary" &&
     css`
-      color: var(--color-dark);
+      color: var(--color-dark-lighten0);
+    `}
+
+    ${props =>
+    props.variant === "disabled" &&
+    css`
+      color: var(--color-dark-lighten2);
+    `}
+
+    ${props =>
+    props.color === "red" &&
+    css`
+      color: var(--color-red);
+    `}
+
+    ${props =>
+    props.color === "orange" &&
+    css`
+      color: var(--color-orange);
+    `}
+
+    ${props =>
+    props.color === "blue" &&
+    css`
+      color: var(--color-blue);
     `}
 
   ${props =>

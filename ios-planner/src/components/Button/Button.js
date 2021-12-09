@@ -2,13 +2,15 @@ import React from "react"
 import { ButtonWrapper, IconWrapper } from "./Button.style"
 
 const Button = props => {
-  const { hovered, active, size, children, color, icon, className } = props
+  const { hovered, active, size, variant, children, color, icon, className } =
+    props
 
   return (
     <>
       {icon && children ? (
         <ButtonWrapper
           color={color}
+          variant={variant}
           hovered={hovered}
           active={active}
           size={size}
@@ -19,6 +21,7 @@ const Button = props => {
       ) : (
         <ButtonWrapper
           color={color}
+          variant={variant}
           hovered={hovered}
           active={active}
           size={size}

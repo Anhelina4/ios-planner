@@ -4,18 +4,24 @@ export const ButtonWrapper = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: var(--text-lg);
-  line-height: var(--line-height-md);
+  font-size: var(--text-md);
+  line-height: var(--lh-md);
   color: var(--color-dark);
   padding: var(--p-sm);
   background: transparent;
   border: none;
-  border-radius: var(--br-lg);
+  border-radius: var(--border-radius-lg);
   cursor: pointer;
   font-weight: var(--text-semibold);
 
   ${props =>
-    props.color === "light" &&
+    props.variant === "primary" &&
+    css`
+      color: var(--color-dark);
+    `}
+
+  ${props =>
+    props.variant === "secondary" &&
     css`
       color: var(--color-dark-lighten1);
     `}
@@ -62,13 +68,13 @@ export const ButtonWrapper = styled.button`
   &:hover {
     background: ${props =>
       props.hovered ? "var(--color-dark-lighten6)" : "none"};
-    border-radius: var(--br-lg);
+    border-radius: var(--border-radius-lg);
   }
 
   &:active {
     background: ${props =>
       props.active ? "var(--color-dark-lighten4)" : "none"};
-    border-radius: var(--br-lg);
+    border-radius: var(--border-radius-lg);
   }
 `
 

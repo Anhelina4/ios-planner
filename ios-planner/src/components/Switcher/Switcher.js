@@ -7,12 +7,12 @@ import {
 import { Text } from "../../components"
 
 const Switcher = props => {
-  const { icon, bg } = props
+  const { icon, variant, className} = props
 
   return (
-    <SwitcherWrapper>
+    <SwitcherWrapper className={className}>
       <ContainerWrapper>
-        <IconWrapper bg={bg}>{icon}</IconWrapper>
+        <IconWrapper variant={variant}>{icon}</IconWrapper>
         <Text>Today</Text>
       </ContainerWrapper>
       <Text size="md" children="0" />

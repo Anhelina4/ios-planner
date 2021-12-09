@@ -58,29 +58,30 @@
   --m-xxl: 32px;
 
   /*border-radius*/
-  --br-sm: 2px;
-  --br-md: 4px;
-  --br-lg: 6px;
-  --br-xl: 8px;
-  --br-xxl: 10px;
-  --br-round: 50%;
+  --border-radius-sm: 2px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 6px;
+  --border-radius-xl: 8px;
+  --border-radius-xxl: 10px;
+  --border-radius-round: 50%;
 
   /*checkbox*/
   --checkbox-inner-dot: 10px;
   --checkbox-outer-dot: 14px;
+  --checkbox-max-width: 12px;
 
   /*border*/
-  --b-sm: 1px;
-  --b-md: 2px;
-  --b-lg: 3px;
+  --border-sm: 1px;
+  --border-md: 2px;
+  --border-lg: 3px;
 
   /*opacity*/
   --opacity-100: 100%;
   --opacity-0: 0%;
 
   /*line-height*/
-  --line-height-sm: 1.25;
-  --line-height-md: 1.5;
-  --line-height-lg: 2;
+  --lh-sm: 1.25;
+  --lh-md: 1.5;
+  --lh-lg: 2;
 }
 @import "./helpers.css";
