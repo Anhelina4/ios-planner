@@ -1,5 +1,22 @@
 import styled, { css } from "styled-components"
 
+const btnColors = {
+  blue: "var(--color-blue)",
+  red: "var(--color-red)",
+  orange: "var(--color-orange)",
+}
+
+const btnVariants = {
+  primary: "var(--color-dark)",
+  secondary: "var(--color-dark-lighten1)",
+}
+
+const btnSizes = {
+  sm: { height: "var(--btn-sm)", fontSize: "var(--text-sm)" },
+  md: { height: "var(--btn-md)", fontSize: "var(--text-md)" },
+  lg: { height: "var(--btn-lg)", fontSize: "var(--text-xl)" },
+}
+
 export const ButtonWrapper = styled.button`
   display: flex;
   justify-content: center;
@@ -15,56 +32,24 @@ export const ButtonWrapper = styled.button`
   font-weight: var(--text-semibold);
 
   ${props =>
-    props.variant === "primary" &&
+    props.color &&
     css`
-      color: var(--color-dark);
+      color: ${props => btnColors[props.color]};
     `}
 
   ${props =>
-    props.variant === "secondary" &&
+    props.variant &&
     css`
-      color: var(--color-dark-lighten1);
-    `}
-
-  ${props =>
-    props.color === "blue" &&
-    css`
-      color: var(--color-blue);
+      color: ${props => btnVariants[props.variant]};
     `}
 
     ${props =>
-    props.color === "red" &&
+    props.size &&
     css`
-      color: var(--color-red);
+      height: ${props => btnSizes[props.size].height};
+      font-size: ${props => btnSizes[props.size].fontSize};
     `}
 
-    ${props =>
-    props.color === "orange" &&
-    css`
-      color: var(--color-orange);
-    `}
-
-  ${props =>
-    props.size === "md" &&
-    css`
-      height: var(--btn-md);
-      font-size: var(--text-md);
-    `}
-
-  ${props =>
-    props.size === "sm" &&
-    css`
-      height: var(--btn-sm);
-      font-size: var(--text-sm);
-    `}
-
-    ${props =>
-    props.size === "lg" &&
-    css`
-      height: var(--btn-lg);
-      font-size: var(--text-xl);
-    `}
-  
   &:hover {
     background: ${props =>
       props.hovered ? "var(--color-dark-lighten6)" : "none"};
