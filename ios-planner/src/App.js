@@ -65,8 +65,8 @@ function App() {
       <Title size="lg" children="New List" variant="disabled" />
       {/* Checkbox */}
       <Checkbox />
-      <Checkbox checked={true} color="red" />
-      <Checkbox checked={true} color="orange" />
+      <Checkbox checked={true} color="red" />Task1
+      <Checkbox checked={true} color="orange" />Task2
       <Checkbox checked={true} variant="primary" />
       <Checkbox checked={true} variant="secondary" />
       <Checkbox checked={false} />
@@ -83,13 +83,13 @@ function App() {
       <Switcher icon={<AiFillFlag />} variant="orange" />
       <Switcher icon={<AiFillFlag />} variant="lightGrey" />
       {/* Grid.Containers */}
-      <Container variant="container">container</Container>
-      <Container variant="container-sm">sm</Container>
-      <Container variant="container-md">md</Container>
-      <Container variant="container-lg">lg</Container>
-      <Container variant="container-xl">xl</Container>
-      <Container variant="container-xxl">xxl</Container>
-      <Container variant="container-fluid">container-fluid</Container>
+      <Container>container</Container>
+      <Container variant="sm">sm</Container>
+      <Container variant="md">md</Container>
+      <Container variant="lg">lg</Container>
+      <Container variant="xl">xl</Container>
+      <Container variant="xxl">xxl</Container>
+      <Container variant="fluid">container-fluid</Container>
       {/* Grid.Row */}
       <Row></Row>
       <Container>
@@ -98,6 +98,17 @@ function App() {
         <Row>Again</Row>
       </Container>
       {/* Grid.cols */}
+      <Container>
+        <Row>
+          <Col cw={3}>3</Col>
+          <Col cw={3}>3</Col>
+          <Col cw={6}>6</Col>
+        </Row>
+        <Row>
+          <Col cw="auto">col</Col>
+          <Col>col</Col>
+        </Row>
+      </Container>
     </>
   )
 }

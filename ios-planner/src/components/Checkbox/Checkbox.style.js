@@ -13,20 +13,19 @@ const checkboxVariants = {
 
 // styles
 export const CheckboxWrapper = styled.input.attrs({ type: "checkbox" })`
-  opacity: var(--opacity-0);
-  margin-right: var(--m-xl);
+  opacity: var(--opacity-100);
   max-width: var(--checkbox-max-width);
+  
 `
 
 export const LabelWrapper = styled.label`
   position: relative;
-
+  margin-right: var(--m-md);
   &:before {
     content: "";
     position: absolute;
-    display: block;
-    top: 4px;
-    left: -35px;
+    top: 2px;
+    left:-19px;
     width: var(--checkbox-outer-dot);
     height: var(--checkbox-outer-dot);
     border-radius: var(--border-radius-round);
@@ -34,6 +33,7 @@ export const LabelWrapper = styled.label`
     cursor: pointer;
     border: var(--border-md) solid var(--color-blue);
     color: var(--color-blue);
+
     ${props =>
     props.color &&
     css`
@@ -51,8 +51,8 @@ export const LabelWrapper = styled.label`
   &:after {
     content: "";
     position: absolute;
-    top: 8px;
-    left: -31px;
+    top: 6px;
+    left: -15px;
     width: var(--checkbox-inner-dot);
     height: var(--checkbox-inner-dot);
     border-radius: var(--border-radius-round);
