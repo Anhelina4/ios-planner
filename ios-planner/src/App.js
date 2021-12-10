@@ -65,7 +65,7 @@ function App() {
       <Title size="lg" children="New List" variant="disabled" />
       {/* Checkbox */}
       <Checkbox />
-      <Checkbox checked={true} color="red" />Task1
+      <Checkbox checked={true} color="red" />
       <Checkbox checked={true} color="orange" />Task2
       <Checkbox checked={true} variant="primary" />
       <Checkbox checked={true} variant="secondary" />

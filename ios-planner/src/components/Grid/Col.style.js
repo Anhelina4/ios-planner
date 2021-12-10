@@ -6,8 +6,7 @@ const ColWrapper = styled.div`
   flex: 1 0 0%;
   flex-shrink: 0;
   max-width: 100%;
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
+  padding: 0.75rem;
   box-sizing: border-box;
 
   ${props =>
