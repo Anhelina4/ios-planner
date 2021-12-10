@@ -47,7 +47,7 @@ const ContainerWrapper = styled.div`
   ${props =>
     props.variant === "md" &&
     css`
-    @media (min-width: 576px) {
+      @media (min-width: 576px) {
         max-width: 100%;
       }
       @media (min-width: 768px) {
@@ -67,11 +67,11 @@ const ContainerWrapper = styled.div`
     ${props =>
     props.variant === "lg" &&
     css`
-    @media (min-width: 576px) {
+      @media (min-width: 576px) {
         max-width: 100%;
       }
       @media (min-width: 768px) {
-        max-width: 100%;;
+        max-width: 100%;
       }
       @media (min-width: 992px) {
         max-width: 960px;
@@ -88,10 +88,10 @@ const ContainerWrapper = styled.div`
     ${props =>
     props.variant === "xl" &&
     css`
-    @media (min-width: 576px) {
+      @media (min-width: 576px) {
         max-width: 100%;
       }
-    @media (min-width: 992px) {
+      @media (min-width: 992px) {
         max-width: 100%;
       }
       @media (min-width: 1200px) {
@@ -108,17 +108,17 @@ const ContainerWrapper = styled.div`
     ${props =>
     props.variant === "xxl" &&
     css`
-    @media (min-width: 576px) {
+      @media (min-width: 576px) {
         max-width: 100%;
       }
-    @media (min-width: 992px) {
+      @media (min-width: 992px) {
+        max-width: 100%;
+      }
+      @media (min-width: 1200px) {
         max-width: 100%;
       }
       @media (min-width: 1200px) {
         max-width: 100%;
-      }
-      @media (min-width: 1200px) {
-        max-width: 100%
       }
       @media (min-width: 1400px) {
         max-width: 1320px;
@@ -128,20 +128,19 @@ const ContainerWrapper = styled.div`
     ${props =>
     props.variant === "fluid" &&
     css`
-    @media (min-width: 576px) {
+      @media (min-width: 576px) {
         max-width: 100%;
       }
-    @media (min-width: 992px) {
+      @media (min-width: 992px) {
         max-width: 100%;
       }
       @media (min-width: 1200px) {
         max-width: 100%;
       }
-    @media (min-width: 1200px) {
-        max-width: 100%
+      @media (min-width: 1200px) {
+        max-width: 100%;
       }
-    width: 100%;
-      
+      width: 100%;
     `}
 `
 

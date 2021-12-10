@@ -17,6 +17,12 @@ export const SwitcherWrapper = styled.div`
   padding: var(--p-md);
   background: var(--color-dark-lighten2);
   border-radius: var(--border-radius-xxl);
+
+  &:active {
+    background-color: ${props =>
+      switcherVariants[props.variant] || null};
+  }
+  
 `
 
 export const IconWrapper = styled.div`
@@ -34,8 +40,13 @@ export const IconWrapper = styled.div`
   ${props =>
     props.variant &&
     css`
-      background-color: ${props=> switcherVariants[props.variant]};
+      background-color: ${props => switcherVariants[props.variant] || "var(--color-white)"};
     `}
+    
+    &:active > &{
+      background: pink;
+      color: black;
+    }
 `
 
 export const ContainerWrapper = styled.div`

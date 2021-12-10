@@ -108,7 +108,13 @@ function App() {
           <Col cw="auto">col</Col>
           <Col>col</Col>
         </Row>
+        <Row>
+          <Col cw={12}>12</Col>
+        </Row>
       </Container>
+
+      <Container>container</Container>
+      <Container variant="fluid">container-fluid</Container>
     </>
   )
 }
