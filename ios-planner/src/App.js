@@ -9,7 +9,7 @@ import {
   Switcher,
   Container,
   Row,
-  Col
+  Col,
 } from "./components"
 import { MdAddCircleOutline, MdAddCircle, MdClose } from "react-icons/md"
 import { AiFillCloseCircle, AiOutlineSearch, AiFillFlag } from "react-icons/ai"
@@ -33,7 +33,6 @@ function App() {
         icon={<MdAddCircleOutline />}
       />
       <Button variant="primary">Dark Button</Button>
-
       {/* Text */}
       default --------------------------------------
       <Text>Default Text</Text>
@@ -47,7 +46,6 @@ function App() {
       <Text children="My new task" size="lg" color="orange" />
       <Text children="My new task" size="lg" color="blue" />
       <Text children="My new task" size="lg" />
-
       {/* InputSearch */}
       default --------------------------------------
       <SearchInput />
@@ -55,17 +53,16 @@ function App() {
         prefix={<AiOutlineSearch />}
         sufix={<Button icon={<AiFillCloseCircle />} />}
       />
-
       {/* Title */}
       default --------------------------------------
       <Title>Default Title</Title>
       <Title size="md" children="New List" />
       <Title size="md" children="New List" color="red" />
       <Title size="lg" children="New List" color="orange" />
+      <Title size="lg" children="New List" color="blue" />
       <Title size="lg" children="New List" variant="primary" />
       <Title size="lg" children="New List" variant="secondary" />
       <Title size="lg" children="New List" variant="disabled" />
-
       {/* Checkbox */}
       <Checkbox />
       <Checkbox checked={true} color="red" />
@@ -74,7 +71,6 @@ function App() {
       <Checkbox checked={true} variant="secondary" />
       <Checkbox checked={false} />
       <Checkbox checked={true} />
-
       {/* Switcher */}
       <div>
         <br />
@@ -86,7 +82,6 @@ function App() {
       <Switcher icon={<BsInboxFill />} variant="darkGrey" />
       <Switcher icon={<AiFillFlag />} variant="orange" />
       <Switcher icon={<AiFillFlag />} variant="lightGrey" />
-
       {/* Grid.Containers */}
       <Container variant="container">container</Container>
       <Container variant="container-sm">sm</Container>
@@ -95,15 +90,13 @@ function App() {
       <Container variant="container-xl">xl</Container>
       <Container variant="container-xxl">xxl</Container>
       <Container variant="container-fluid">container-fluid</Container>
-      
       {/* Grid.Row */}
       <Row></Row>
       <Container>
         <Row>Hey</Row>
         <Row>Jude</Row>
         <Row>Again</Row>
-        </Container>
-
+      </Container>
       {/* Grid.cols */}
     </>
   )

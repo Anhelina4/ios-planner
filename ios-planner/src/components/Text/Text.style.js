@@ -1,76 +1,50 @@
 import styled, { css } from "styled-components"
 
+// maps
+const Colors = {
+  blue: "var(--color-blue)",
+  red: "var(--color-red)",
+  orange: "var(--color-orange)",
+}
+
+const textVariants = {
+  primary: "var(--color-dark)",
+  secondary: "var(--color-dark-lighten1)",
+  disabled: "var(--color-dark-lighten1)",
+}
+
+const textSizes = {
+  sm: "var(--text-sm)",
+  md: "var(--text-md)",
+  lg: "var(--text-lg)",
+  xl: "var(--text-xl)",
+  xxl: "var(--text-xxl)",
+}
+
+// styles
 const TextWrapper = styled.div`
   color: var(--color-dark-lighten0);
   font-size: ${props => props.size || "var(--text-md)"};
   line-height: var(--lh-md);
-  font-weight: var(--text-semibold);
+  font-weight: var(--text-regular);
   padding: var(--p-md);
 
   ${props =>
-    props.variant === "primary" &&
+    props.variant &&
     css`
-      color: var(--color-dark);
-    `}
-
-  ${props =>
-    props.variant === "secondary" &&
-    css`
-      color: var(--color-dark-lighten0);
+      color: ${props=> textVariants[props.variant]};
     `}
 
     ${props =>
-    props.variant === "disabled" &&
+    props.color &&
     css`
-      color: var(--color-dark-lighten2);
-    `}
-
-    ${props =>
-    props.color === "red" &&
-    css`
-      color: var(--color-red);
-    `}
-
-    ${props =>
-    props.color === "orange" &&
-    css`
-      color: var(--color-orange);
-    `}
-
-    ${props =>
-    props.color === "blue" &&
-    css`
-      color: var(--color-blue);
+      color: ${props=> Colors[props.color]};
     `}
 
   ${props =>
-    props.size === "sm" &&
+    props.size &&
     css`
-      font-size: var(--text-sm);
-    `}
-
-  ${props =>
-    props.size === "md" &&
-    css`
-      font-size: var(--text-md);
-    `}
-
-  ${props =>
-    props.size === "lg" &&
-    css`
-      font-size: var(--text-lg);
-    `}
-
-  ${props =>
-    props.size === "xl" &&
-    css`
-      font-size: var(--text-xl);
-    `}
-    
-  ${props =>
-    props.size === "xxl" &&
-    css`
-      font-size: var(--text-xxl);
+      font-size: ${props=> textSizes[props.size]};
     `}
 `
 
