@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components"
 
-const btnColors = {
+// maps
+const Colors = {
   blue: "var(--color-blue)",
   red: "var(--color-red)",
   orange: "var(--color-orange)",
@@ -14,9 +15,10 @@ const btnVariants = {
 const btnSizes = {
   sm: { height: "var(--btn-sm)", fontSize: "var(--text-sm)" },
   md: { height: "var(--btn-md)", fontSize: "var(--text-md)" },
-  lg: { height: "var(--btn-lg)", fontSize: "var(--text-xl)" },
+  lg: { height: "var(--btn-lg)", fontSize: "var(--text-lg)" },
 }
 
+// styles
 export const ButtonWrapper = styled.button`
   display: flex;
   justify-content: center;
@@ -34,7 +36,7 @@ export const ButtonWrapper = styled.button`
   ${props =>
     props.color &&
     css`
-      color: ${props => btnColors[props.color]};
+      color: ${props => Colors[props.color]};
     `}
 
   ${props =>
