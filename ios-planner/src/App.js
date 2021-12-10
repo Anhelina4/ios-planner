@@ -33,6 +33,7 @@ function App() {
         icon={<MdAddCircleOutline />}
       />
       <Button variant="primary">Dark Button</Button>
+
       {/* Text */}
       default --------------------------------------
       <Text>Default Text</Text>
@@ -46,6 +47,7 @@ function App() {
       <Text children="My new task" size="lg" color="orange" />
       <Text children="My new task" size="lg" color="blue" />
       <Text children="My new task" size="lg" />
+
       {/* InputSearch */}
       default --------------------------------------
       <SearchInput />
@@ -53,6 +55,7 @@ function App() {
         prefix={<AiOutlineSearch />}
         sufix={<Button icon={<AiFillCloseCircle />} />}
       />
+
       {/* Title */}
       default --------------------------------------
       <Title>Default Title</Title>
@@ -62,6 +65,7 @@ function App() {
       <Title size="lg" children="New List" variant="primary" />
       <Title size="lg" children="New List" variant="secondary" />
       <Title size="lg" children="New List" variant="disabled" />
+
       {/* Checkbox */}
       <Checkbox />
       <Checkbox checked={true} color="red" />
@@ -70,6 +74,7 @@ function App() {
       <Checkbox checked={true} variant="secondary" />
       <Checkbox checked={false} />
       <Checkbox checked={true} />
+
       {/* Switcher */}
       <div>
         <br />
@@ -78,9 +83,10 @@ function App() {
       <Switcher />
       <Switcher icon={<BsCalendar3 />} variant="blue" />
       <Switcher icon={<BsCalendarDate />} variant="red" />
-      <Switcher icon={<BsInboxFill />} variant="dark-grey" />
+      <Switcher icon={<BsInboxFill />} variant="darkGrey" />
       <Switcher icon={<AiFillFlag />} variant="orange" />
-      <Switcher icon={<AiFillFlag />} variant="light-grey" />
+      <Switcher icon={<AiFillFlag />} variant="lightGrey" />
+
       {/* Grid.Containers */}
       <Container variant="container">container</Container>
       <Container variant="container-sm">sm</Container>
@@ -89,6 +95,7 @@ function App() {
       <Container variant="container-xl">xl</Container>
       <Container variant="container-xxl">xxl</Container>
       <Container variant="container-fluid">container-fluid</Container>
+      
       {/* Grid.Row */}
       <Row></Row>
       <Container>
