@@ -154,4 +154,15 @@
   padding: var(--p-xxl);
 }
 
+/*text-font-weight*/
+.text-regular {
+  font-weight: var(--text-regular) !important;
+}
+.text-semibold {
+  font-weight: var(--text-semibold) !important;
+}
+.text-bold {
+  font-weight: var(--text-bold) !important;
+}
+
 /*# sourceMappingURL=helpers.css.map */

@@ -77,10 +77,15 @@ function App() {
       </div>
       default --------------------------------------
       <Switcher />
-      <Switcher icon={<BsCalendar3 />} variant="blue" />
-      <Switcher icon={<BsCalendarDate />} variant="red" />
-      <Switcher icon={<BsInboxFill />} variant="darkGrey" />
-      <Switcher icon={<AiFillFlag />} variant="orange" />
+      <Switcher icon={<BsCalendar3 />} variant="blue" active children="Today"/>
+      <Switcher icon={<BsCalendar3 />} variant="blue" children="Today"/>
+      <Switcher icon={<BsCalendarDate />} variant="red" active children="Scheduled"/>
+      <Switcher icon={<BsCalendarDate />} variant="red" children="Scheduled"/>
+      <Switcher icon={<BsInboxFill />} variant="darkGrey" active children="All"/>
+      <Switcher icon={<BsInboxFill />} variant="darkGrey" children="All"/>
+      <Switcher icon={<AiFillFlag />} variant="orange" active children="With flag"/>
+      <Switcher icon={<AiFillFlag />} variant="orange" children="With flag"/>
+      <Switcher icon={<AiFillFlag />} variant="lightGrey" active/>
       <Switcher icon={<AiFillFlag />} variant="lightGrey" />
       {/* Grid.Containers */}
       <Container>container</Container>
