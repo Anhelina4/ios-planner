@@ -1,20 +1,31 @@
 import styled, { css } from "styled-components"
+// maps
+const Colors = {
+  blue: "var(--color-blue)",
+  red: "var(--color-red)",
+  orange: "var(--color-orange)",
+}
 
-export const CheckboxWrapper = styled.input.attrs({ variant: "checkbox" })`
-  opacity: var(--opacity-0);
-  margin-right: var(--m-xl);
+const checkboxVariants = {
+  primary: "var(--color-dark)",
+  secondary: "var(--color-dark-lighten1)",
+}
+
+// styles
+export const CheckboxWrapper = styled.input.attrs({ type: "checkbox" })`
+  opacity: var(--opacity-100);
   max-width: var(--checkbox-max-width);
+  
 `
 
 export const LabelWrapper = styled.label`
   position: relative;
-
+  margin-right: var(--m-md);
   &:before {
     content: "";
     position: absolute;
-    display: block;
-    top: 4px;
-    left: -35px;
+    top: 2px;
+    left:-19px;
     width: var(--checkbox-outer-dot);
     height: var(--checkbox-outer-dot);
     border-radius: var(--border-radius-round);
@@ -24,47 +35,24 @@ export const LabelWrapper = styled.label`
     color: var(--color-blue);
 
     ${props =>
-      props.size === "md" &&
-      css`
-        font-size: var(--title-md);
-      `}
+    props.color &&
+    css`
+      border-color: ${props => Colors[props.color]};
+    `}
 
-    ${props =>
-      props.size === "lg" &&
-      css`
-        font-size: var(--title-lg);
-      `}
-
-    ${props =>
-      props.color === "red" &&
-      css`
-        border-color: var(--color-red);
-      `}
-
-    ${props =>
-      props.color === "orange" &&
-      css`
-        border-color: var(--color-orange);
-      `}
-
-    ${props =>
-      props.variant === "secondary" &&
-      css`
-        border-color: var(--color-dark-lighten1);
-      `}
-
-      ${props =>
-      props.variant === "primary" &&
-      css`
-        border-color: var(--color-dark);
-      `}
+  ${props =>
+    props.variant &&
+    css`
+      border-color: ${props => checkboxVariants[props.variant]};
+    `}
   }
+  
 
   &:after {
     content: "";
     position: absolute;
-    top: 8px;
-    left: -31px;
+    top: 6px;
+    left: -15px;
     width: var(--checkbox-inner-dot);
     height: var(--checkbox-inner-dot);
     border-radius: var(--border-radius-round);

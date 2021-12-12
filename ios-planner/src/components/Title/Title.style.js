@@ -1,51 +1,47 @@
 import styled, { css } from "styled-components"
 
+
+// maps
+const Colors = {
+  blue: "var(--color-blue)",
+  red: "var(--color-red)",
+  orange: "var(--color-orange)",
+}
+
+const titleSizes = {
+  md: "var(--title-md)",
+  lg: "var(--title-lg)",
+}
+
+const titleVariants = {
+  primary: "var(--color-dark)",
+  secondary: "var(--color-dark-lighten0)",
+  disabled: "var(--color-dark-lighten1)",
+}
+
+// styles
 const TitleWrapper = styled.h2`
-  color: var(--color-blue);
   font-size: var(--title-md);
   padding: var(--p-md);
   margin: var(--m-md) var(--m-none);
   line-height: var(--lh-md);
+  color: var(--color-dark);
   ${props =>
-    props.size === "md" &&
+    props.size &&
     css`
-      font-size: var(--title-md);
-    `}
-
-  ${props =>
-    props.size === "lg" &&
-    css`
-      font-size: var(--title-lg);
+      font-size: ${props => titleSizes[props.size]};
     `}
 
     ${props =>
-    props.color === "red" &&
+    props.color &&
     css`
-      color: var(--color-red);
+      color: ${props=> Colors[props.color]};
     `}
 
     ${props =>
-    props.color === "orange" &&
+    props.variant &&
     css`
-      color: var(--color-orange);
-    `}
-
-    ${props =>
-    props.variant === "primary" &&
-    css`
-      color: var(--color-dark);
-    `}
-
-    ${props =>
-    props.variant === "secondary" &&
-    css`
-      color: var(--color-dark-lighten0);
-    `}
-
-    ${props =>
-    props.variant === "disabled" &&
-    css`
-      color: var(--color-dark-lighten1);
+      color: ${props=> titleVariants[props.variant]};
     `}
 `
 

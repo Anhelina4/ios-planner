@@ -7,15 +7,15 @@ import {
 import { Text } from "../../components"
 
 const Switcher = props => {
-  const { icon, variant, className} = props
+  const { icon, variant} = props
 
   return (
-    <SwitcherWrapper className={className}>
-      <ContainerWrapper>
+    <SwitcherWrapper variant={variant} className="par">
+      <ContainerWrapper >
         <IconWrapper variant={variant}>{icon}</IconWrapper>
-        <Text>Today</Text>
+        <Text >Today</Text>
       </ContainerWrapper>
-      <Text size="md" children="0" />
+      <Text size="md" children="0" variant={variant}/>
     </SwitcherWrapper>
   )
 }

@@ -1,5 +1,15 @@
 import styled, { css } from "styled-components"
 
+// map
+const switcherVariants = {
+  blue: "var(--color-blue)",
+  red: "var(--color-red)",
+  orange: "var(--color-orange)",
+  darkGrey: "var(--color-dark)",
+  lightGrey: "var(--color-dark-lighten1)",
+}
+
+// styles
 export const SwitcherWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -7,6 +17,12 @@ export const SwitcherWrapper = styled.div`
   padding: var(--p-md);
   background: var(--color-dark-lighten2);
   border-radius: var(--border-radius-xxl);
+
+  &:active {
+    background-color: ${props =>
+      switcherVariants[props.variant] || null};
+  }
+  
 `
 
 export const IconWrapper = styled.div`
@@ -22,28 +38,15 @@ export const IconWrapper = styled.div`
   background-color: var(--color-blue);
 
   ${props =>
-    props.variant === "red" &&
+    props.variant &&
     css`
-      background-color: var(--color-red);
+      background-color: ${props => switcherVariants[props.variant] || "var(--color-white)"};
     `}
-
-  ${props =>
-    props.variant === "orange" &&
-    css`
-      background-color: var(--color-orange);
-    `}
-
-    ${props =>
-    props.variant === "dark-grey" &&
-    css`
-      background-color: var(--color-dark);
-    `}
-
-    ${props =>
-    props.variant === "light-grey" &&
-    css`
-      background-color: var(--color-dark-lighten1);
-    `}
+    
+    &:active > &{
+      background: pink;
+      color: black;
+    }
 `
 
 export const ContainerWrapper = styled.div`

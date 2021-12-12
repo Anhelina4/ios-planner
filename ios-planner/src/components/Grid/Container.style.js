@@ -1,14 +1,31 @@
 import styled, { css } from "styled-components"
 
+// styles
 const ContainerWrapper = styled.div`
   padding: 0.75rem;
   margin-bottom: 1.5rem;
   margin-right: auto;
   margin-left: auto;
   background: orange;
+  box-sizing: border-box;
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
 
   ${props =>
-    props.variant === "container" &&
+    props.variant === "sm" &&
     css`
       @media (min-width: 576px) {
         max-width: 540px;
@@ -28,10 +45,10 @@ const ContainerWrapper = styled.div`
     `}
 
   ${props =>
-    props.variant === "container-sm" &&
+    props.variant === "md" &&
     css`
       @media (min-width: 576px) {
-        max-width: 540px;
+        max-width: 100%;
       }
       @media (min-width: 768px) {
         max-width: 720px;
@@ -48,10 +65,13 @@ const ContainerWrapper = styled.div`
     `}
 
     ${props =>
-    props.variant === "container-md" &&
+    props.variant === "lg" &&
     css`
+      @media (min-width: 576px) {
+        max-width: 100%;
+      }
       @media (min-width: 768px) {
-        max-width: 720px;
+        max-width: 100%;
       }
       @media (min-width: 992px) {
         max-width: 960px;
@@ -64,11 +84,18 @@ const ContainerWrapper = styled.div`
       }
     `}
 
+
     ${props =>
-    props.variant === "container-lg" &&
+    props.variant === "xl" &&
     css`
+      @media (min-width: 576px) {
+        max-width: 100%;
+      }
       @media (min-width: 992px) {
-        max-width: 960px;
+        max-width: 100%;
+      }
+      @media (min-width: 1200px) {
+        max-width: 100%;
       }
       @media (min-width: 1200px) {
         max-width: 1140px;
@@ -78,12 +105,20 @@ const ContainerWrapper = styled.div`
       }
     `}
 
-
     ${props =>
-    props.variant === "container-xl" &&
+    props.variant === "xxl" &&
     css`
+      @media (min-width: 576px) {
+        max-width: 100%;
+      }
+      @media (min-width: 992px) {
+        max-width: 100%;
+      }
       @media (min-width: 1200px) {
-        max-width: 1140px;
+        max-width: 100%;
+      }
+      @media (min-width: 1200px) {
+        max-width: 100%;
       }
       @media (min-width: 1400px) {
         max-width: 1320px;
@@ -91,16 +126,20 @@ const ContainerWrapper = styled.div`
     `}
 
     ${props =>
-    props.variant === "container-xxl" &&
+    props.variant === "fluid" &&
     css`
-      @media (min-width: 1400px) {
-        max-width: 1320px;
+      @media (min-width: 576px) {
+        max-width: 100%;
       }
-    `}
-
-    ${props =>
-    props.variant === "container-fluid" &&
-    css`
+      @media (min-width: 992px) {
+        max-width: 100%;
+      }
+      @media (min-width: 1200px) {
+        max-width: 100%;
+      }
+      @media (min-width: 1200px) {
+        max-width: 100%;
+      }
       width: 100%;
     `}
 `
