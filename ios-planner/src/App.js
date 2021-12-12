@@ -10,6 +10,7 @@ import {
   Container,
   Row,
   Col,
+  Header,
 } from "./components"
 import { MdAddCircleOutline, MdAddCircle, MdClose } from "react-icons/md"
 import { AiFillCloseCircle, AiOutlineSearch, AiFillFlag } from "react-icons/ai"
@@ -66,7 +67,8 @@ function App() {
       {/* Checkbox */}
       <Checkbox />
       <Checkbox checked={true} color="red" />
-      <Checkbox checked={true} color="orange" />Task2
+      <Checkbox checked={true} color="orange" />
+      Task2
       <Checkbox checked={true} variant="primary" />
       <Checkbox checked={true} variant="secondary" />
       <Checkbox checked={false} />
@@ -77,15 +79,30 @@ function App() {
       </div>
       default --------------------------------------
       <Switcher />
-      <Switcher icon={<BsCalendar3 />} variant="blue" active children="Today"/>
-      <Switcher icon={<BsCalendar3 />} variant="blue" children="Today"/>
-      <Switcher icon={<BsCalendarDate />} variant="red" active children="Scheduled"/>
-      <Switcher icon={<BsCalendarDate />} variant="red" children="Scheduled"/>
-      <Switcher icon={<BsInboxFill />} variant="darkGrey" active children="All"/>
-      <Switcher icon={<BsInboxFill />} variant="darkGrey" children="All"/>
-      <Switcher icon={<AiFillFlag />} variant="orange" active children="With flag"/>
-      <Switcher icon={<AiFillFlag />} variant="orange" children="With flag"/>
-      <Switcher icon={<AiFillFlag />} variant="lightGrey" active/>
+      <Switcher icon={<BsCalendar3 />} variant="blue" active children="Today" />
+      <Switcher icon={<BsCalendar3 />} variant="blue" children="Today" />
+      <Switcher
+        icon={<BsCalendarDate />}
+        variant="red"
+        active
+        children="Scheduled"
+      />
+      <Switcher icon={<BsCalendarDate />} variant="red" children="Scheduled" />
+      <Switcher
+        icon={<BsInboxFill />}
+        variant="darkGrey"
+        active
+        children="All"
+      />
+      <Switcher icon={<BsInboxFill />} variant="darkGrey" children="All" />
+      <Switcher
+        icon={<AiFillFlag />}
+        variant="orange"
+        active
+        children="With flag"
+      />
+      <Switcher icon={<AiFillFlag />} variant="orange" children="With flag" />
+      <Switcher icon={<AiFillFlag />} variant="lightGrey" active />
       <Switcher icon={<AiFillFlag />} variant="lightGrey" />
       {/* Grid.Containers */}
       <Container>container</Container>
@@ -117,9 +134,11 @@ function App() {
           <Col cw={12}>12</Col>
         </Row>
       </Container>
-
-      <Container>container</Container>
-      <Container variant="fluid">container-fluid</Container>
+      {/* Header */}
+      <Header color="blue">Hello Header</Header>
+      <Header color="red">Hello Header</Header>
+      <Header color="orange">Hello Header</Header>
+      <Header variant="primary">Hello Header</Header>
     </>
   )
 }

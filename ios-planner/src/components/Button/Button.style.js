@@ -8,14 +8,16 @@ const Colors = {
 }
 
 const btnVariants = {
-  primary: "var(--color-dark)",
+  primary: "var(--color-dark-lighten0)",
   secondary: "var(--color-dark-lighten1)",
+  disabled: "var(--color-dark-lighten2)",
 }
 
 const btnSizes = {
   sm: { height: "var(--btn-sm)", fontSize: "var(--text-sm)" },
   md: { height: "var(--btn-md)", fontSize: "var(--text-md)" },
   lg: { height: "var(--btn-lg)", fontSize: "var(--text-lg)" },
+  xl: { height: "var(--btn-xl)", fontSize: "var(--text-xl)" },
 }
 
 // styles

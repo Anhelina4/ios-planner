@@ -1,6 +1,9 @@
 import styled from "styled-components"
 
-export const InputWrapper = styled.input.attrs({ placeholder: "Search" })`
+export const InputWrapper = styled.input.attrs({
+  placeholder: "Search",
+  type: "search",
+})`
   display: flex;
   justify-content: center;
   align-items: center;

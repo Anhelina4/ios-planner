@@ -164,5 +164,43 @@
 .text-bold {
   font-weight: var(--text-bold) !important;
 }
+.text-extraBold {
+  font-weight: var(--text-extraBold) !important;
+}
+.title-regular {
+  font-weight: var(--title-regular) !important;
+}
+.title-semibold {
+  font-weight: var(--title-semibold) !important;
+}
+.title-bold {
+  font-weight: var(--title-bold) !important;
+}
+.title-extraBold {
+  font-weight: var(--title-extraBold) !important;
+}
+
+/* display */
+.d-flex {
+  display: flex;
+}
+.align-center {
+  align-items: center;
+}
+.align-end {
+  align-items: flex-end;
+}
+.align-start {
+  align-items: flex-start;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-start {
+  justify-content: flex-start;
+}
 
 /*# sourceMappingURL=helpers.css.map */

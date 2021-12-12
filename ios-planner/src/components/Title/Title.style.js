@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components"
 
-
 // maps
 const Colors = {
   blue: "var(--color-blue)",
@@ -14,9 +13,9 @@ const titleSizes = {
 }
 
 const titleVariants = {
-  primary: "var(--color-dark)",
-  secondary: "var(--color-dark-lighten0)",
-  disabled: "var(--color-dark-lighten1)",
+  primary: "var(--color-dark-lighten0)",
+  secondary: "var(--color-dark-lighten1)",
+  disabled: "var(--color-dark-lighten2)",
 }
 
 // styles
@@ -32,18 +31,17 @@ const TitleWrapper = styled.h2`
       font-size: ${props => titleSizes[props.size]};
     `}
 
-    ${props =>
+  ${props =>
     props.color &&
     css`
-      color: ${props=> Colors[props.color]};
+      color: ${props => Colors[props.color]};
     `}
 
     ${props =>
     props.variant &&
     css`
-      color: ${props=> titleVariants[props.variant]};
+      color: ${props => titleVariants[props.variant]};
     `}
 `
-
 
 export default TitleWrapper

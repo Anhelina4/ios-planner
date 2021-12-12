@@ -3,6 +3,7 @@
   --btn-sm: 14px;
   --btn-md: 20px;
   --btn-lg: 26px;
+  --btn-xl: 30px;
 
   /* colors */
   --color-blue: #007aff;
@@ -13,7 +14,7 @@
   --color-dark: #242424; /*task-text*/
   --color-dark-lighten0: #424243; /*category-text+title*/
   --color-dark-lighten1: #888888; /*category-text+title*/
-  --color-dark-lighten2: #bebebe; /*counter*/
+  --color-dark-lighten2: #a7a7a7; /*counter*/
   --color-dark-lighten3: #cecfd0; /*icon*/
   --color-dark-lighten4: #d0d1d2; /*inpsearch-text*/ /*counter-light-text*/
   --color-dark-lighten5: #dadbdc; /*sider-back*/ /*category-chosen*/ /*task-chosen*/
@@ -22,12 +23,14 @@
   /*title-sizes*/
   --title-md: 20px;
   --title-lg: 30px;
+  --title-xl: 34px;
   /* --title-lg: 40px; */
 
   /*title-weight*/
   --title-regular: 400;
   --title-semibold: 500;
   --title-bold: 600;
+  --title-extraBold: 700;
 
   /*text-sizes*/
   --text-sm: 12px;
@@ -40,6 +43,7 @@
   --text-regular: 400;
   --text-semibold: 500;
   --text-bold: 600;
+  --text-extraBold: 700;
 
   /*paddings*/
   --p-none: 0px;
@@ -68,7 +72,7 @@
   /*checkbox*/
   --checkbox-inner-dot: 10px;
   --checkbox-outer-dot: 14px;
-  --checkbox-max-width: 15px;
+  --checkbox-max-width: 16px;
 
   /*border*/
   --border-sm: 1px;

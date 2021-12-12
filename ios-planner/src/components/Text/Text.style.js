@@ -11,7 +11,7 @@ const Colors = {
 const textVariants = {
   primary: "var(--color-dark)",
   secondary: "var(--color-dark-lighten1)",
-  disabled: "var(--color-dark-lighten1)",
+  disabled: "var(--color-dark-lighten2)",
 }
 
 const textSizes = {
