@@ -1,5 +1,5 @@
 import React from "react"
-import { CategoryWrapper, IconWrapper } from "./Category.style"
+import { CategoryWrapper, IconWrapper } from "./CategorySimpleView.style"
 import { Text, Button } from "../../../../components"
 import {AiOutlineUnorderedList} from "react-icons/ai"
 import {MdClose} from "react-icons/md"
@@ -18,7 +18,7 @@ const CategorySimpleView = props => {
           </>
         ) : (
           <>
-          <IconWrapper color="white">{< MdClose/>}</IconWrapper>
+          <IconWrapper color="white">{< AiOutlineUnorderedList/>}</IconWrapper>
             <Text size="md" color="white">
               {children}
             </Text>
@@ -27,7 +27,7 @@ const CategorySimpleView = props => {
         )}
         
       </div>
-      <Button>{btnIcon}</Button>
+      <Button>{<MdClose/>}</Button>
     </CategoryWrapper>
   )
 }
