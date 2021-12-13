@@ -6,6 +6,7 @@ const ContainerWrapper = styled.div`
   /* margin-bottom: 1.5rem; */
   margin-right: auto;
   margin-left: auto;
+  width: 100%;
   /* background: orange; */
   box-sizing: border-box;
   @media (min-width: 576px) {

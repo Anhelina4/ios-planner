@@ -75,7 +75,21 @@
 .m-xxl {
   margin: var(--p-xxl);
 }
-
+.mt-none{
+  margin-top: 0px !important;
+}
+.mb-none{
+  margin-bottom: 0px !important;
+}
+.ml-none{
+  margin-left: 0px !important;
+}
+.mr-none{
+  margin-right: 0px !important;
+}
+.m-none{
+  margin: 0px !important;
+}
 /*padding*/
 .pt-sm {
   padding-top: var(--p-sm);
@@ -153,6 +167,21 @@
 .p-xxl {
   padding: var(--p-xxl);
 }
+.pt-none{
+  padding-top: 0px !important;
+}
+.pb-none{
+  padding-bottom: 0px !important;
+}
+.pl-none{
+  padding-left: 0px !important;
+}
+.pr-none{
+  padding-right: 0px !important;
+}
+.p-none{
+  padding: opx !important;
+}
 
 /*text-font-weight*/
 .text-regular {
@@ -202,7 +231,10 @@
 .justify-start {
   justify-content: flex-start;
 }
-.direction-col{
+.justify-between{
+  justify-content: space-between;
+}
+.direction-col {
   flex-direction: column !important;
 }
 

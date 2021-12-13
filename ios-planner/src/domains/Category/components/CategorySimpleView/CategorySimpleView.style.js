@@ -1,5 +1,4 @@
-import styled, {css} from "styled-components"
-
+import styled, { css } from "styled-components"
 
 export const CategoryWrapper = styled.div`
   display: flex;
@@ -11,9 +10,11 @@ export const CategoryWrapper = styled.div`
   font-size: var(--text-sm);
   line-height: var(--lh-sm);
   box-sizing: border-box;
-  ${props=> !props.focused && css`
-     background: var(--color-dark-lighten3);
-  `}
+  ${props =>
+    !props.focused &&
+    css`
+      background: var(--color-dark-lighten3);
+    `}
 `
 
 export const IconWrapper = styled.div`
@@ -21,7 +22,7 @@ export const IconWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: var(--m-none) var(--m-md);
-  color:  var(--color-white);
+  color: var(--color-white);
   border-radius: var(--border-radius-round);
   height: var(--btn-lg);
   width: var(--btn-lg);

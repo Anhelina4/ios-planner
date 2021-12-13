@@ -30,8 +30,8 @@ const Header = props => {
       </ContainerWrapper>
       <SubtitleWrapper>
         <div className="d-flex">
-          <Button color={color}>0 done</Button>
-          <Button variant="disabled">&bull; Clear</Button>
+          <Button variant="disabled">0 done</Button>
+          <Button color={color}>&bull; Clear</Button>
         </div>
         <Button color={color}>Show</Button>
       </SubtitleWrapper>

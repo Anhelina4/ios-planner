@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 const TaskSimpleViewWrapper = styled.div`
   padding: var(--p-md);

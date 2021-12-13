@@ -10,15 +10,11 @@ const RowWrapper = styled.div`
   margin-left: calc(1.5rem * -0.5);
 
   & > * & {
-    
     flex-shrink: 0;
     width: 100%;
     max-width: 100%;
   }
-  
-  & + & {
-    margin-top: 1rem;
-  }
+
 `
 
 export default RowWrapper

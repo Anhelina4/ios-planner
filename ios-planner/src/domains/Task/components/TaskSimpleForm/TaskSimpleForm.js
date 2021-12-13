@@ -5,8 +5,10 @@ import { InputWrapper } from "./TaskSimpleForm.style.js"
 import { AiFillFlag } from "react-icons/ai"
 import { MdClose } from "react-icons/md"
 import { TaskSimpleFormWrapper } from "../TaskSimpleForm/TaskSimpleForm.style"
+
 const TaskSimpleForm = props => {
   const { checked, color, variant } = props
+
   return (
     <>
       <Container>

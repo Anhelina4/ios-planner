@@ -28,7 +28,7 @@ export const ButtonWrapper = styled.button`
   align-items: center;
   font-size: var(--text-md);
   line-height: var(--lh-md);
-  color: ${props=> Colors[props.color] || "var(--color-dark)"};
+  color: ${props => Colors[props.color] || "var(--color-dark)"};
   padding: var(--p-sm);
   background: transparent;
   border: none;

@@ -7,6 +7,7 @@ import { MdClose } from "react-icons/md"
 
 const TaskSimpleView = props => {
   const { color, variant, checked, children } = props
+
   return (
     <>
       <Container>
