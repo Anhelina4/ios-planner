@@ -1,7 +1,8 @@
 import React from "react"
 import { CategoryWrapper, IconWrapper } from "./Category.style"
 import { Text, Button } from "../../../../components"
-
+import {AiOutlineUnorderedList} from "react-icons/ai"
+import {MdClose} from "react-icons/md"
 const CategorySimpleView = props => {
   const { icon, children, btnIcon, focused } = props
   return (
@@ -10,14 +11,14 @@ const CategorySimpleView = props => {
         
         {!focused ? (
           <>
-          <IconWrapper color="white">{icon}</IconWrapper>
+          <IconWrapper color="white">{<AiOutlineUnorderedList/>}</IconWrapper>
             <Text size="md">
               {children}
             </Text>
           </>
         ) : (
           <>
-          <IconWrapper color="white">{icon}</IconWrapper>
+          <IconWrapper color="white">{< MdClose/>}</IconWrapper>
             <Text size="md" color="white">
               {children}
             </Text>
