@@ -12,8 +12,9 @@ import {
   Col,
   Header,
 } from "./components"
+import {CategorySimpleForm} from "./domains/Category/components"
 import { MdAddCircleOutline, MdAddCircle, MdClose } from "react-icons/md"
-import { AiFillCloseCircle, AiOutlineSearch, AiFillFlag } from "react-icons/ai"
+import { AiFillCloseCircle, AiOutlineSearch, AiFillFlag, AiOutlineUnorderedList } from "react-icons/ai"
 import { BsCalendar3, BsCalendarDate, BsInboxFill } from "react-icons/bs"
 function App() {
   return (
@@ -139,6 +140,8 @@ function App() {
       <Header color="red">Hello Header</Header>
       <Header color="orange">Hello Header</Header>
       <Header variant="primary">Hello Header</Header>
+      {/* Category */}
+      <CategorySimpleForm icon={<AiOutlineUnorderedList/>}></CategorySimpleForm>
     </>
   )
 }

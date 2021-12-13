@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 export const InputWrapper = styled.input.attrs({
   placeholder: "Search",
-  type: "search",
 })`
   display: flex;
   justify-content: center;
@@ -39,7 +38,7 @@ export const Prefix = styled.div`
 export const Sufix = styled.div`
   position: absolute;
   top: -25px;
-  right: 1px;
+  right: 0px;
 `
 
 export const InputInnerWrapper = styled.div`
