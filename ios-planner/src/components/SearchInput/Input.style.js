@@ -19,6 +19,7 @@ export const InputWrapper = styled.input.attrs({
   cursor: text;
   padding-left: var(--p-xxl);
   color: var(--color-dark-lighten0);
+  
   &:hover {
     background: var(--color-dark-lighten5);
   }

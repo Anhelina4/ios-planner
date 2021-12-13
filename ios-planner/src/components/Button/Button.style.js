@@ -3,6 +3,7 @@ import styled, { css } from "styled-components"
 // maps
 const Colors = {
   blue: "var(--color-blue)",
+  blueDarken: "var(--color-blue-lighten)",
   red: "var(--color-red)",
   orange: "var(--color-orange)",
 }
@@ -27,7 +28,7 @@ export const ButtonWrapper = styled.button`
   align-items: center;
   font-size: var(--text-md);
   line-height: var(--lh-md);
-  color: var(--color-dark);
+  color: ${props=> Colors[props.color] || "var(--color-dark)"};
   padding: var(--p-sm);
   background: transparent;
   border: none;
