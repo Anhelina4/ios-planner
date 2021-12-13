@@ -40,4 +40,5 @@ export const SubtitleWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid var(--color-dark-lighten3);
 `

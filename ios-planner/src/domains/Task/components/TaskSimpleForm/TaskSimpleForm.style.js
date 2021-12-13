@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components"
 
-export const TaskSimpleFormWrapper = styled.div``
+export const TaskSimpleFormWrapper = styled.div`
+   border-bottom: 1px solid var(--color-dark-lighten2);
+`
 
 export const InputWrapper = styled.input`
   font-weight: var(--text-regular);

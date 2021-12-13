@@ -158,8 +158,9 @@ function App() {
       <TaskSimpleForm></TaskSimpleForm>
       <TaskSimpleForm checked variant="secondary"></TaskSimpleForm>
       <TaskSimpleForm checked color="orange"></TaskSimpleForm>
-
-      <TaskSimpleView checked color="orange">My new Task</TaskSimpleView>
+      <TaskSimpleView checked color="orange">
+        My new Task
+      </TaskSimpleView>
       <TaskSimpleView variant="secondary">my new Task</TaskSimpleView>
     </>
   )

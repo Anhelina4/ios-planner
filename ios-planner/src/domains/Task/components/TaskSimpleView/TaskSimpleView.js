@@ -12,7 +12,7 @@ const TaskSimpleView = props => {
       <Container>
         <Row>
           <Col cw="auto">
-            <Checkbox checked={checked}/>
+            <Checkbox checked={checked} />
           </Col>
           <Col>
             <TaskSimpleViewWrapper>{children}</TaskSimpleViewWrapper>
