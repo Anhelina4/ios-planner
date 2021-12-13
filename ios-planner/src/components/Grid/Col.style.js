@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components"
 
 const ColWrapper = styled.div`
-  box-shadow: inset 0 0 0 1px black;
-
+display:flex;
+  /* box-shadow: inset 0 0 0 1px black; */
   flex: 1 0 0%;
   flex-shrink: 0;
   max-width: 100%;

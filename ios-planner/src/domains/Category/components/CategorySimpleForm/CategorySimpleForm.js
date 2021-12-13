@@ -1,5 +1,5 @@
 import React from "react"
-import { CategoryWrapper, IconWrapper } from "./Category.style"
+import { CategoryWrapper, IconWrapper } from "./CategorySimpleForm.style"
 import  {Text}  from "../../../../components"
 
 const CategorySimpleForm = props => {

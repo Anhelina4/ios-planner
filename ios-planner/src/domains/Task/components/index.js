@@ -1,3 +1,3 @@
-export { default as TaskCombinedView } from "./TaskCombinedView"
-export { default as TaskList } from "./TaskList"
-export { default as TaskSimpleForm } from "./TaskSimpleForm"
+export { default as TaskSimpleView } from "./TaskSimpleView/TaskSimpleView"
+export { default as TaskList } from "./TaskList/TaskList"
+export { default as TaskSimpleForm } from "./TaskSimpleForm/TaskSimpleForm"

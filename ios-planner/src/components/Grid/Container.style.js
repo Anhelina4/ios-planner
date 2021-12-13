@@ -2,11 +2,11 @@ import styled, { css } from "styled-components"
 
 // styles
 const ContainerWrapper = styled.div`
-  padding: 0.75rem;
-  margin-bottom: 1.5rem;
+  /* padding: 0.75rem; */
+  /* margin-bottom: 1.5rem; */
   margin-right: auto;
   margin-left: auto;
-  background: orange;
+  /* background: orange; */
   box-sizing: border-box;
   @media (min-width: 576px) {
     max-width: 540px;

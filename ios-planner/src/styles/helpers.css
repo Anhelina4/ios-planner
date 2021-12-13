@@ -202,5 +202,8 @@
 .justify-start {
   justify-content: flex-start;
 }
+.direction-col{
+  flex-direction: column !important;
+}
 
 /*# sourceMappingURL=helpers.css.map */

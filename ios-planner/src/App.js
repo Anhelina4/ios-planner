@@ -16,6 +16,7 @@ import {
   CategorySimpleForm,
   CategorySimpleView,
 } from "./domains/Category/components"
+import {TaskSimpleForm} from "./domains/Task/components"
 import { MdAddCircleOutline, MdAddCircle, MdClose } from "react-icons/md"
 import {
   AiFillCloseCircle,
@@ -153,6 +154,11 @@ function App() {
         icon={<AiOutlineUnorderedList />}></CategorySimpleForm>
         <CategorySimpleView icon={<AiOutlineUnorderedList />} btnIcon={< MdClose/>}>My new List</CategorySimpleView>
         <CategorySimpleView icon={<AiOutlineUnorderedList />} btnIcon={< MdClose/>} focused>My new List</CategorySimpleView>
+
+        {/* Task */}
+        <TaskSimpleForm></TaskSimpleForm>
+        <TaskSimpleForm checked variant="secondary"></TaskSimpleForm>
+        <TaskSimpleForm checked color="orange" ></TaskSimpleForm>
     </>
   )
 }

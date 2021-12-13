@@ -3,7 +3,7 @@ import styled, { css } from "styled-components"
 const RowWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  background: green;
+  /* background: green; */
   box-sizing: border-box;
   margin-top: calc(var(--p-none) * -1);
   margin-right: calc(1.5rem * -0.5);
