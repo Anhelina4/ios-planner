@@ -8,6 +8,7 @@ const Colors = {
 }
 
 const titleSizes = {
+  sm: "var(--title-sm)",
   md: "var(--title-md)",
   lg: "var(--title-lg)",
 }

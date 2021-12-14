@@ -17,7 +17,7 @@ export const HeaderWrapper = styled.h1`
   font-size: var(--title-xl);
   color: ${props => Colors[props.color] || "var(--color-blue)"};
   font-weight: var(--title-extraBold);
-  margin: var(--m-xl) var(--m-none);
+  margin: var(--m-none);
   ${props =>
     props.variant &&
     css`

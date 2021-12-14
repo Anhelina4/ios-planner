@@ -1,24 +1,19 @@
 import styled from "styled-components"
 
-export const InputWrapper = styled.input.attrs({
+export const InputStyled = styled.input.attrs({
   placeholder: "Search",
 })`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+  position: relative;
   width: 100%;
-  border-radius: var(--border-radius-lg);
-  border: none;
-  padding: var(--p-md);
-  margin: var(--m-md);
-  font-size: var(--text-sm);
-  line-height: var(--lh-sm);
   box-sizing: border-box;
-  background: var(--color-dark-lighten5);
-  cursor: text;
-  padding-left: var(--p-xxl);
-  color: var(--color-dark-lighten0);
+  border: unset;
+  border-radius: var(--border-radius-md);
+  line-height: var(--lh-sm);
+  font-size: var(--text-sm);
+  font-family: var(--font-family-main);
+  padding: var(--p-md) var(--p-xxl);
+  background: var(--color-dark-lighten3);
+  display: block;
 
   &:hover {
     background: var(--color-dark-lighten5);
@@ -33,15 +28,23 @@ export const InputWrapper = styled.input.attrs({
 `
 export const Prefix = styled.div`
   position: absolute;
-  top: -25px;
-  left: 10px;
+  top: 50%;
+  left: 8px;
+  font-size: var(--text-lg);
+  line-height: var(--text-lg);
+  display: flex;
+  transform: translate(0, -50%);
 `
 export const Sufix = styled.div`
   position: absolute;
-  top: -25px;
-  right: 0px;
+  top: 50%;
+  right: 8px;
+  font-size: var(--text-lg);
+  line-height: var(--text-lg);
+  display: flex;
+  transform: translate(0, -50%);
 `
 
-export const InputInnerWrapper = styled.div`
+export const InputWrapper = styled.div`
   position: relative;
 `

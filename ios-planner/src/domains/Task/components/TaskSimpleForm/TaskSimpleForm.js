@@ -10,29 +10,29 @@ const TaskSimpleForm = props => {
   const { checked, color, variant } = props
 
   return (
-    <>
-      <Container>
-        <Row>
-          <Col cw="auto">
-            <Checkbox checked={checked} />
-          </Col>
+    <Container className="mt-xl">
+      <Row>
+        <Col cw="auto">
+          <Checkbox checked={checked} />
+        </Col>
 
-          <Col className="direction-col">
-            <InputWrapper />
-            <TaskSimpleFormWrapper>
-              <InputWrapper placeholder="Notes" />
-            </TaskSimpleFormWrapper>
-          </Col>
+        <Col className="direction-col">
+          <InputWrapper />
+          <TaskSimpleFormWrapper>
+            <InputWrapper placeholder="Notes" />
+          </TaskSimpleFormWrapper>
+        </Col>
 
-          <Col cw="auto" className="align-start">
-            <Button color={color} variant={variant}>
-              {<AiFillFlag />}
-            </Button>
-            <Button>{<MdClose />}</Button>
-          </Col>
-        </Row>
-      </Container>
-    </>
+        <Col cw="auto" className="d-flex align-start">
+          <Button color={color} variant={variant}>
+            {<AiFillFlag />}
+          </Button>
+          <Button variant="primary" active>
+            {<MdClose />}
+          </Button>
+        </Col>
+      </Row>
+    </Container>
   )
 }
 

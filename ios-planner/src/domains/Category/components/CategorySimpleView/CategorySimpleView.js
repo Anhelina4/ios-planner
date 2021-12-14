@@ -15,20 +15,22 @@ const CategorySimpleView = props => {
             <IconWrapper color="white">
               {<AiOutlineUnorderedList />}
             </IconWrapper>
-            <Text size="md">{children}</Text>
+            <Text size="md" className="text-semibold">
+              {children}
+            </Text>
           </>
         ) : (
           <>
             <IconWrapper color="white">
               {<AiOutlineUnorderedList />}
             </IconWrapper>
-            <Text size="md" color="white">
+            <Text size="md" color="white" className="text-semibold">
               {children}
             </Text>
           </>
         )}
       </div>
-      <Button>{<MdClose />}</Button>
+      <Button active>{<MdClose />}</Button>
     </CategoryWrapper>
   )
 }

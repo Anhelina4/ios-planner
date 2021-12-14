@@ -1,9 +1,5 @@
 import React from "react"
-import {
-  SwitcherWrapper,
-  IconWrapper,
-  ContainerWrapper,
-} from "./Switcher.style"
+import { SwitcherWrapper, IconWrapper } from "./Switcher.style"
 import { Text } from "../../components"
 import { Col, Row, Container } from "../../components/Grid"
 
@@ -35,12 +31,12 @@ const Switcher = props => {
         <Row className="mt-none">
           {!active ? (
             <Col className="mt-none pt-none mb-none pb-none">
-              <Text size="lg" children={children} className="text-semibold" />
+              <Text size="md" children={children} className="text-semibold" />
             </Col>
           ) : (
             <Col className="mt-none pt-none mb-none pb-none">
               <Text
-                size="lg"
+                size="md"
                 children={children}
                 color="white"
                 className="text-semibold"

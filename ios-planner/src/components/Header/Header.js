@@ -14,7 +14,7 @@ const Header = props => {
   return (
     <>
       <ButtonWrapper>
-        <Button icon={<AiOutlinePlus />} size="xl" hovered active />
+        <Button icon={<AiOutlinePlus />} size="xl" active />
       </ButtonWrapper>
       <ContainerWrapper>
         <HeaderWrapper color={color} variant={variant}>
@@ -28,12 +28,18 @@ const Header = props => {
           className="title-extraBold"
         />
       </ContainerWrapper>
-      <SubtitleWrapper>
-        <div className="d-flex">
-          <Button variant="disabled">0 done</Button>
-          <Button color={color}>&bull; Clear</Button>
+      <SubtitleWrapper className="pb-lg">
+        <div className="d-flex ">
+          <Button variant="disabled" size="sm">
+            0 done
+          </Button>
+          <Button color={color} size="sm" active>
+            &bull; Clear
+          </Button>
         </div>
-        <Button color={color}>Show</Button>
+        <Button color={color} size="sm" active>
+          Show
+        </Button>
       </SubtitleWrapper>
     </>
   )

@@ -2,6 +2,7 @@ import React from "react"
 import { CategoryWrapper, IconWrapper } from "./CategorySimpleForm.style"
 import { Text, Button } from "../../../../components"
 import { MdClose } from "react-icons/md"
+
 const CategorySimpleForm = props => {
   const { icon } = props
 

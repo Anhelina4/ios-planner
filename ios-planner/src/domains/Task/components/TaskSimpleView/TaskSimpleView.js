@@ -9,24 +9,24 @@ const TaskSimpleView = props => {
   const { color, variant, checked, children } = props
 
   return (
-    <>
-      <Container>
-        <Row>
-          <Col cw="auto">
-            <Checkbox checked={checked} />
-          </Col>
-          <Col>
-            <TaskSimpleViewWrapper>{children}</TaskSimpleViewWrapper>
-          </Col>
-          <Col cw="auto">
-            <Button color={color} variant={variant}>
-              {<AiFillFlag />}
-            </Button>
-            <Button>{<MdClose />}</Button>
-          </Col>
-        </Row>
-      </Container>
-    </>
+    <Container className="mt-xl">
+      <Row>
+        <Col cw="auto">
+          <Checkbox checked={checked} />
+        </Col>
+        <Col>
+          <TaskSimpleViewWrapper>{children}</TaskSimpleViewWrapper>
+        </Col>
+        <Col cw="auto" className="d-flex ">
+          <Button color={color} variant={variant}>
+            {<AiFillFlag />}
+          </Button>
+          <Button variant="primary" active>
+            {<MdClose />}
+          </Button>
+        </Col>
+      </Row>
+    </Container>
   )
 }
 

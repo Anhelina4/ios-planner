@@ -18,7 +18,7 @@ export const SwitcherWrapper = styled.div`
   background: ${props =>
     props.active
       ? switcherVariants[props.variant]
-      : "var(--color-dark-lighten2)"};
+      : "var(--color-dark-lighten3)"};
   border-radius: var(--border-radius-xxl);
 `
 

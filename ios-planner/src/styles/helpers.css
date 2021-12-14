@@ -234,8 +234,9 @@
 .justify-between{
   justify-content: space-between;
 }
-.direction-col {
-  flex-direction: column !important;
+.position-bottom{
+  position: absolute;
+  bottom: 10px;
 }
 
 /*# sourceMappingURL=helpers.css.map */

@@ -26,14 +26,14 @@ export const ButtonWrapper = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: var(--text-md);
-  line-height: var(--lh-md);
+  font-size: ${props => btnSizes[props.size] || "var(--text-md)"};
+  line-height: ${props => btnSizes[props.size] || "var(--text-md)"};
   color: ${props => Colors[props.color] || "var(--color-dark)"};
   padding: var(--p-sm);
   background: transparent;
   border: none;
   border-radius: var(--border-radius-lg);
-  cursor: pointer;
+  cursor: ${props => (props.variant === "disabled" ? "default" : "pointer")};
   font-weight: var(--text-semibold);
 
   ${props =>
@@ -55,15 +55,8 @@ export const ButtonWrapper = styled.button`
       font-size: ${props => btnSizes[props.size].fontSize};
     `}
 
-  &:hover {
-    background: ${props =>
-      props.hovered ? "var(--color-dark-lighten6)" : "none"};
-    border-radius: var(--border-radius-lg);
-  }
-
   &:active {
-    background: ${props =>
-      props.active ? "var(--color-dark-lighten4)" : "none"};
+    color: ${props => (props.active ? "var(--color-black)" : "none")};
     border-radius: var(--border-radius-lg);
   }
 `
@@ -72,5 +65,6 @@ export const IconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: var(--m-none) var(--m-sm);
+  margin: var(--m-none);
+  margin-right: var(--m-md);
 `

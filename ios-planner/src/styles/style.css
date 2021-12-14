@@ -1,6 +1,6 @@
 :root {
   /* buttons sizes */
-  --btn-sm: 14px;
+  --btn-sm: 16px;
   --btn-md: 20px;
   --btn-lg: 26px;
   --btn-xl: 30px;
@@ -16,12 +16,13 @@
   --color-dark-lighten0: #424243; /*category-text+title*/
   --color-dark-lighten1: #888888; /*category-text+title*/
   --color-dark-lighten2: #a7a7a7; /*counter*/
-  --color-dark-lighten3: #cecfd0; /*icon*/
-  --color-dark-lighten4: #d0d1d2; /*inpsearch-text*/ /*counter-light-text*/
+  --color-dark-lighten3: #bebebe; /*icon*/
+  --color-dark-lighten4: #c4c5c5; /*inpsearch-text*/ /*counter-light-text*/
   --color-dark-lighten5: #dadbdc; /*sider-back*/ /*category-chosen*/ /*task-chosen*/
   --color-dark-lighten6: #e7e8e9; /*switcher-back*/ /*inpsearch-back*/
 
   /*title-sizes*/
+  --title-sm: 14px;
   --title-md: 20px;
   --title-lg: 30px;
   --title-xl: 34px;
@@ -88,5 +89,10 @@
   --lh-sm: 1.25;
   --lh-md: 1.5;
   --lh-lg: 2;
+
+  /* font-family */
+  --font-family-main:-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
 }
 @import "./helpers.css";
