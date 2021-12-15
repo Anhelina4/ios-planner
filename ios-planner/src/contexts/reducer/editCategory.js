@@ -1,17 +1,15 @@
-// const editCategory = (state, payload) => {
-//   const newState = { ...state }
+const editCategory = (state, payload) => {
+  const newState = { ...state }
 
-//   newState.currentCategory.categoryName = payload.editedCategory
-//   newState.categories.map(item => {
-//     const newChangedCategory = newState.lists.find(
-//       item => item.id === newState.currentList.id
-//     )
-//     // console.log("find changed item from lists", changedItem)
-//     const index = newState.lists.indexOf(changedItem)
-//     // console.log(index);
-//     newState.lists[index] = newState.currentList
-//   })
-//   return { ...newState }
-// }
-
-// export default editCategory
+  newState.currentCategory.categoryName = payload.editedCategoryName
+  newState.categories.map(item => {
+    const newChangedCategoryId = newState.categories.find(
+      item => item.categoryId === newState.currentCategory.categoryId
+    )
+    const index = newState.categories.indexOf(newChangedCategoryId)
+    newState.categories[index] = newState.currentCategory
+    return { ...newState }
+  })
+  return { ...newState }
+}
+export default editCategory

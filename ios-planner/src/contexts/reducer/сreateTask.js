@@ -19,8 +19,8 @@ const сreateTask = (state, payload) => {
   //change categories
   newState.categories.map(item => {
     return item.categoryId === newState.currentCategory.categoryId
-      ? (item.categoryTasks = [
-          ...item.categoryTasks,
+      ? (item.tasksList = [
+          ...item.tasksList,
           {
             taskName: payload.taskName,
             taskNotes: payload.taskNotes,

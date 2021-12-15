@@ -1,8 +1,8 @@
 const deleteTask = (state, payload) => {
   const newState = { ...state }
 
-  newState.currentCategory.categoryTasks =
-    state.currentCategory.categoryTasks.filter(item => {
+  newState.currentCategory.tasksList =
+    state.currentCategory.tasksList.filter(item => {
       return item.taskId !== payload.taskId
     })
 
