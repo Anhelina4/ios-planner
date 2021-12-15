@@ -7,7 +7,7 @@ const Colors = {
 }
 
 const checkboxVariants = {
-  primary: "var(--color-dark)",
+  primary: "var(--color-dark-lighten0)",
   secondary: "var(--color-dark-lighten1)",
 }
 
@@ -15,7 +15,6 @@ const checkboxVariants = {
 export const CheckboxWrapper = styled.input.attrs({ type: "checkbox" })`
   opacity: var(--opacity-100);
   max-width: var(--checkbox-max-width);
-  
 `
 
 export const LabelWrapper = styled.label`
@@ -25,7 +24,7 @@ export const LabelWrapper = styled.label`
     content: "";
     position: absolute;
     top: 2px;
-    left:-19px;
+    left: -19px;
     width: var(--checkbox-outer-dot);
     height: var(--checkbox-outer-dot);
     border-radius: var(--border-radius-round);
@@ -35,18 +34,17 @@ export const LabelWrapper = styled.label`
     color: var(--color-blue);
 
     ${props =>
-    props.color &&
-    css`
-      border-color: ${props => Colors[props.color]};
-    `}
+      props.color &&
+      css`
+        border-color: ${props => Colors[props.color]};
+      `}
 
-  ${props =>
-    props.variant &&
-    css`
-      border-color: ${props => checkboxVariants[props.variant]};
-    `}
+    ${props =>
+      props.variant &&
+      css`
+        border-color: ${props => checkboxVariants[props.variant]};
+      `}
   }
-  
 
   &:after {
     content: "";

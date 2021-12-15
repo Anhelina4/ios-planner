@@ -5,7 +5,7 @@ const switcherVariants = {
   blue: "var(--color-blue)",
   red: "var(--color-red)",
   orange: "var(--color-orange)",
-  darkGrey: "var(--color-dark)",
+  darkGrey: "var(--color-dark-lighten0)",
   lightGrey: "var(--color-dark-lighten1)",
 }
 
@@ -15,14 +15,11 @@ export const SwitcherWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: var(--p-md);
-  background: var(--color-dark-lighten2);
+  background: ${props =>
+    props.active
+      ? switcherVariants[props.variant]
+      : "var(--color-dark-lighten3)"};
   border-radius: var(--border-radius-xxl);
-
-  &:active {
-    background-color: ${props =>
-      switcherVariants[props.variant] || null};
-  }
-  
 `
 
 export const IconWrapper = styled.div`
@@ -34,19 +31,16 @@ export const IconWrapper = styled.div`
   border-radius: var(--border-radius-round);
   height: var(--btn-lg);
   width: var(--btn-lg);
-  color: var(--color-white);
-  background-color: var(--color-blue);
+  color: ${props =>
+    props.active ? switcherVariants[props.variant] : "var(--color-white)"};
+  background-color: ${props => switcherVariants[props.variant]};
 
   ${props =>
-    props.variant &&
+    props.active &&
     css`
-      background-color: ${props => switcherVariants[props.variant] || "var(--color-white)"};
-    `}
-    
-    &:active > &{
-      background: pink;
-      color: black;
-    }
+      background-color: ${props =>
+        props.active ? "var(--color-white)" : switcherVariants[props.variant]};
+    `};
 `
 
 export const ContainerWrapper = styled.div`

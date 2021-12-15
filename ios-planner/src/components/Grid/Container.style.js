@@ -2,12 +2,12 @@ import styled, { css } from "styled-components"
 
 // styles
 const ContainerWrapper = styled.div`
-  padding: 0.75rem;
-  margin-bottom: 1.5rem;
+  height: ${props => props.height};
   margin-right: auto;
   margin-left: auto;
-  background: orange;
+  width: 100%;
   box-sizing: border-box;
+
   @media (min-width: 576px) {
     max-width: 540px;
   }

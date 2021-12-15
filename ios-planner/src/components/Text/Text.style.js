@@ -5,12 +5,13 @@ const Colors = {
   blue: "var(--color-blue)",
   red: "var(--color-red)",
   orange: "var(--color-orange)",
+  white: "var(--color-white)",
 }
 
 const textVariants = {
   primary: "var(--color-dark)",
   secondary: "var(--color-dark-lighten1)",
-  disabled: "var(--color-dark-lighten1)",
+  disabled: "var(--color-dark-lighten2)",
 }
 
 const textSizes = {
@@ -24,7 +25,7 @@ const textSizes = {
 // styles
 const TextWrapper = styled.div`
   color: var(--color-dark-lighten0);
-  font-size: ${props => props.size || "var(--text-md)"};
+  font-size: var(--text-md);
   line-height: var(--lh-md);
   font-weight: var(--text-regular);
   padding: var(--p-md);
@@ -32,19 +33,19 @@ const TextWrapper = styled.div`
   ${props =>
     props.variant &&
     css`
-      color: ${props=> textVariants[props.variant]};
+      color: ${props => textVariants[props.variant]};
     `}
 
-    ${props =>
+  ${props =>
     props.color &&
     css`
-      color: ${props=> Colors[props.color]};
+      color: ${props => Colors[props.color]};
     `}
 
   ${props =>
     props.size &&
     css`
-      font-size: ${props=> textSizes[props.size]};
+      font-size: ${props => textSizes[props.size]};
     `}
 `
 

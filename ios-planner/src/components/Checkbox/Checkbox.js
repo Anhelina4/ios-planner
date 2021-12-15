@@ -7,7 +7,12 @@ const Checkbox = props => {
   return (
     <>
       <CheckboxWrapper />
-      <LabelWrapper checked={checked} color={color} variant={variant} className={className}/>
+      <LabelWrapper
+        checked={checked}
+        color={color}
+        variant={variant}
+        className={className}
+      />
     </>
   )
 }
