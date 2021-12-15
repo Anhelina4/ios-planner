@@ -6,7 +6,13 @@ import CategoryListWrapper from "./CategoryList.style"
 const CategoryList = () => {
   return (
     <CategoryListWrapper>
-      <Col>
+      <Col className="mb-lg">
+        <CategorySimpleView>My new List</CategorySimpleView>
+      </Col>
+      <Col className="mb-lg">
+        <CategorySimpleView focused>My new List</CategorySimpleView>
+      </Col>
+      <Col className="mb-lg">
         <CategorySimpleView>My new List</CategorySimpleView>
       </Col>
     </CategoryListWrapper>

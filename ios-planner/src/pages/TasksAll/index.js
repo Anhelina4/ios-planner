@@ -1,1 +1,1 @@
-export { default as Tasksall } from "./TasksAll"
+export { default as TasksAll } from "./TasksAll"

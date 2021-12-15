@@ -7,7 +7,6 @@ const ContainerWrapper = styled.div`
   margin-left: auto;
   width: 100%;
   box-sizing: border-box;
-
   @media (min-width: 576px) {
     max-width: 540px;
   }

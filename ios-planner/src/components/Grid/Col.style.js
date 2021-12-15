@@ -5,6 +5,7 @@ const ColWrapper = styled.div`
   flex-shrink: 0;
   max-width: 100%;
   box-sizing: border-box;
+  background: ${props=>props.focused ? "var(--color-dark-lighten6)" : null};
   ${props =>
     props.cw === "auto" &&
     css`

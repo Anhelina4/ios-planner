@@ -16,7 +16,7 @@ export const InputStyled = styled.input.attrs({
   display: block;
 
   &:hover {
-    background: var(--color-dark-lighten5);
+    background: var(--color-dark-lighten4);
   }
   &:focus {
     outline: none;

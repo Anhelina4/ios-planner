@@ -10,25 +10,13 @@ const CategorySimpleView = props => {
   return (
     <CategoryWrapper focused={focused}>
       <div className="d-flex align-center justify-center">
-        {!focused ? (
-          <>
-            <IconWrapper color="white">
-              {<AiOutlineUnorderedList />}
-            </IconWrapper>
-            <Text size="md" className="text-semibold">
-              {children}
-            </Text>
-          </>
-        ) : (
-          <>
-            <IconWrapper color="white">
-              {<AiOutlineUnorderedList />}
-            </IconWrapper>
-            <Text size="md" color="white" className="text-semibold">
-              {children}
-            </Text>
-          </>
-        )}
+        <IconWrapper color="white">{<AiOutlineUnorderedList />}</IconWrapper>
+        <Text
+          size="md"
+          className="text-semibold"
+          color={focused ? "white" : null}>
+          {children}
+        </Text>
       </div>
       <Button active>{<MdClose />}</Button>
     </CategoryWrapper>

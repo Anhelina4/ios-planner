@@ -65,8 +65,8 @@ const Sider = () => {
             <Title size="sm" children="My lists" variant="secondary" />
           </Col>
         </Row>
-        <Row>
-          <Col>
+        <Row height="380px">
+          <Col height="380px">
             <CategoryList />
           </Col>
         </Row>

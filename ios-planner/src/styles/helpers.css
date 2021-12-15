@@ -238,5 +238,8 @@
   position: absolute;
   bottom: 10px;
 }
+.direction-col{
+  flex-direction: column
+}
 
 /*# sourceMappingURL=helpers.css.map */

@@ -1,27 +1,21 @@
 import React from "react"
 import { Container, Col, Row } from "../../components/Grid"
-import { Header } from "../../components"
 import PageLayoutWrapper from "./PageLayout.style"
-import { TaskSimpleForm, TaskList } from "../../domains/Task/components"
 
-const PageLayout = () => {
+
+const PageLayout = ({header, content}) => {
   return (
     <>
       <Container>
         <PageLayoutWrapper>
           <Row>
             <Col>
-              <Header color="blue" className="mb-xl">
-                New List
-              </Header>
+              {header}
             </Col>
           </Row>
           <Row>
-            <TaskSimpleForm variant="secondary" />
-          </Row>
-          <Row>
             <Col>
-              <TaskList variant="secondary" />
+              {content}
             </Col>
           </Row>
         </PageLayoutWrapper>

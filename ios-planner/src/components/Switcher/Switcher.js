@@ -16,33 +16,23 @@ const Switcher = props => {
             </IconWrapper>
           </Col>
           <Col cw="auto" className="mb-none pb-none mt-none pt-none">
-            {!active ? (
-              <Text size="lg" children="0" className="text-semibold" />
-            ) : (
-              <Text
+              <Text 
                 size="lg"
                 children="0"
-                color="white"
+                color= {active ? "white" : null}
                 className="text-semibold"
               />
-            )}
           </Col>
         </Row>
         <Row className="mt-none">
-          {!active ? (
-            <Col className="mt-none pt-none mb-none pb-none">
-              <Text size="md" children={children} className="text-semibold" />
-            </Col>
-          ) : (
             <Col className="mt-none pt-none mb-none pb-none">
               <Text
                 size="md"
                 children={children}
-                color="white"
+                color={active ? "white" : null}
                 className="text-semibold"
               />
             </Col>
-          )}
         </Row>
       </Container>
     </SwitcherWrapper>

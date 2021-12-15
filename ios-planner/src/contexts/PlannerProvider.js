@@ -3,7 +3,9 @@ import PlannerContext from "./PlannerContext"
 import reducer from "./reducer"
 
 const PlannerProvider = ({ children }) => {
-  return <PlannerContext.Provider>{children}</PlannerContext.Provider>
+  const [state, dispatch] = useReducer(reducer, {currentCategory:[], categories: []})
+
+  return <PlannerContext.Provider value={state, dispatch}>{children}</PlannerContext.Provider>
 }
 
 export default PlannerProvider
