@@ -75,19 +75,19 @@
 .m-xxl {
   margin: var(--p-xxl);
 }
-.mt-none{
+.mt-none {
   margin-top: 0px !important;
 }
-.mb-none{
+.mb-none {
   margin-bottom: 0px !important;
 }
-.ml-none{
+.ml-none {
   margin-left: 0px !important;
 }
-.mr-none{
+.mr-none {
   margin-right: 0px !important;
 }
-.m-none{
+.m-none {
   margin: 0px !important;
 }
 /*padding*/
@@ -167,19 +167,19 @@
 .p-xxl {
   padding: var(--p-xxl);
 }
-.pt-none{
+.pt-none {
   padding-top: 0px !important;
 }
-.pb-none{
+.pb-none {
   padding-bottom: 0px !important;
 }
-.pl-none{
+.pl-none {
   padding-left: 0px !important;
 }
-.pr-none{
+.pr-none {
   padding-right: 0px !important;
 }
-.p-none{
+.p-none {
   padding: opx !important;
 }
 
@@ -231,15 +231,15 @@
 .justify-start {
   justify-content: flex-start;
 }
-.justify-between{
+.justify-between {
   justify-content: space-between;
 }
-.position-bottom{
+.position-bottom {
   position: absolute;
   bottom: 10px;
 }
-.direction-col{
-  flex-direction: column
+.direction-col {
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=helpers.css.map */

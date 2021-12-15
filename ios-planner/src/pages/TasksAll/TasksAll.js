@@ -1,8 +1,8 @@
 import React from "react"
-import {TaskList} from "../../domains/Task/components"
+import { TaskList } from "../../domains/Task/components"
 
 const TasksAll = () => {
-  return <TaskList/>
+  return <TaskList />
 }
 
 export default TasksAll

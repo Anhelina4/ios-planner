@@ -1,4 +1,4 @@
-html{
+html {
   height: 100%;
 }
 body {
@@ -11,6 +11,6 @@ body {
   box-sizing: border-box;
   margin: 0px;
 }
-#root{
+#root {
   height: inherit;
 }

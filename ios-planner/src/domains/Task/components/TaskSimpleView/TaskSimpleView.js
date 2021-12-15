@@ -10,7 +10,7 @@ const TaskSimpleView = props => {
 
   return (
     <Container className="pt-xl">
-      <TaskSimpleViewWrapper >
+      <TaskSimpleViewWrapper>
         <Row>
           <Col cw="auto" className="d-flex align-start">
             <Checkbox checked={checked} />

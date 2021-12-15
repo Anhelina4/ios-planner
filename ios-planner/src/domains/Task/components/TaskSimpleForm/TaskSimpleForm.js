@@ -11,7 +11,7 @@ const TaskSimpleForm = props => {
 
   return (
     <Container className="mt-xl">
-      <TaskSimpleFormWrapper >
+      <TaskSimpleFormWrapper>
         <Row>
           <Col cw="auto">
             <Checkbox checked={checked} />
