@@ -15,6 +15,28 @@ const CategoryList = () => {
       <Col className="mb-lg">
         <CategorySimpleView>My new List</CategorySimpleView>
       </Col>
+      <Col className="mb-lg">
+        <CategorySimpleView>My new List</CategorySimpleView>
+      </Col>
+      <Col className="mb-lg">
+        <CategorySimpleView>My new List</CategorySimpleView>
+      </Col>
+      <Col className="mb-lg">
+        <CategorySimpleView>My new List</CategorySimpleView>
+      </Col>
+      <Col className="mb-lg">
+        <CategorySimpleView>My new List</CategorySimpleView>
+      </Col>
+      <Col className="mb-lg">
+        <CategorySimpleView>My new List</CategorySimpleView>
+      </Col>
+      <Col className="mb-lg">
+        <CategorySimpleView>My new List</CategorySimpleView>
+      </Col>
+      <Col className="mb-lg">
+        <CategorySimpleView>My new List</CategorySimpleView>
+      </Col>
+      
     </CategoryListWrapper>
   )
 }
