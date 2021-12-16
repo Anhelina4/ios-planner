@@ -14,7 +14,6 @@ const useCategoryActions = () => {
   }
 
   const editCategory = (editedCategoryName, categoryId) => {
-    console.log(editedCategoryName, categoryId)
     dispatch({
       type: "editCategory",
       payload: { editedCategoryName, categoryId },

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { CategorySimpleView, CategorySimpleForm } from "../../components"
 import { Col } from "../../../../components"
 import CategoryListWrapper from "./CategoryList.style"
@@ -7,7 +7,7 @@ import { useCategoryActions } from "../../hooks"
 
 const CategoryList = props => {
   const { state, categoryName, setCategoryName } = usePlannerContext()
-  const { createCategory, setThisAsCurrentCategory } = useCategoryActions()
+  const { createCategory } = useCategoryActions()
   const { display } = props
   return (
     <CategoryListWrapper>
@@ -20,7 +20,13 @@ const CategoryList = props => {
           )
         })}
       </Col>
-      {display ? <CategorySimpleForm /> : null}
+      {display ? (
+        <CategorySimpleForm
+          value={categoryName}
+          onChange={e => setCategoryName(e.target.value)}
+          onKeyDown={createCategory}
+        />
+      ) : null}
     </CategoryListWrapper>
   )
 }
