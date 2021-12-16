@@ -1,6 +1,6 @@
 const editCategory = (state, payload) => {
   const newState = { ...state }
-
+  console.log(payload)
   newState.currentCategory.categoryName = payload.editedCategoryName
   newState.categories.map(item => {
     const newChangedCategoryId = newState.categories.find(

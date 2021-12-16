@@ -15,7 +15,7 @@ import { usePlannerActions, usePlannerContext } from "../../contexts/hooks"
 
 const Sider = () => {
   const { switchComponent } = usePlannerActions()
-  const {showcsf, setShowCSF} = usePlannerContext()
+  const { showcsf, setShowCSF } = usePlannerContext()
 
   return (
     <Container height="100%">

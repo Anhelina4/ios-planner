@@ -2,7 +2,7 @@ import { useState } from "react"
 import { usePlannerContext } from "../../../contexts/hooks"
 
 const useCategoryActions = () => {
-  const { dispatch, categoryName, setCategoryName, editedCategoryName } = usePlannerContext()
+  const { state, dispatch, categoryName, setCategoryName, editedCategoryName } = usePlannerContext()
 
   const createCategory = e => {
     if (e.key === "Enter") {
@@ -15,7 +15,18 @@ const useCategoryActions = () => {
     dispatch({type:"editCategory", payload:{editedCategoryName, categoryId}})
   }
 
-  return { createCategory, editCategory }
+  const setThisAsCurrentCategory = (categoryId) => {
+    console.log("currentCategory worked")
+    state.categories.filter(item => {
+      if (item.categoryId === categoryId) {
+        state.currentCategory = {...item, item};
+        console.log(item)
+        return {...state}
+      }
+      return {...state}
+    })
+  }
+  return { createCategory, editCategory, setThisAsCurrentCategory }
 }
 
 export default useCategoryActions

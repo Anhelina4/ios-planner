@@ -3,7 +3,8 @@ import styled, { css } from "styled-components"
 // maps
 const Colors = {
   blue: "var(--color-blue)",
-  blueDarken: "var(--color-blue-lighten)",
+  blueLighten: "var(--color-blue-lighten)",
+  blueLighten1: "var(--color-blue-lighten1)",
   red: "var(--color-red)",
   orange: "var(--color-orange)",
 }

@@ -10,18 +10,24 @@ import { usePlannerActions } from "../../../../contexts/hooks"
 import editCategory from "../../../../contexts/reducer/editCategory"
 
 const CategorySimpleView = props => {
-  const { children, focused, categoryId } = props
+  const { children, focused, categoryId, key } = props
   const { dispatch } = usePlannerContext()
-  const { categoryName, setCategoryName, showcsf, setShowCSF } = usePlannerContext()
-  const { createCategory } = useCategoryActions()
+  const { categoryName, setCategoryName, showcsf, setShowCSF } =
+    usePlannerContext()
+  const { createCategory, editCategory } = useCategoryActions()
   const { hideComponent } = usePlannerActions()
   const [editedCategoryName, setEditedCategoryName] = useState(children)
   const [editable, setEditable] = useState(false)
+  const { setThisAsCurrentCategory } = useCategoryActions()
 
   return (
     <>
       {!editable ? (
-        <CategoryWrapper focused={focused}>
+        <CategoryWrapper
+          focused={focused}
+          key={key}
+          onClick={()=>setThisAsCurrentCategory(categoryId)}
+          >
           <div className="d-flex align-center justify-center">
             <IconWrapper color="white">
               {<AiOutlineUnorderedList />}
@@ -30,27 +36,34 @@ const CategorySimpleView = props => {
               size="md"
               className="text-semibold"
               color={focused ? "white" : null}
-              onClick={(e)=>{setEditable(true)
-              e.stopPropagation()
-              hideComponent(setShowCSF)}}>
-              {children}
+              onClick={e => {
+                setEditable(true)
+                e.stopPropagation()
+                hideComponent(setShowCSF)
+              }}>
+              {editedCategoryName}
             </Text>
           </div>
           <Button active>{<MdClose />}</Button>
         </CategoryWrapper>
       ) : (
-        <CategoryWrapper>
+        <CategoryWrapper color="blueLighten" focused>
           <div className="d-flex align-center">
             <IconWrapper color="white">
               {<AiOutlineUnorderedList />}
             </IconWrapper>
             <input
               type="text"
+              value={editedCategoryName}
               className="pl-md pr-md mr-md ml-md"
-              onClick={(e)=>{setEditable(false)
-                e.stopPropagation()}}
-              onChange={e => {setCategoryName(e.target.value)
+              onClick={e => {
+                setEditable(false)
+                e.stopPropagation()
               }}
+              onChange={e => {
+                setEditedCategoryName(e.target.value)
+              }}
+              onKeyDown={() => editCategory(editedCategoryName, categoryId)}
               autoFocus
             />
             <Text size="md">5</Text>
