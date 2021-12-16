@@ -3,21 +3,24 @@ import { CategorySimpleView, CategorySimpleForm } from "../../components"
 import { Col } from "../../../../components"
 import CategoryListWrapper from "./CategoryList.style"
 import { usePlannerContext } from "../../../../contexts/hooks"
+import { useCategoryActions } from "../../hooks"
 
-const CategoryList = () => {
+const CategoryList = (props) => {
   const { state } = usePlannerContext()
+  const { display } = props
+  console.log(display)
   return (
     <CategoryListWrapper>
-      {state.categories.map(item => {
+      {state.categories.map((item, index) => {
         return (
           <Col>
-            <CategorySimpleView categoryId={item.categoryId}>
+            <CategorySimpleView categoryId={item.categoryId} key={index}>
               {item.categoryName}
             </CategorySimpleView>
           </Col>
         )
       })}
-      <CategorySimpleForm></CategorySimpleForm>
+      {display ? <CategorySimpleForm></CategorySimpleForm> : null}
     </CategoryListWrapper>
   )
 }

@@ -8,9 +8,12 @@ const PlannerProvider = ({ children }) => {
     categories: [],
   })
   const [categoryName, setCategoryName] = useState()
+  const [taskName, setTaskName] = useState()
+  const [taskNotes, setTaskNotes] = useState()
+  const [showtsf, setShowTSF] = useState(false)
   return (
     <PlannerContext.Provider
-      value={{ state, dispatch, categoryName, setCategoryName }}>
+      value={{ state, dispatch, categoryName, setCategoryName, showtsf, setShowTSF, taskName, setTaskName, taskNotes, setTaskNotes }}>
       {children}
     </PlannerContext.Provider>
   )

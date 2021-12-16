@@ -8,7 +8,7 @@ const CategorySimpleView = props => {
   const { children, focused } = props
 
   return (
-    <CategoryWrapper focused={focused}>
+    <CategoryWrapper focused={focused} >
       <div className="d-flex align-center justify-center">
         <IconWrapper color="white">{<AiOutlineUnorderedList />}</IconWrapper>
         <Text

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import SiderWrapper from "./Sider.style"
 import { SearchInput, Button, Switcher, Title } from ".."
 import { Container, Row, Col } from ".."
@@ -11,8 +11,12 @@ import {
   BsCircleFill,
 } from "react-icons/bs"
 import { MdAddCircleOutline } from "react-icons/md"
+import { usePlannerActions } from "../../contexts/hooks"
 
 const Sider = () => {
+  const { showComponent } = usePlannerActions()
+  const [showcsf, setShowCSF] = useState(false)
+
   return (
     <Container height="100%">
       <SiderWrapper>
@@ -67,7 +71,7 @@ const Sider = () => {
         </Row>
         <Row height="380px">
           <Col height="380px">
-            <CategoryList />
+            <CategoryList display={showcsf} />
           </Col>
         </Row>
         <Row>
@@ -78,6 +82,7 @@ const Sider = () => {
               children="New List"
               icon={<MdAddCircleOutline />}
               className="position-bottom"
+              onClick={() => showComponent(setShowCSF, showcsf)}
             />
           </Col>
         </Row>

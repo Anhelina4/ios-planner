@@ -9,6 +9,7 @@ import { useCategoryActions } from "../../hooks"
 const CategorySimpleForm = () => {
   const { categoryName, setCategoryName } = usePlannerContext()
   const { createCategory } = useCategoryActions()
+  
   return (
     <CategoryWrapper>
       <div className="d-flex align-center">
