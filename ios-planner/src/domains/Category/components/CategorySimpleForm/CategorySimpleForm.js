@@ -1,15 +1,12 @@
 import React from "react"
-import { usePlannerContext } from "../../../../contexts/hooks"
 import { CategoryWrapper, IconWrapper } from "./CategorySimpleForm.style"
 import { Text, Button } from "../../../../components"
 import { MdClose } from "react-icons/md"
 import { AiOutlineUnorderedList } from "react-icons/ai"
-import { useCategoryActions } from "../../hooks"
 
 const CategorySimpleForm = props => {
-  const { editedCategoryName, onClick, onChange, onKeyDown, value, onDelete } = props
-  console.log("inside-value",editedCategoryName)
-  console.log("inside-props", props)
+  const { onClick, onChange, onKeyDown, value, onDelete } = props
+
   return (
     <CategoryWrapper>
       <div className="d-flex align-center">

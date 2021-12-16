@@ -9,13 +9,16 @@ const CategoryList = props => {
   const { state, categoryName, setCategoryName } = usePlannerContext()
   const { createCategory } = useCategoryActions()
   const { display } = props
+
   return (
     <CategoryListWrapper>
       <Col>
         {state.categories.map((item, index) => {
           return (
-            <CategorySimpleView categoryId={item.categoryId} key={index} categoryName={item.categoryName}>
-            </CategorySimpleView>
+            <CategorySimpleView
+              categoryId={item.categoryId}
+              key={index}
+              categoryName={item.categoryName}></CategorySimpleView>
           )
         })}
       </Col>

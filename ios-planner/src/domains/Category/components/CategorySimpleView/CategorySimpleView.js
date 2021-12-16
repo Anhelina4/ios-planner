@@ -11,7 +11,7 @@ import {
 import { CategorySimpleForm } from ".."
 
 const CategorySimpleView = props => {
-  const { focused, categoryId, categoryName, value } = props
+  const { focused, categoryId, categoryName } = props
   const { setShowCSF } = usePlannerContext()
   const { editCategory, deleteCategory } = useCategoryActions()
   const { hideComponent } = usePlannerActions()
@@ -61,7 +61,7 @@ const CategorySimpleView = props => {
               setEditable(false)
             }
           }}
-          onDelete={()=>deleteCategory(categoryId)}></CategorySimpleForm>
+          onDelete={() => deleteCategory(categoryId)}></CategorySimpleForm>
       )}
     </>
   )

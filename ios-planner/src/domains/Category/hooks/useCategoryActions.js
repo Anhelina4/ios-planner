@@ -1,7 +1,7 @@
 import { usePlannerContext } from "../../../contexts/hooks"
 
 const useCategoryActions = () => {
-  const { state, dispatch, categoryName, setCategoryName } = usePlannerContext()
+  const { dispatch, categoryName, setCategoryName } = usePlannerContext()
 
   const createCategory = e => {
     if (e.key === "Enter") {
