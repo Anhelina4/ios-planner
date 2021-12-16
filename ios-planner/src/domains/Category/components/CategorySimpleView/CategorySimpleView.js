@@ -11,11 +11,11 @@ import {
 import { CategorySimpleForm } from ".."
 
 const CategorySimpleView = props => {
-  const { children, focused, categoryId } = props
+  const { focused, categoryId, categoryName, value } = props
   const { setShowCSF } = usePlannerContext()
-  const { editCategory } = useCategoryActions()
+  const { editCategory, deleteCategory } = useCategoryActions()
   const { hideComponent } = usePlannerActions()
-  const [editedCategoryName, setEditedCategoryName] = useState(children)
+  const [editedCategoryName, setEditedCategoryName] = useState(categoryName)
   const [editable, setEditable] = useState(false)
 
   return (
@@ -33,21 +33,28 @@ const CategorySimpleView = props => {
               onClick={e => {
                 setEditable(true)
                 e.stopPropagation()
+                setEditedCategoryName(categoryName)
                 hideComponent(setShowCSF)
               }}>
-              {editedCategoryName}
+              {categoryName}
             </Text>
           </div>
-          <Button active>{<MdClose />}</Button>
+          <Button
+            active
+            onClick={() => {
+              deleteCategory(categoryId)
+            }}>
+            {<MdClose />}
+          </Button>
         </CategoryWrapper>
       ) : (
         <CategorySimpleForm
-          value={editedCategoryName}
           onClick={e => {
             setEditable(false)
             e.stopPropagation()
           }}
           onChange={e => setEditedCategoryName(e.target.value)}
+          value={editedCategoryName}
           onKeyDown={e => {
             if (e.key === "Enter") {
               editCategory(editedCategoryName, categoryId)

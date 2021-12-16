@@ -14,8 +14,7 @@ const CategoryList = props => {
       <Col>
         {state.categories.map((item, index) => {
           return (
-            <CategorySimpleView categoryId={item.categoryId} key={index}>
-              {item.categoryName}
+            <CategorySimpleView categoryId={item.categoryId} key={index} categoryName={item.categoryName}>
             </CategorySimpleView>
           )
         })}

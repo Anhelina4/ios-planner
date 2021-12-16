@@ -1,10 +1,7 @@
-import { useState } from "react"
-import { BsEggFill } from "react-icons/bs"
 import { usePlannerContext } from "../../../contexts/hooks"
 
 const useCategoryActions = () => {
-  const { state, dispatch, categoryName, setCategoryName, editedCategoryName } =
-    usePlannerContext()
+  const { state, dispatch, categoryName, setCategoryName } = usePlannerContext()
 
   const createCategory = e => {
     if (e.key === "Enter") {
@@ -20,18 +17,12 @@ const useCategoryActions = () => {
     })
   }
 
-  // const setThisAsCurrentCategory = (categoryId) => {
-  //   console.log("currentCategory worked")
-  //   state.categories.filter(item => {
-  //     if (item.categoryId === categoryId) {
-  //       state.currentCategory = {...item, item};
-  //       console.log(item)
-  //       return {...state}
-  //     }
-  //     return {...state}
-  //   })
-  // }
-  return { createCategory, editCategory }
+  const deleteCategory = categoryId => {
+    console.log(categoryId)
+    dispatch({ type: "deleteCategory", payload: { categoryId } })
+  }
+
+  return { createCategory, editCategory, deleteCategory }
 }
 
 export default useCategoryActions
