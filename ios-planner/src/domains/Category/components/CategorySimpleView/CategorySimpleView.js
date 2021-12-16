@@ -60,7 +60,8 @@ const CategorySimpleView = props => {
               editCategory(editedCategoryName, categoryId)
               setEditable(false)
             }
-          }}></CategorySimpleForm>
+          }}
+          onDelete={()=>deleteCategory(categoryId)}></CategorySimpleForm>
       )}
     </>
   )

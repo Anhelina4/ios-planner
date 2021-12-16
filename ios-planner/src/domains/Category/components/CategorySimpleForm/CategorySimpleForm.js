@@ -7,7 +7,7 @@ import { AiOutlineUnorderedList } from "react-icons/ai"
 import { useCategoryActions } from "../../hooks"
 
 const CategorySimpleForm = props => {
-  const { editedCategoryName, onClick, onChange, onKeyDown, value } = props
+  const { editedCategoryName, onClick, onChange, onKeyDown, value, onDelete } = props
   console.log("inside-value",editedCategoryName)
   console.log("inside-props", props)
   return (
@@ -27,7 +27,7 @@ const CategorySimpleForm = props => {
           0
         </Text>
       </div>
-      <Button>{<MdClose />}</Button>
+      <Button onClick={onDelete}>{<MdClose />}</Button>
     </CategoryWrapper>
   )
 }
