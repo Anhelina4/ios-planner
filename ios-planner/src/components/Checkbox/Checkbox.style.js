@@ -13,7 +13,7 @@ const checkboxVariants = {
 
 // styles
 export const CheckboxWrapper = styled.input.attrs({ type: "checkbox" })`
-  opacity: var(--opacity-100);
+  opacity: var(--opacity-0);
   max-width: var(--checkbox-max-width);
 `
 

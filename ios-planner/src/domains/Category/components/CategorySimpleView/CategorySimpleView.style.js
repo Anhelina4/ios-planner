@@ -13,7 +13,7 @@ export const CategoryWrapper = styled.div`
   ${props =>
     !props.focused &&
     css`
-      background: var(--color-dark-lighten3);
+      background: var(--color-dark-lighten5);
     `}
 `
 

@@ -5,11 +5,12 @@ export const CategoryWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: var(--p-md);
-  background: var(--color-blue);
+  background: var(--color-blue-lighten);
   border-radius: var(--border-radius-lg);
   font-size: var(--text-sm);
   line-height: var(--lh-sm);
   box-sizing: border-box;
+  
 `
 
 export const IconWrapper = styled.div`
@@ -18,9 +19,8 @@ export const IconWrapper = styled.div`
   justify-content: center;
   margin: var(--m-none) var(--m-md);
   color: var(--color-white);
-  margin-top: var(--m-md);
-  margin-left: var(--m-md);
   border-radius: var(--border-radius-round);
   height: var(--btn-lg);
   width: var(--btn-lg);
+  background: var(--color-blue);
 `
