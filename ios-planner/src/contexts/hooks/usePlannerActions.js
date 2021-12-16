@@ -1,10 +1,16 @@
-
 const usePlannerActions = () => {
-  const showComponent = (fn, value) => {
-    console.log("worked")
+
+  const switchComponent = (fn, value) => {
+    console.log("switchComponents Fn")
     fn(!value)
   }
-  return { showComponent }
+
+  const hideComponent = (fn) => {
+    console.log("hideComponents Fn")
+    fn(false)
+  }
+
+  return { switchComponent, hideComponent }
 }
 
 export default usePlannerActions

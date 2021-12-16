@@ -1,26 +1,26 @@
-import React from "react"
+import React, { useState } from "react"
 import { CategorySimpleView, CategorySimpleForm } from "../../components"
 import { Col } from "../../../../components"
 import CategoryListWrapper from "./CategoryList.style"
 import { usePlannerContext } from "../../../../contexts/hooks"
 import { useCategoryActions } from "../../hooks"
 
-const CategoryList = (props) => {
-  const { state } = usePlannerContext()
+const CategoryList = props => {
+  const { state, categoryName, setCategoryName} = usePlannerContext()
+  const { createCategory } = useCategoryActions()
   const { display } = props
-  console.log(display)
   return (
     <CategoryListWrapper>
       {state.categories.map((item, index) => {
         return (
           <Col>
-            <CategorySimpleView categoryId={item.categoryId} key={index}>
-              {item.categoryName}
-            </CategorySimpleView>
+              <CategorySimpleView categoryId={item.categoryId} key={index}>
+                {item.categoryName}
+              </CategorySimpleView>
           </Col>
         )
       })}
-      {display ? <CategorySimpleForm></CategorySimpleForm> : null}
+      {display ? <CategorySimpleForm/> : null}
     </CategoryListWrapper>
   )
 }

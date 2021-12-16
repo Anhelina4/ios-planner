@@ -11,11 +11,11 @@ import {
   BsCircleFill,
 } from "react-icons/bs"
 import { MdAddCircleOutline } from "react-icons/md"
-import { usePlannerActions } from "../../contexts/hooks"
+import { usePlannerActions, usePlannerContext } from "../../contexts/hooks"
 
 const Sider = () => {
-  const { showComponent } = usePlannerActions()
-  const [showcsf, setShowCSF] = useState(false)
+  const { switchComponent } = usePlannerActions()
+  const {showcsf, setShowCSF} = usePlannerContext()
 
   return (
     <Container height="100%">
@@ -82,7 +82,7 @@ const Sider = () => {
               children="New List"
               icon={<MdAddCircleOutline />}
               className="position-bottom"
-              onClick={() => showComponent(setShowCSF, showcsf)}
+              onClick={() => switchComponent(setShowCSF, showcsf)}
             />
           </Col>
         </Row>

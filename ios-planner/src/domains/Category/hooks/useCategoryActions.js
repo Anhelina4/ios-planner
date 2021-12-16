@@ -2,7 +2,7 @@ import { useState } from "react"
 import { usePlannerContext } from "../../../contexts/hooks"
 
 const useCategoryActions = () => {
-  const { dispatch, categoryName, setCategoryName } = usePlannerContext()
+  const { dispatch, categoryName, setCategoryName, editedCategoryName } = usePlannerContext()
 
   const createCategory = e => {
     if (e.key === "Enter") {
@@ -11,7 +11,11 @@ const useCategoryActions = () => {
     }
   }
 
-  return { createCategory }
+  const editCategory = (editedCategoryName, categoryId) =>{
+    dispatch({type:"editCategory", payload:{editedCategoryName, categoryId}})
+  }
+
+  return { createCategory, editCategory }
 }
 
 export default useCategoryActions
