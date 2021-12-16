@@ -10,7 +10,7 @@ import { usePlannerActions } from "../../../../contexts/hooks"
 import editCategory from "../../../../contexts/reducer/editCategory"
 
 const CategorySimpleView = props => {
-  const { children, focused, categoryId, key } = props
+  const { children, focused, categoryId } = props
   const { dispatch } = usePlannerContext()
   const { categoryName, setCategoryName, showcsf, setShowCSF } =
     usePlannerContext()
@@ -18,16 +18,11 @@ const CategorySimpleView = props => {
   const { hideComponent } = usePlannerActions()
   const [editedCategoryName, setEditedCategoryName] = useState(children)
   const [editable, setEditable] = useState(false)
-  const { setThisAsCurrentCategory } = useCategoryActions()
 
   return (
     <>
       {!editable ? (
-        <CategoryWrapper
-          focused={focused}
-          key={key}
-          onClick={()=>setThisAsCurrentCategory(categoryId)}
-          >
+        <CategoryWrapper focused={focused}>
           <div className="d-flex align-center justify-center">
             <IconWrapper color="white">
               {<AiOutlineUnorderedList />}
@@ -60,10 +55,15 @@ const CategorySimpleView = props => {
                 setEditable(false)
                 e.stopPropagation()
               }}
-              onChange={e => {
-                setEditedCategoryName(e.target.value)
+              onChange={e => setEditedCategoryName(e.target.value)}
+              onKeyDown={e => {
+                if (e.key === "Enter") {
+                  {
+                    editCategory(editedCategoryName, categoryId)
+                    setEditable(false)
+                  }
+                }
               }}
-              onKeyDown={() => editCategory(editedCategoryName, categoryId)}
               autoFocus
             />
             <Text size="md">5</Text>
