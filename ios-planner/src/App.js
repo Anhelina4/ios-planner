@@ -17,7 +17,7 @@ function App() {
                 New List
               </Header>
             }
-            content={<TasksAll />}
+            content={<TasksAll/>}
           />
         }></AppLayout>
     </PlannerProvider>

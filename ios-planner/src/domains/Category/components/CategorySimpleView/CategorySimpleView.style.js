@@ -1,5 +1,14 @@
 import styled, { css } from "styled-components"
 
+// maps
+const Colors = {
+  blue: "var(--color-blue)",
+  blueLighten: "var(--color-blue-lighten)",
+  blueLighten1: "var(--color-blue-lighten1)",
+  red: "var(--color-red)",
+  orange: "var(--color-orange)",
+}
+
 export const CategoryWrapper = styled.div`
   display: flex;
   align-items: center;

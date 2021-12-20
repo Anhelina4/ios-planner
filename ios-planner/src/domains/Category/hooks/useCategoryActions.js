@@ -1,16 +1,28 @@
 import { usePlannerContext } from "../../../contexts/hooks"
 
 const useCategoryActions = () => {
-  const { categoryName, setCategoryName } = usePlannerContext()
+  const { dispatch, categoryName, setCategoryName } = usePlannerContext()
 
-  const { dispatch } = usePlannerContext()
   const createCategory = e => {
     if (e.key === "Enter") {
       dispatch({ type: "createCategory", payload: { categoryName } })
       setCategoryName("")
     }
   }
-  return { createCategory }
+
+  const editCategory = (editedCategoryName, categoryId) => {
+    dispatch({
+      type: "editCategory",
+      payload: { editedCategoryName, categoryId },
+    })
+  }
+
+  const deleteCategory = categoryId => {
+    console.log(categoryId)
+    dispatch({ type: "deleteCategory", payload: { categoryId } })
+  }
+
+  return { createCategory, editCategory, deleteCategory }
 }
 
 export default useCategoryActions

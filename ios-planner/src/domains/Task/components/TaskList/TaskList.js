@@ -2,8 +2,10 @@ import React from "react"
 import { TaskSimpleView, TaskSimpleForm } from ".."
 import TaskListWrapper from "./TaskList.style"
 import { Col } from "../../../../components"
+import { usePlannerContext} from "../../../../contexts/hooks"
 
 const TaskList = () => {
+  const {showtsf} = usePlannerContext()
   return (
     <TaskListWrapper>
       <Col>
@@ -22,9 +24,7 @@ const TaskList = () => {
         </TaskSimpleView>
       </Col>
       <Col>
-        <TaskSimpleForm variant="secondary" className="mb-lg">
-          My new Task
-        </TaskSimpleForm>
+        {showtsf ? <TaskSimpleForm variant="secondary" className="mb-lg"/> : null}
       </Col>
     </TaskListWrapper>
   )

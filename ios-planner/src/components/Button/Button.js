@@ -2,8 +2,17 @@ import React from "react"
 import { ButtonWrapper, IconWrapper } from "./Button.style"
 
 const Button = props => {
-  const { hovered, active, size, variant, children, color, icon, className } =
-    props
+  const {
+    hovered,
+    active,
+    size,
+    variant,
+    children,
+    color,
+    icon,
+    className,
+    onClick,
+  } = props
 
   return (
     <>
@@ -14,7 +23,8 @@ const Button = props => {
           hovered={hovered}
           active={active}
           size={size}
-          className={className}>
+          className={className}
+          onClick={onClick}>
           <IconWrapper>{icon}</IconWrapper>
           {children}
         </ButtonWrapper>
@@ -25,6 +35,7 @@ const Button = props => {
           hovered={hovered}
           active={active}
           size={size}
+          onClick={onClick}
           className={className}>
           {icon || children}
         </ButtonWrapper>

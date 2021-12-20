@@ -8,7 +8,6 @@ import { TaskSimpleFormWrapper } from "../TaskSimpleForm/TaskSimpleForm.style"
 
 const TaskSimpleForm = props => {
   const { checked, color, variant } = props
-
   return (
     <Container className="mt-xl">
       <TaskSimpleFormWrapper>
