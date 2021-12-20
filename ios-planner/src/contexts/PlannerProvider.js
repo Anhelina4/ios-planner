@@ -12,7 +12,6 @@ const PlannerProvider = ({ children }) => {
   const [taskNotes, setTaskNotes] = useState("")
   const [showtsf, setShowTSF] = useState(false)
   const [showcsf, setShowCSF] = useState(false)
-
   return (
     <PlannerContext.Provider
       value={{

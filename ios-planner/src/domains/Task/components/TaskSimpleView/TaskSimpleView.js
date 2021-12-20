@@ -12,7 +12,7 @@ import {
 } from "../../../../contexts/hooks"
 
 const TaskSimpleView = props => {
-  const { color, variant, children, taskId, taskName, taskNotes } = props
+  const { color, variant, children, taskId, taskName, taskNotes, onClick } = props
   const { deleteTask, editTask, checkTask, flagTask } = useTaskActions()
   const { setShowTSF } = usePlannerContext()
   const { hideComponent } = usePlannerActions()
@@ -24,7 +24,7 @@ const TaskSimpleView = props => {
   return (
     <>
       {!editable ? (
-        <TaskSimpleViewWrapper>
+        <TaskSimpleViewWrapper onClick={onClick}>
           <Row>
             <Col
               cw="auto"

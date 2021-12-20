@@ -11,12 +11,13 @@ import {
 import { CategorySimpleForm } from ".."
 
 const CategorySimpleView = props => {
-  const { focused, categoryId, categoryName } = props
+  const { categoryId, categoryName } = props
   const { dispatch, setShowCSF, setShowTSF } = usePlannerContext()
   const { editCategory, deleteCategory } = useCategoryActions()
   const { hideComponent } = usePlannerActions()
   const [editedCategoryName, setEditedCategoryName] = useState(categoryName)
   const [editable, setEditable] = useState(false)
+  const [focused, setFocused] = useState(false)
   return (
     <>
       {!editable ? (
@@ -25,6 +26,7 @@ const CategorySimpleView = props => {
           onClick={() => {
             dispatch({ type: "defineCurrentCategory", payload: { categoryId } })
             setShowTSF(true)
+            setFocused(!focused)
           }}>
           <div className="d-flex align-center justify-center">
             <IconWrapper color="white">
