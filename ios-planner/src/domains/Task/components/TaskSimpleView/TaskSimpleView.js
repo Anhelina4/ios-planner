@@ -12,16 +12,15 @@ import {
 } from "../../../../contexts/hooks"
 
 const TaskSimpleView = props => {
-  const { color, variant, checked, children, taskId, taskName, taskNotes } =
-    props
+  const { color, variant, children, taskId, taskName, taskNotes } = props
   const { deleteTask, editTask, checkTask, flagTask } = useTaskActions()
   const { setShowTSF } = usePlannerContext()
   const { hideComponent } = usePlannerActions()
   const [editedTaskName, setEditedTaskName] = useState(taskName)
   const [editedTaskNotes, setEditedTaskNotes] = useState(taskNotes)
   const [editable, setEditable] = useState(false)
-  const [status, setStatus] = useState(true)
-  const [flag, setFlag] = useState(true)
+  const [status, setStatus] = useState(false)
+  const [flag, setFlag] = useState(false)
   return (
     <>
       {!editable ? (
@@ -30,9 +29,12 @@ const TaskSimpleView = props => {
             <Col
               cw="auto"
               className="d-flex align-start"
-              onClick={() => setStatus(!status)}>
+              onClick={() => {
+                setStatus(!status)
+                console.log(status)
+              }}>
               <Checkbox
-                checked={checked}
+                checked={status}
                 onClick={() => {
                   checkTask(taskId, status)
                 }}
@@ -58,7 +60,7 @@ const TaskSimpleView = props => {
               className="d-flex align-start"
               onClick={() => setFlag(!flag)}>
               <Button
-                color={color}
+                checked={flag}
                 variant={variant}
                 onClick={() => flagTask(taskId, flag)}>
                 {<AiFillFlag />}
