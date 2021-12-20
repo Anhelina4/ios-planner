@@ -15,7 +15,7 @@ import { usePlannerActions, usePlannerContext } from "../../contexts/hooks"
 
 const Sider = () => {
   const { switchComponent } = usePlannerActions()
-  const { showcsf, setShowCSF } = usePlannerContext()
+  const { state, showcsf, setShowCSF } = usePlannerContext()
 
   return (
     <Container height="100%">
@@ -66,7 +66,7 @@ const Sider = () => {
         </Row>
         <Row>
           <Col>
-            <Title size="sm" children="My lists" variant="secondary" />
+            <Title size="sm" children="My lists" variant="secondary" onClick={()=>console.log(state)}/>
           </Col>
         </Row>
         <Row height="380px">

@@ -18,7 +18,6 @@ const useCategoryActions = () => {
   }
 
   const deleteCategory = categoryId => {
-    console.log(categoryId)
     dispatch({ type: "deleteCategory", payload: { categoryId } })
   }
 

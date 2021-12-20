@@ -1,13 +1,15 @@
+import { v4 as uuidv4 } from "uuid"
+
 const сreateTask = (state, payload) => {
   const newState = JSON.parse(JSON.stringify(state))
 
   // change currentCategory
-  newState.currentCategory.categoryTasks = [
-    ...newState.currentCategory.categoryTasks,
+  newState.currentCategory.tasksList = [
+    ...newState.currentCategory.tasksList,
     {
       taskName: payload.taskName,
       taskNotes: payload.taskNotes,
-      taskId: payload.taskId,
+      taskId: uuidv4(),
       parentId: newState.currentCategory.categoryId,
       flag: false,
       status: false,
@@ -24,7 +26,7 @@ const сreateTask = (state, payload) => {
           {
             taskName: payload.taskName,
             taskNotes: payload.taskNotes,
-            taskId: payload.taskId,
+            taskId: uuidv4(),
             parentId: newState.currentCategory.categoryId,
             flag: false,
             status: false,

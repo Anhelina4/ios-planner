@@ -15,7 +15,12 @@ const TaskSimpleView = props => {
           <Col cw="auto" className="d-flex align-start">
             <Checkbox checked={checked} />
           </Col>
-          <Col>{children}</Col>
+          <Col>
+            <Row className="direction-col">
+              <Col>{children[0]}</Col>
+              <Col>{children[1]}</Col>
+            </Row>
+          </Col>
           <Col cw="auto" className="d-flex">
             <Button color={color} variant={variant}>
               {<AiFillFlag />}

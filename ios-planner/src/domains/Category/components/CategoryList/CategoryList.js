@@ -5,13 +5,13 @@ import CategoryListWrapper from "./CategoryList.style"
 import { usePlannerContext } from "../../../../contexts/hooks"
 import { useCategoryActions } from "../../hooks"
 
+
 const CategoryList = props => {
   const { state, categoryName, setCategoryName } = usePlannerContext()
   const { createCategory } = useCategoryActions()
   const { display } = props
-
   return (
-    <CategoryListWrapper>
+    <CategoryListWrapper >
       <Col>
         {state.categories.map((item, index) => {
           return (

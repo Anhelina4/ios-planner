@@ -2,29 +2,31 @@ import React from "react"
 import { TaskSimpleView, TaskSimpleForm } from ".."
 import TaskListWrapper from "./TaskList.style"
 import { Col } from "../../../../components"
-import { usePlannerContext} from "../../../../contexts/hooks"
+import { usePlannerContext } from "../../../../contexts/hooks"
 
 const TaskList = () => {
-  const {showtsf} = usePlannerContext()
+  const { state, showtsf } = usePlannerContext()
   return (
     <TaskListWrapper>
       <Col>
-        <TaskSimpleView variant="secondary" className="mb-lg">
-          My new Task
-        </TaskSimpleView>
-      </Col>
-      <Col focused>
-        <TaskSimpleView variant="secondary" className="mb-lg">
-          My new Task
-        </TaskSimpleView>
+        {state?.currentCategory?.tasksList?.length > 0
+          ? state.currentCategory.tasksList.map((item, index) => {
+              return (
+                <TaskSimpleView
+                  variant="secondary"
+                  taskId={item.taskId}
+                  key={index}>
+                  {item.taskName}
+                  {item.taskNotes}
+                </TaskSimpleView>
+              )
+            })
+          : null}
       </Col>
       <Col>
-        <TaskSimpleView variant="secondary" className="mb-lg">
-          My new Task
-        </TaskSimpleView>
-      </Col>
-      <Col>
-        {showtsf ? <TaskSimpleForm variant="secondary" className="mb-lg"/> : null}
+        {showtsf ? (
+          <TaskSimpleForm variant="secondary" className="mb-lg" />
+        ) : null}
       </Col>
     </TaskListWrapper>
   )
