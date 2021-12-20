@@ -7,7 +7,7 @@ import { MdClose } from "react-icons/md"
 
 const TaskSimpleView = props => {
   const { color, variant, checked, children } = props
-
+console.log(children)
   return (
     <Container className="pt-xl">
       <TaskSimpleViewWrapper>
@@ -17,8 +17,8 @@ const TaskSimpleView = props => {
           </Col>
           <Col>
             <Row className="direction-col">
-              <Col>{children[0]}</Col>
-              <Col>{children[1]}</Col>
+              <Col className="pl-md pr-md">{children[0]}</Col>
+              <Col className="pl-md pr-md text-sm">{children[1]}</Col>
             </Row>
           </Col>
           <Col cw="auto" className="d-flex">

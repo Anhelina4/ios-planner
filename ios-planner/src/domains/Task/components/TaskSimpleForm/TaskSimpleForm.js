@@ -22,13 +22,17 @@ const TaskSimpleForm = props => {
             <InputWrapper
               value={taskName}
               onChange={e => setTaskName(e.target.value)}
-              onKeyDown={e=> e.key === "Enter" ? createTask(taskName, taskNotes) : null}
+              onKeyDown={e =>
+                e.key === "Enter" ? createTask(taskName, taskNotes) : null
+              }
             />
             <InputWrapper
               value={taskNotes}
               placeholder="Notes"
               onChange={e => setTaskNotes(e.target.value)}
-              onKeyDown={e=> e.key === "Enter" ? createTask(taskName, taskNotes) : null}
+              onKeyDown={e =>
+                e.key === "Enter" ? createTask(taskName, taskNotes) : null
+              }
             />
           </Col>
           <Col cw="auto" className="d-flex align-start">

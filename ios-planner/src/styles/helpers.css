@@ -209,6 +209,11 @@
   font-weight: var(--title-extraBold) !important;
 }
 
+/*text-sizes*/
+.text-sm{
+  font-size: var(--text-sm);
+}
+
 /* display */
 .d-flex {
   display: flex;

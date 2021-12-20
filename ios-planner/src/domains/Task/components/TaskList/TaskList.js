@@ -3,11 +3,12 @@ import { TaskSimpleView, TaskSimpleForm } from ".."
 import TaskListWrapper from "./TaskList.style"
 import { Col } from "../../../../components"
 import { usePlannerContext } from "../../../../contexts/hooks"
+import { usePlannerActions } from "../../../../contexts/hooks"
 
 const TaskList = () => {
   const { state, showtsf } = usePlannerContext()
   return (
-    <TaskListWrapper>
+    <TaskListWrapper >
       <Col>
         {state?.currentCategory?.tasksList?.length > 0
           ? state.currentCategory.tasksList.map((item, index) => {
