@@ -8,19 +8,11 @@ const AppLayout = ({ left, right }) => {
   return (
     <Container height="100%" variant="fluid">
       <Row height="100%">
-        <Col
-          cw="auto"
-          onClick={() => {
-            hideComponent(setShowTSF)
-          }}
-          >
-          {left}
-        </Col>
+        <Col cw="auto">{left}</Col>
         <Col
           onClick={() => {
             hideComponent(setShowCSF)
-          }}
-          >
+          }}>
           {right}
         </Col>
       </Row>

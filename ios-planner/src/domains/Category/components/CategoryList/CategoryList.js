@@ -13,14 +13,15 @@ const CategoryList = props => {
   return (
     <CategoryListWrapper >
       <Col>
-        {state.categories.map((item, index) => {
+        {state?.categories?.length > 0 ?
+        state.categories.map((item, index) => {
           return (
             <CategorySimpleView
               categoryId={item.categoryId}
               key={index}
               categoryName={item.categoryName}></CategorySimpleView>
           )
-        })}
+        }) : null}
       </Col>
       {display ? (
         <CategorySimpleForm

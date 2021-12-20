@@ -5,6 +5,8 @@ import deleteTask from "./deleteTask"
 import editCategory from "./editCategory"
 import editTask from "./editTask"
 import defineCurrentCategory from "./defineCurrentCategory"
+import flagTask from "./flagTask"
+import checkTask from "./checkTask"
 
 const reducer = (state, action) => {
   const { type, payload } = action
@@ -16,7 +18,9 @@ const reducer = (state, action) => {
     deleteTask,
     editCategory,
     editTask,
-    defineCurrentCategory
+    defineCurrentCategory,
+    flagTask,
+    checkTask
   }
 
   return actionsMap[type](state, payload)

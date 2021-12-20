@@ -19,16 +19,14 @@ const TaskSimpleForm = props => {
     onKeyDown,
   } = props
   return (
-    <Container className="mt-xl">
       <TaskSimpleFormWrapper>
         <Row>
-          <Col cw="auto">
+          <Col cw="auto" className="d-flex align-start">
             <Checkbox checked={checked} />
           </Col>
-          <Col className="d-flex direction-col">
+          <Col className="d-flex direction-col justify-center">
             <InputWrapper
-              tabIndex="1"
-              className="text-md"
+              className="text-md pb-none"
               type="text"
               autoFocus
               value={valueTask}
@@ -37,7 +35,7 @@ const TaskSimpleForm = props => {
               onKeyDown={onKeyDown}
             />
             <InputWrapper
-             tabIndex="2"
+            className="pt-none pb-none"
               type="text"
               value={valueNotes}
               onClick={onClick}
@@ -55,7 +53,6 @@ const TaskSimpleForm = props => {
           </Col>
         </Row>
       </TaskSimpleFormWrapper>
-    </Container>
   )
 }
 

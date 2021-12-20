@@ -3,7 +3,7 @@ const deleteCategory = (state, payload) => {
   newState.categories = state.categories.filter(item => {
     return item.categoryId !== payload.categoryId
   })
-
+  newState.currentCategory = {}
   return newState
 }
 
