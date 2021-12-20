@@ -4,13 +4,20 @@ import { Checkbox, Button } from "../../../../components"
 import { InputWrapper, TaskSimpleFormWrapper } from "./TaskSimpleForm.style.js"
 import { AiFillFlag } from "react-icons/ai"
 import { MdClose } from "react-icons/md"
-import { usePlannerContext } from "../../../../contexts/hooks"
-import { useTaskActions } from "../../hooks"
 
 const TaskSimpleForm = props => {
-  const { checked, color, variant } = props
-  const { taskName, setTaskName, taskNotes, setTaskNotes } = usePlannerContext()
-  const { createTask } = useTaskActions()
+  const {
+    checked,
+    color,
+    variant,
+    onDelete,
+    onClick,
+    valueTask,
+    valueNotes,
+    onChangeTask,
+    onChangeNotes,
+    onKeyDown,
+  } = props
   return (
     <Container className="mt-xl">
       <TaskSimpleFormWrapper>
@@ -20,22 +27,29 @@ const TaskSimpleForm = props => {
           </Col>
           <Col className="d-flex direction-col">
             <InputWrapper
-              value={taskName}
-              onChange={e => setTaskName(e.target.value)}
-              onKeyDown={createTask}
+              tabIndex="1"
+              className="text-md"
+              type="text"
+              autoFocus
+              value={valueTask}
+              onClick={onClick}
+              onChange={onChangeTask}
+              onKeyDown={onKeyDown}
             />
             <InputWrapper
-              value={taskNotes}
-              placeholder="Notes"
-              onChange={e => setTaskNotes(e.target.value)}
-              onKeyDown={createTask}
+             tabIndex="2"
+              type="text"
+              value={valueNotes}
+              onClick={onClick}
+              onChange={onChangeNotes}
+              onKeyDown={onKeyDown}
             />
           </Col>
           <Col cw="auto" className="d-flex align-start">
             <Button color={color} variant={variant}>
               {<AiFillFlag />}
             </Button>
-            <Button variant="primary" active>
+            <Button variant="primary" active onClick={onDelete}>
               {<MdClose />}
             </Button>
           </Col>

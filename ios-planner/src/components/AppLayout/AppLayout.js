@@ -10,18 +10,16 @@ const AppLayout = ({ left, right }) => {
       <Row height="100%">
         <Col
           cw="auto"
-          // onClick={() => {
-          //   hideComponent(setShowTSF)
-          //   showComponent(setShowCSF)
-          // }}
+          onClick={() => {
+            hideComponent(setShowTSF)
+          }}
           >
           {left}
         </Col>
         <Col
-          // onClick={() => {
-          //   hideComponent(setShowCSF)
-          //   showComponent(setShowTSF)
-          // }}
+          onClick={() => {
+            hideComponent(setShowCSF)
+          }}
           >
           {right}
         </Col>

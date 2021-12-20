@@ -4,11 +4,13 @@ import TaskListWrapper from "./TaskList.style"
 import { Col } from "../../../../components"
 import { usePlannerContext } from "../../../../contexts/hooks"
 import { usePlannerActions } from "../../../../contexts/hooks"
+import { useTaskActions } from "../../hooks"
 
 const TaskList = () => {
-  const { state, showtsf } = usePlannerContext()
+  const { state, showtsf, taskName, taskNotes, setTaskName, setTaskNotes } = usePlannerContext()
+  const {createTask} = useTaskActions()
   return (
-    <TaskListWrapper >
+    <TaskListWrapper>
       <Col>
         {state?.currentCategory?.tasksList?.length > 0
           ? state.currentCategory.tasksList.map((item, index) => {
@@ -26,7 +28,15 @@ const TaskList = () => {
       </Col>
       <Col>
         {showtsf ? (
-          <TaskSimpleForm variant="secondary" className="mb-lg" />
+          <TaskSimpleForm
+            variant="secondary"
+            className="mb-lg"
+            valueTask={taskName}
+            valueNotes={taskNotes}
+            onChangeTask={e=>setTaskName(e.target.value)}
+            onChangeNotes={e=>setTaskNotes(e.target.value)}
+            onKeyDown={createTask}
+          />
         ) : null}
       </Col>
     </TaskListWrapper>

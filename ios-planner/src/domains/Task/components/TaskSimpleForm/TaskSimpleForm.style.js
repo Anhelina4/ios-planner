@@ -9,7 +9,7 @@ export const InputWrapper = styled.input`
   font-weight: var(--text-regular);
   color: var(--color-dark-lighten0);
   border: none;
-  padding: var(--p-md);
+  padding: var(--p-sm);
   font-size: var(--text-sm);
   line-height: var(--lh-sm);
   box-sizing: border-box;

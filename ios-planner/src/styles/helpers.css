@@ -213,6 +213,9 @@
 .text-sm{
   font-size: var(--text-sm);
 }
+.text-md{
+  font-size: var(--text-md)!important;
+}
 
 /* display */
 .d-flex {

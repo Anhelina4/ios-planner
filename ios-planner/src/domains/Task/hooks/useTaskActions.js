@@ -16,7 +16,11 @@ const useTaskActions = () => {
     dispatch({ type: "deleteTask", payload: { taskId } })
   }
 
-  return { createTask, deleteTask }
+  const editTask = (editedTaskName, taskId) =>{
+    dispatch({type:"editTask", payload:{editedTaskName, taskId}})
+  }
+
+  return { createTask, deleteTask, editTask }
 }
 
 export default useTaskActions
