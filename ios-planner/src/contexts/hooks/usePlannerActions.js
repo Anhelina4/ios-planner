@@ -7,7 +7,11 @@ const usePlannerActions = () => {
     fn(false)
   }
 
-  return { switchComponent, hideComponent }
+  const showComponent = fn => {
+    fn(true)
+  }
+
+  return { switchComponent, hideComponent, showComponent }
 }
 
 export default usePlannerActions

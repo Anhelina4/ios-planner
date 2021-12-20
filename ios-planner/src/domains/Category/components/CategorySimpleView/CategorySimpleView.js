@@ -59,7 +59,7 @@ const CategorySimpleView = props => {
           onChange={e => setEditedCategoryName(e.target.value)}
           value={editedCategoryName}
           onKeyDown={e => {
-            if (e.key === "Enter") {
+            if (e.key === "Enter" && categoryName!=="") {
               editCategory(editedCategoryName, categoryId)
               setEditable(false)
             }

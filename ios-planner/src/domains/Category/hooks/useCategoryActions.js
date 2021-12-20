@@ -4,7 +4,7 @@ const useCategoryActions = () => {
   const { dispatch, categoryName, setCategoryName } = usePlannerContext()
 
   const createCategory = e => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && categoryName!=="") {
       dispatch({ type: "createCategory", payload: { categoryName } })
       setCategoryName("")
     }

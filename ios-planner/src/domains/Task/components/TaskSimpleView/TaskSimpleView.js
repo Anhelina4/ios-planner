@@ -4,10 +4,11 @@ import { Checkbox, Button } from "../../../../components"
 import { Row, Col, Container } from "../../../../components/Grid"
 import { AiFillFlag } from "react-icons/ai"
 import { MdClose } from "react-icons/md"
+import {useTaskActions} from "../../hooks"
 
 const TaskSimpleView = props => {
-  const { color, variant, checked, children } = props
-console.log(children)
+  const { color, variant, checked, children, taskId } = props
+  const {deleteTask} = useTaskActions()
   return (
     <Container className="pt-xl">
       <TaskSimpleViewWrapper>
@@ -25,7 +26,7 @@ console.log(children)
             <Button color={color} variant={variant}>
               {<AiFillFlag />}
             </Button>
-            <Button variant="primary" active>
+            <Button variant="primary" active onClick={()=>deleteTask(taskId)}>
               {<MdClose />}
             </Button>
           </Col>
