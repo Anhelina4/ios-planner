@@ -8,18 +8,8 @@ import { TasksAll } from "./pages/TasksAll"
 function App() {
   return (
     <PlannerProvider>
-      <AppLayout
-        left={<Sider />}
-        right={
-          <PageLayout
-            header={
-              <Header color="blue" className="mb-xl">
-                New List
-              </Header>
-            }
-            content={<TasksAll/>}
-          />
-        }></AppLayout>
+      <Navigator>
+      </Navigator>
     </PlannerProvider>
   )
 }

@@ -30,14 +30,16 @@ const TaskSimpleView = props => {
               cw="auto"
               className="d-flex align-start"
               onClick={() => {
-                setStatus(!status)
+                
                 console.log(status)
-              }}>
+              }}
+              >
               <Checkbox
                 checked={status}
                 onClick={() => {
                   checkTask(taskId, status)
                 }}
+                onCheckedChanged={()=>setStatus( !status)}
               />
             </Col>
             <Col>

@@ -38,13 +38,19 @@ const Sider = () => {
         </Row>
         <Row>
           <Col className="mr-xl mt-xxl">
-            <Switcher icon={<BsCalendar3 />} variant="blue" children="Today" />
+              <Switcher
+                icon={<BsCalendar3 />}
+                variant="blue"
+                children="Today"
+                path="/today"
+              />
           </Col>
           <Col className="mt-xxl">
             <Switcher
               icon={<BsCalendarDate />}
               variant="red"
               children="Scheduled"
+              path="/scheduled"
             />
           </Col>
         </Row>
@@ -54,6 +60,7 @@ const Sider = () => {
               icon={<BsInboxFill />}
               variant="darkGrey"
               children="All"
+              path="/all"
             />
           </Col>
           <Col className="mt-xl">
@@ -61,12 +68,17 @@ const Sider = () => {
               icon={<AiFillFlag />}
               variant="orange"
               children="With flag"
+              path="/withflag"
             />
           </Col>
         </Row>
         <Row>
           <Col>
-            <Title size="sm" children="My lists" variant="secondary" onClick={()=>console.log(state)}/>
+            <Title
+              size="sm"
+              children="My lists"
+              variant="secondary"
+            />
           </Col>
         </Row>
         <Row height="380px">
