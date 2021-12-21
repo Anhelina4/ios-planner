@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import {
   HeaderWrapper,
   ContainerWrapper,
@@ -7,17 +7,22 @@ import {
 } from "./Header.style"
 import { Text, Button } from ".."
 import { AiOutlinePlus } from "react-icons/ai"
-import { usePlannerContext} from "../../contexts/hooks"
-import { usePlannerActions} from "../../contexts/hooks"
+import { usePlannerContext } from "../../contexts/hooks"
+import { usePlannerActions } from "../../contexts/hooks"
 
 const Header = props => {
   const { children, color, variant } = props
-  const {showtsf, setShowTSF} = usePlannerContext()
-  const { showComponent } = usePlannerActions()
+  const { showtsf, setShowTSF } = usePlannerContext()
+  const { switchComponent } = usePlannerActions()
   return (
     <>
       <ButtonWrapper>
-        <Button icon={<AiOutlinePlus />} size="xl" active onClick={()=>showComponent(setShowTSF, showtsf)}/>
+        <Button
+          icon={<AiOutlinePlus />}
+          size="xl"
+          active
+          onClick={()=>switchComponent(setShowTSF, showtsf)}
+        />
       </ButtonWrapper>
       <ContainerWrapper>
         <HeaderWrapper color={color} variant={variant}>

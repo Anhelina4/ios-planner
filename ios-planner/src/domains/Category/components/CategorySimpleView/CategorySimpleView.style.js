@@ -10,20 +10,21 @@ const Colors = {
 }
 
 export const CategoryWrapper = styled.div`
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: var(--p-md);
-  background: var(--color-blue-lighten);
+  background: var(--color-dark-lighten5);
   border-radius: var(--border-radius-lg);
   font-size: var(--text-sm);
   line-height: var(--lh-sm);
   box-sizing: border-box;
-  ${props =>
-    !props.focused &&
-    css`
-      background: var(--color-dark-lighten5);
-    `}
+    ${props =>
+      props.focused &&
+      css`
+        background: var(--color-blue-lighten);
+      `}
 `
 
 export const IconWrapper = styled.div`

@@ -55,7 +55,11 @@ export const ButtonWrapper = styled.button`
       height: ${props => btnSizes[props.size].height};
       font-size: ${props => btnSizes[props.size].fontSize};
     `}
-
+    ${props =>
+    props.checked === true &&
+    css`
+      color: var(--color-orange);
+    `}
   &:active {
     color: ${props => (props.active ? "var(--color-black)" : "none")};
     border-radius: var(--border-radius-lg);

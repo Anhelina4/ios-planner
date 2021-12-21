@@ -1,12 +1,18 @@
 const editTask = (state, payload) => {
   const newState = { ...state }
 
-    newState.currentCategory.tasksList = newState.currentList.tasksList.map(item => {
+  newState.currentCategory.tasksList = newState.currentCategory.tasksList.map(
+    item => {
       return item.taskId === payload.taskId
-        ? { ...item, taskName: payload.editedTaskName }
+        ? {
+            ...item,
+            taskName: payload.editedTaskName,
+            taskNotes: payload.editedTaskNotes,
+          }
         : { ...item }
-    })
-    return { ...newState }
+    }
+  )
+  return { ...newState }
 }
 
 export default editTask

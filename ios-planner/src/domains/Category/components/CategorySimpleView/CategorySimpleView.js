@@ -11,17 +11,23 @@ import {
 import { CategorySimpleForm } from ".."
 
 const CategorySimpleView = props => {
-  const { focused, categoryId, categoryName } = props
-  const { setShowCSF } = usePlannerContext()
+  const { categoryId, categoryName } = props
+  const { dispatch, setShowCSF, setShowTSF } = usePlannerContext()
   const { editCategory, deleteCategory } = useCategoryActions()
   const { hideComponent } = usePlannerActions()
   const [editedCategoryName, setEditedCategoryName] = useState(categoryName)
   const [editable, setEditable] = useState(false)
-
+  const [focused, setFocused] = useState(false)
   return (
     <>
       {!editable ? (
-        <CategoryWrapper focused={focused}>
+        <CategoryWrapper
+          focused={focused}
+          onClick={() => {
+            dispatch({ type: "defineCurrentCategory", payload: { categoryId } })
+            setShowTSF(true)
+            setFocused(!focused)
+          }}>
           <div className="d-flex align-center justify-center">
             <IconWrapper color="white">
               {<AiOutlineUnorderedList />}
@@ -49,10 +55,6 @@ const CategorySimpleView = props => {
         </CategoryWrapper>
       ) : (
         <CategorySimpleForm
-          onClick={e => {
-            setEditable(false)
-            e.stopPropagation()
-          }}
           onChange={e => setEditedCategoryName(e.target.value)}
           value={editedCategoryName}
           onKeyDown={e => {

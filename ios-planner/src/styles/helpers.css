@@ -209,6 +209,14 @@
   font-weight: var(--title-extraBold) !important;
 }
 
+/*text-sizes*/
+.text-sm{
+  font-size: var(--text-sm);
+}
+.text-md{
+  font-size: var(--text-md)!important;
+}
+
 /* display */
 .d-flex {
   display: flex;

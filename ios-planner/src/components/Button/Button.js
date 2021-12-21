@@ -12,6 +12,7 @@ const Button = props => {
     icon,
     className,
     onClick,
+    checked
   } = props
 
   return (
@@ -36,6 +37,7 @@ const Button = props => {
           active={active}
           size={size}
           onClick={onClick}
+          checked={checked}
           className={className}>
           {icon || children}
         </ButtonWrapper>

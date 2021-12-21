@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 const TaskSimpleViewWrapper = styled.div`
-  padding: var(--p-none) var(--p-md) var(--p-lg) var(--p-md);
+  padding:  var(--p-lg) var(--p-md);
+  margin-bottom: var(--m-lg);
   font-size: var(--text-md);
   box-sizing: border-box;
   cursor: text;
