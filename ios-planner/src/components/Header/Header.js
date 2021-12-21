@@ -21,7 +21,7 @@ const Header = props => {
           icon={<AiOutlinePlus />}
           size="xl"
           active
-          onClick={()=>switchComponent(setShowTSF, showtsf)}
+          onClick={() => switchComponent(setShowTSF, showtsf)}
         />
       </ButtonWrapper>
       <ContainerWrapper>

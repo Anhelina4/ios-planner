@@ -1,14 +1,25 @@
 import React from "react"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { useNavigate } from "react-router-dom"
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom"
 import { TasksAll } from "./TasksAll"
 import { Sider } from "../components"
 import { AppLayout } from "../components"
+import { usePlannerContext } from "../contexts/hooks"
+
 const Navigator = () => {
+  const { state } = usePlannerContext()
   return (
     <>
       <Router>
         <Routes>
+          <Route
+            path="/"
+            exact
+            element={<Navigate to="/categories" exact />}></Route>
           <Route
             path="/categories"
             exact
@@ -53,6 +64,18 @@ const Navigator = () => {
                 left={<Sider />}
                 right={<TasksAll color="orange" title="With flag" />}
               />
+            }></Route>
+          <Route
+            path="/categories/:id"
+            element={
+              <AppLayout
+                left={<Sider />}
+                right={
+                  <TasksAll
+                    color="blue"
+                    title={state.currentCategory.categoryName}
+                  />
+                }></AppLayout>
             }></Route>
         </Routes>
       </Router>

@@ -11,9 +11,10 @@ const checkTask = (state, payload) => {
         : { ...item }
     }
   )
-  newState.categories.map(item=>{
-      return item.categoryId === newState.currentCategory.categoryId ?
-      (item.tasksList = newState.currentCategory.tasksList) : null
+  newState.categories.map(item => {
+    return item.categoryId === newState.currentCategory.categoryId
+      ? (item.tasksList = newState.currentCategory.tasksList)
+      : null
   })
   return { ...newState }
 }

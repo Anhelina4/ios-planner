@@ -3,6 +3,7 @@ import { SwitcherWrapper, IconWrapper } from "./Switcher.style"
 import { Text } from "../../components"
 import { Col, Row, Container } from "../../components/Grid"
 import { useNavigate } from "react-router-dom"
+
 const Switcher = props => {
   let navigate = useNavigate()
   const { icon, variant, active, children, path } = props
@@ -11,7 +12,6 @@ const Switcher = props => {
     <SwitcherWrapper
       variant={variant}
       active={active}
-      variant="md"
       onClick={() => {
         navigate(path)
       }}>

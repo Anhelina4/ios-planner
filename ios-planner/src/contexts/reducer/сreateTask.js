@@ -1,9 +1,8 @@
 import { v4 as uuidv4 } from "uuid"
-import { usePlannerContext } from "../hooks"
 
 const сreateTask = (state, payload) => {
   const newState = JSON.parse(JSON.stringify(state))
-  
+
   // change currentCategory
   newState.currentCategory.tasksList = [
     ...newState.currentCategory.tasksList,

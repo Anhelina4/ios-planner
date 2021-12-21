@@ -1,14 +1,15 @@
-import React, {useState} from "react"
+import React from "react"
 import { TaskSimpleView, TaskSimpleForm } from ".."
 import TaskListWrapper from "./TaskList.style"
 import { Col } from "../../../../components"
 import { usePlannerContext } from "../../../../contexts/hooks"
-import { usePlannerActions } from "../../../../contexts/hooks"
 import { useTaskActions } from "../../hooks"
 
 const TaskList = () => {
-  const { state, showtsf, taskName, taskNotes, setTaskName, setTaskNotes } = usePlannerContext()
-  const {createTask} = useTaskActions()
+  const { state, showtsf, taskName, taskNotes, setTaskName, setTaskNotes } =
+    usePlannerContext()
+  const { createTask } = useTaskActions()
+
   return (
     <TaskListWrapper>
       <Col>
@@ -33,8 +34,8 @@ const TaskList = () => {
             className="mb-lg"
             valueTask={taskName}
             valueNotes={taskNotes}
-            onChangeTask={e=>setTaskName(e.target.value)}
-            onChangeNotes={e=>setTaskNotes(e.target.value)}
+            onChangeTask={e => setTaskName(e.target.value)}
+            onChangeNotes={e => setTaskNotes(e.target.value)}
             onKeyDown={createTask}
           />
         ) : null}

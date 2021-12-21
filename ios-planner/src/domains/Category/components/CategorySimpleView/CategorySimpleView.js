@@ -9,6 +9,7 @@ import {
   usePlannerActions,
 } from "../../../../contexts/hooks"
 import { CategorySimpleForm } from ".."
+import { Link } from "react-router-dom"
 
 const CategorySimpleView = props => {
   const { categoryId, categoryName } = props
@@ -18,53 +19,59 @@ const CategorySimpleView = props => {
   const [editedCategoryName, setEditedCategoryName] = useState(categoryName)
   const [editable, setEditable] = useState(false)
   const [focused, setFocused] = useState(false)
+
   return (
     <>
-      {!editable ? (
-        <CategoryWrapper
-          focused={focused}
-          onClick={() => {
-            dispatch({ type: "defineCurrentCategory", payload: { categoryId } })
-            setShowTSF(true)
-            setFocused(!focused)
-          }}>
-          <div className="d-flex align-center justify-center">
-            <IconWrapper color="white">
-              {<AiOutlineUnorderedList />}
-            </IconWrapper>
-            <Text
-              size="md"
-              className="text-semibold"
-              color={focused ? "white" : null}
-              onClick={e => {
-                setEditable(true)
-                e.stopPropagation()
-                setEditedCategoryName(categoryName)
-                hideComponent(setShowCSF)
-              }}>
-              {categoryName}
-            </Text>
-          </div>
-          <Button
-            active
+      <Link to={`/categories/${categoryId}`}>
+        {!editable ? (
+          <CategoryWrapper
+            focused={focused}
             onClick={() => {
-              deleteCategory(categoryId)
+              dispatch({
+                type: "defineCurrentCategory",
+                payload: { categoryId },
+              })
+              setShowTSF(true)
+              setFocused(!focused)
             }}>
-            {<MdClose />}
-          </Button>
-        </CategoryWrapper>
-      ) : (
-        <CategorySimpleForm
-          onChange={e => setEditedCategoryName(e.target.value)}
-          value={editedCategoryName}
-          onKeyDown={e => {
-            if (e.key === "Enter") {
-              editCategory(editedCategoryName, categoryId)
-              setEditable(false)
-            }
-          }}
-          onDelete={() => deleteCategory(categoryId)}></CategorySimpleForm>
-      )}
+            <div className="d-flex align-center justify-center">
+              <IconWrapper color="white">
+                {<AiOutlineUnorderedList />}
+              </IconWrapper>
+              <Text
+                size="md"
+                className="text-semibold"
+                color={focused ? "white" : null}
+                onClick={e => {
+                  setEditable(true)
+                  e.stopPropagation()
+                  setEditedCategoryName(categoryName)
+                  hideComponent(setShowCSF)
+                }}>
+                {categoryName}
+              </Text>
+            </div>
+            <Button
+              active
+              onClick={() => {
+                deleteCategory(categoryId)
+              }}>
+              {<MdClose />}
+            </Button>
+          </CategoryWrapper>
+        ) : (
+          <CategorySimpleForm
+            onChange={e => setEditedCategoryName(e.target.value)}
+            value={editedCategoryName}
+            onKeyDown={e => {
+              if (e.key === "Enter") {
+                editCategory(editedCategoryName, categoryId)
+                setEditable(false)
+              }
+            }}
+            onDelete={() => deleteCategory(categoryId)}></CategorySimpleForm>
+        )}
+      </Link>
     </>
   )
 }

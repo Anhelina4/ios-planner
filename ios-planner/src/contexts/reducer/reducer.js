@@ -20,7 +20,7 @@ const reducer = (state, action) => {
     editTask,
     defineCurrentCategory,
     flagTask,
-    checkTask
+    checkTask,
   }
 
   return actionsMap[type](state, payload)

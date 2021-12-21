@@ -12,7 +12,8 @@ import {
 } from "../../../../contexts/hooks"
 
 const TaskSimpleView = props => {
-  const { color, variant, children, taskId, taskName, taskNotes, onClick } = props
+  const { color, variant, children, taskId, taskName, taskNotes, onClick } =
+    props
   const { deleteTask, editTask, checkTask, flagTask } = useTaskActions()
   const { setShowTSF } = usePlannerContext()
   const { hideComponent } = usePlannerActions()
@@ -21,6 +22,7 @@ const TaskSimpleView = props => {
   const [editable, setEditable] = useState(false)
   const [status, setStatus] = useState(false)
   const [flag, setFlag] = useState(false)
+
   return (
     <>
       {!editable ? (
@@ -30,16 +32,14 @@ const TaskSimpleView = props => {
               cw="auto"
               className="d-flex align-start"
               onClick={() => {
-                
                 console.log(status)
-              }}
-              >
+              }}>
               <Checkbox
                 checked={status}
                 onClick={() => {
                   checkTask(taskId, status)
                 }}
-                onCheckedChanged={()=>setStatus( !status)}
+                onCheckedChanged={() => setStatus(!status)}
               />
             </Col>
             <Col>

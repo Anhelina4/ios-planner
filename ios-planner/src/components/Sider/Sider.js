@@ -1,7 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import SiderWrapper from "./Sider.style"
-import { SearchInput, Button, Switcher, Title } from ".."
-import { Container, Row, Col } from ".."
+import { SearchInput, Button, Switcher, Title, Container, Row, Col } from ".."
 import { CategoryList } from "../../domains/Category/components"
 import { AiOutlineSearch, AiFillCloseCircle, AiFillFlag } from "react-icons/ai"
 import {
@@ -15,7 +14,7 @@ import { usePlannerActions, usePlannerContext } from "../../contexts/hooks"
 
 const Sider = () => {
   const { switchComponent } = usePlannerActions()
-  const { state, showcsf, setShowCSF } = usePlannerContext()
+  const { showcsf, setShowCSF } = usePlannerContext()
 
   return (
     <Container height="100%">
@@ -38,12 +37,12 @@ const Sider = () => {
         </Row>
         <Row>
           <Col className="mr-xl mt-xxl">
-              <Switcher
-                icon={<BsCalendar3 />}
-                variant="blue"
-                children="Today"
-                path="/today"
-              />
+            <Switcher
+              icon={<BsCalendar3 />}
+              variant="blue"
+              children="Today"
+              path="/today"
+            />
           </Col>
           <Col className="mt-xxl">
             <Switcher
@@ -74,11 +73,7 @@ const Sider = () => {
         </Row>
         <Row>
           <Col>
-            <Title
-              size="sm"
-              children="My lists"
-              variant="secondary"
-            />
+            <Title size="sm" children="My lists" variant="secondary" />
           </Col>
         </Row>
         <Row height="380px">
