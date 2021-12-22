@@ -12,8 +12,7 @@ import { usePlannerContext } from "../contexts/hooks"
 
 const Navigator = () => {
   const { state } = usePlannerContext()
-  let data = state.categories
-  console.log(data)
+
   return (
     <>
       <Router>
@@ -27,7 +26,7 @@ const Navigator = () => {
             exact
             element={
               <AppLayout
-                left={<Sider/>}
+                left={<Sider />}
                 right={<TasksAll color="blue" title="New List" />}
               />
             }></Route>
@@ -45,7 +44,7 @@ const Navigator = () => {
             exact
             element={
               <AppLayout
-                left={<Sider/>}
+                left={<Sider />}
                 right={<TasksAll color="red" title="Scheduled" />}
               />
             }></Route>
@@ -63,7 +62,7 @@ const Navigator = () => {
             exact
             element={
               <AppLayout
-                left={<Sider data={data}/>}
+                left={<Sider />}
                 right={<TasksAll color="orange" title="With flag" />}
               />
             }></Route>
@@ -71,7 +70,7 @@ const Navigator = () => {
             path="/categories/:id"
             element={
               <AppLayout
-                left={<Sider data={data}/>}
+                left={<Sider />}
                 right={
                   <TasksAll
                     color="blue"

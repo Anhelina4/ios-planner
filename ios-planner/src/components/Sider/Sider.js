@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react"
+import React, { useEffect, useState } from "react"
 import SiderWrapper from "./Sider.style"
 import { SearchInput, Button, Switcher, Title, Container, Row, Col } from ".."
 import { CategoryList } from "../../domains/Category/components"
@@ -11,10 +11,12 @@ import {
 } from "react-icons/bs"
 import { MdAddCircleOutline } from "react-icons/md"
 import { usePlannerActions, usePlannerContext } from "../../contexts/hooks"
+import { useTaskActions } from "../../domains/Task/hooks"
 
-const Sider = props => {
+const Sider = () => {
   const { switchComponent } = usePlannerActions()
   const { showcsf, setShowCSF, state } = usePlannerContext()
+  const { filterAll, filterFlagged } = useTaskActions()
   const [counter, setCounter] = useState()
   const [counterFlag, setCounterFlag] = useState()
   let sum = 0
@@ -79,6 +81,7 @@ const Sider = props => {
               children="All"
               path="/all"
               counter={counter}
+              filter={filterAll}
             />
           </Col>
           <Col className="mt-xl">
@@ -88,6 +91,7 @@ const Sider = props => {
               children="With flag"
               path="/withflag"
               counter={counterFlag}
+              filter={filterFlagged}
             />
           </Col>
         </Row>

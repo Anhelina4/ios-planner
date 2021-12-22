@@ -31,7 +31,26 @@ const useTaskActions = () => {
     dispatch({ type: "flagTask", payload: { taskId, flag } })
   }
 
-  return { createTask, deleteTask, editTask, checkTask, flagTask }
+  const filterAll = () => {
+    dispatch({ type: "filterAll", payload: { children: "All", id: "/all" } })
+  }
+
+  const filterFlagged = () => {
+    dispatch({
+      type: "filterFlagged",
+      payload: { children: "Flagged", id: "/withflag" },
+    })
+  }
+
+  return {
+    createTask,
+    deleteTask,
+    editTask,
+    checkTask,
+    flagTask,
+    filterAll,
+    filterFlagged,
+  }
 }
 
 export default useTaskActions

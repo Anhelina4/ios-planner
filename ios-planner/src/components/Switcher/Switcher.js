@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { SwitcherWrapper, IconWrapper } from "./Switcher.style"
 import { Text } from "../../components"
 import { Col, Row, Container } from "../../components/Grid"
 import { useNavigate } from "react-router-dom"
-import { usePlannerContext } from "../../contexts/hooks"
 
 const Switcher = props => {
   let navigate = useNavigate()
-  const { dispatch, state } = usePlannerContext()
-  const { icon, variant, children, path, id, counter } = props
+  const { icon, variant, children, path, id, counter, filter } = props
   const [activeSwitcher, setActiveSwitcher] = useState(false)
  
   return (
@@ -19,8 +17,9 @@ const Switcher = props => {
       onClick={() => {
         navigate(path)
         setActiveSwitcher(!activeSwitcher)
+        filter()
       }}>
-      <Container>
+      <Container >
         <Row className="justify-between">
           <Col className="mb-none pb-none mt-none pt-none">
             <IconWrapper active={activeSwitcher} variant={variant}>
