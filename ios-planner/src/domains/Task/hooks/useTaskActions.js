@@ -1,9 +1,8 @@
 import { usePlannerContext } from "../../../contexts/hooks"
 
 const useTaskActions = () => {
-  const { dispatch, setTaskName, setTaskNotes, taskName, taskNotes } =
+  const { dispatch, setTaskName, setTaskNotes, taskName, taskNotes, deletedTaskId } =
     usePlannerContext()
-
   const createTask = e => {
     if (e.key === "Enter" && taskName !== "") {
       dispatch({ type: "createTask", payload: { taskName, taskNotes } })
@@ -31,8 +30,11 @@ const useTaskActions = () => {
     dispatch({ type: "flagTask", payload: { taskId, flag } })
   }
 
-  const filterAll = () => {
-    dispatch({ type: "filterAll", payload: { children: "All", id: "/all" } })
+  const filterAll = (children, id, deletedTaskId) => {
+    dispatch({
+      type: "filterAll",
+      payload: { children, id, deletedTaskId },
+    })
   }
 
   const filterFlagged = () => {

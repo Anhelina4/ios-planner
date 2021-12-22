@@ -23,7 +23,7 @@ const TaskSimpleView = props => {
     onClick,
   } = props
   const { deleteTask, editTask, checkTask, flagTask } = useTaskActions()
-  const { setShowTSF } = usePlannerContext()
+  const { setShowTSF, deletedTaskId, setDeletedTaskId } = usePlannerContext()
   const { hideComponent } = usePlannerActions()
   const [editedTaskName, setEditedTaskName] = useState(taskName)
   const [editedTaskNotes, setEditedTaskNotes] = useState(taskNotes)
@@ -68,7 +68,10 @@ const TaskSimpleView = props => {
               <Button
                 variant="primary"
                 active
-                onClick={() => deleteTask(taskId)}>
+                onClick={() => {
+                  deleteTask(taskId)
+                  setDeletedTaskId(taskId)
+                }}>
                 {<MdClose />}
               </Button>
             </Col>

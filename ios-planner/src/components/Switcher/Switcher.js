@@ -3,26 +3,26 @@ import { SwitcherWrapper, IconWrapper } from "./Switcher.style"
 import { Text } from "../../components"
 import { Col, Row, Container } from "../../components/Grid"
 import { useNavigate } from "react-router-dom"
+import { usePlannerContext } from "../../contexts/hooks"
 
 const Switcher = props => {
   let navigate = useNavigate()
+  const {deletedTaskId} = usePlannerContext()
   const { icon, variant, children, path, id, counter, filter } = props
-  const [activeSwitcher, setActiveSwitcher] = useState(false)
- 
   return (
     <SwitcherWrapper
       variant={variant}
-      active={activeSwitcher}
       id={id}
       onClick={() => {
         navigate(path)
-        setActiveSwitcher(!activeSwitcher)
-        filter()
+        if (filter) {
+          filter(children, id, deletedTaskId)
+        }
       }}>
-      <Container >
+      <Container>
         <Row className="justify-between">
           <Col className="mb-none pb-none mt-none pt-none">
-            <IconWrapper active={activeSwitcher} variant={variant}>
+            <IconWrapper  variant={variant}>
               {icon}
             </IconWrapper>
           </Col>
@@ -30,7 +30,6 @@ const Switcher = props => {
             <Text
               size="lg"
               children={counter || "0"}
-              color={activeSwitcher ? "white" : null}
               className="text-semibold"
             />
           </Col>
@@ -40,7 +39,6 @@ const Switcher = props => {
             <Text
               size="md"
               children={children}
-              color={activeSwitcher ? "white" : null}
               className="text-semibold"
             />
           </Col>

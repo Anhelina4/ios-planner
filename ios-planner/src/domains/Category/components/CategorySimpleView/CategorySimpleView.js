@@ -52,7 +52,6 @@ const CategorySimpleView = props => {
                 color={focused ? "white" : null}
                 onClick={e => {
                   setEditable(true)
-                  e.stopPropagation()
                   setEditedCategoryName(categoryName)
                   hideComponent(setShowCSF)
                 }}>
