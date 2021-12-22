@@ -12,7 +12,7 @@ const useTaskActions = () => {
   }
 
   const deleteTask = taskId => {
-    dispatch({ type: "deleteTask", payload: { taskId } })
+    dispatch({ type: "deleteTask", payload: { taskId, deletedTaskId } })
   }
 
   const editTask = (editedTaskName, taskId, editedTaskNotes) => {
