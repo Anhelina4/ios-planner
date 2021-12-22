@@ -9,7 +9,7 @@ const TaskList = () => {
   const { state, showtsf, taskName, taskNotes, setTaskName, setTaskNotes } =
     usePlannerContext()
   const { createTask } = useTaskActions()
-console.log(state.currentCategory.tasksList);
+  // console.log(state.currentCategory.tasksList);
   return (
     <TaskListWrapper>
       <Col>

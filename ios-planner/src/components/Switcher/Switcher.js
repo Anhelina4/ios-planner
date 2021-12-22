@@ -1,24 +1,29 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { SwitcherWrapper, IconWrapper } from "./Switcher.style"
 import { Text } from "../../components"
 import { Col, Row, Container } from "../../components/Grid"
 import { useNavigate } from "react-router-dom"
+import { usePlannerContext } from "../../contexts/hooks"
 
 const Switcher = props => {
   let navigate = useNavigate()
-  const { icon, variant, active, children, path } = props
-
+  const {dispatch, state} = usePlannerContext()
+  const { icon, variant, children, path, id, } = props
+  const [activeSwitcher, setActiveSwitcher] = useState(false)
+  console.log("currentCategory", state.currentCategory)
   return (
     <SwitcherWrapper
       variant={variant}
-      active={active}
+      active={activeSwitcher}
+      id={id}
       onClick={() => {
         navigate(path)
+        setActiveSwitcher(!activeSwitcher)
       }}>
       <Container>
         <Row className="justify-between">
           <Col className="mb-none pb-none mt-none pt-none">
-            <IconWrapper active={active} variant={variant}>
+            <IconWrapper active={activeSwitcher} variant={variant}>
               {icon}
             </IconWrapper>
           </Col>
@@ -26,7 +31,7 @@ const Switcher = props => {
             <Text
               size="lg"
               children="0"
-              color={active ? "white" : null}
+              color={activeSwitcher ? "white" : null}
               className="text-semibold"
             />
           </Col>
@@ -36,7 +41,7 @@ const Switcher = props => {
             <Text
               size="md"
               children={children}
-              color={active ? "white" : null}
+              color={activeSwitcher ? "white" : null}
               className="text-semibold"
             />
           </Col>

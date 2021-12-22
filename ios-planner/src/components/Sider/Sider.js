@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import SiderWrapper from "./Sider.style"
 import { SearchInput, Button, Switcher, Title, Container, Row, Col } from ".."
 import { CategoryList } from "../../domains/Category/components"
@@ -15,7 +15,7 @@ import { usePlannerActions, usePlannerContext } from "../../contexts/hooks"
 const Sider = props => {
   const { switchComponent } = usePlannerActions()
   const { showcsf, setShowCSF } = usePlannerContext()
-
+  
   return (
     <Container height="100%">
       <SiderWrapper>
