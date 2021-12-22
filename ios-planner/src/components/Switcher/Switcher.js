@@ -7,10 +7,10 @@ import { usePlannerContext } from "../../contexts/hooks"
 
 const Switcher = props => {
   let navigate = useNavigate()
-  const {dispatch, state} = usePlannerContext()
-  const { icon, variant, children, path, id, } = props
+  const { dispatch, state } = usePlannerContext()
+  const { icon, variant, children, path, id, counter } = props
   const [activeSwitcher, setActiveSwitcher] = useState(false)
-  console.log("currentCategory", state.currentCategory)
+ 
   return (
     <SwitcherWrapper
       variant={variant}
@@ -30,7 +30,7 @@ const Switcher = props => {
           <Col cw="auto" className="mb-none pb-none mt-none pt-none">
             <Text
               size="lg"
-              children="0"
+              children={counter || "0"}
               color={activeSwitcher ? "white" : null}
               className="text-semibold"
             />

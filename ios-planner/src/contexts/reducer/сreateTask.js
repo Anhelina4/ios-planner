@@ -5,7 +5,7 @@ const сreateTask = (state, payload) => {
 
   // change currentCategory
   newState.currentCategory.tasksList = [
-    ...newState.currentCategory.tasksList,
+    ...newState.currentCategory?.tasksList,
     {
       taskName: payload.taskName,
       taskNotes: payload.taskNotes,

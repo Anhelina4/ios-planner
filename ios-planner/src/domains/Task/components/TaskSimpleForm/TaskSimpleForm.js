@@ -34,6 +34,7 @@ const TaskSimpleForm = props => {
             onClick={onClick}
             onChange={onChangeTask}
             onKeyDown={onKeyDown}
+            placeholder="Task"
           />
           <InputWrapper
             className="pt-none pb-none"
@@ -42,6 +43,7 @@ const TaskSimpleForm = props => {
             onClick={onClick}
             onChange={onChangeNotes}
             onKeyDown={onKeyDown}
+            placeholder="Notes"
           />
         </Col>
         <Col cw="auto" className="d-flex align-start">
