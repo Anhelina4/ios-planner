@@ -249,5 +249,8 @@
 .direction-col {
   flex-direction: column;
 }
+.decoration-none{
+  text-decoration: none;
+}
 
 /*# sourceMappingURL=helpers.css.map */

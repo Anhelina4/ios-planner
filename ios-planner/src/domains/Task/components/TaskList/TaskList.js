@@ -9,7 +9,7 @@ const TaskList = () => {
   const { state, showtsf, taskName, taskNotes, setTaskName, setTaskNotes } =
     usePlannerContext()
   const { createTask } = useTaskActions()
-
+console.log(state.currentCategory.tasksList);
   return (
     <TaskListWrapper>
       <Col>
@@ -19,7 +19,9 @@ const TaskList = () => {
                 <TaskSimpleView
                   variant="secondary"
                   taskId={item.taskId}
-                  key={index}>
+                  key={index}
+                  taskStatus={item.status}
+                  taskFlag={item.flag}>
                   {item.taskName}
                   {item.taskNotes}
                 </TaskSimpleView>
