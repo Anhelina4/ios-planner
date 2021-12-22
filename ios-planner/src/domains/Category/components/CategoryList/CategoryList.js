@@ -9,7 +9,6 @@ const CategoryList = props => {
   const { state, categoryName, setCategoryName } = usePlannerContext()
   const { createCategory } = useCategoryActions()
   const { display } = props
-
   return (
     <CategoryListWrapper>
       <Col>

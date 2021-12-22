@@ -22,6 +22,7 @@ const TaskSimpleView = props => {
   const [editable, setEditable] = useState(false)
   const [status, setStatus] = useState(false)
   const [flag, setFlag] = useState(false)
+  console.log("before change flag->", flag)
 
   return (
     <>
@@ -60,7 +61,10 @@ const TaskSimpleView = props => {
             <Col
               cw="auto"
               className="d-flex align-start"
-              onClick={() => setFlag(!flag)}>
+              onClick={() =>{ 
+              setFlag(!flag)
+              }
+              }>
               <Button
                 checked={flag}
                 variant={variant}

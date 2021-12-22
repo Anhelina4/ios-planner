@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { CategoryWrapper, IconWrapper } from "./CategorySimpleView.style"
 import { Text, Button } from "../../../../components"
 import { AiOutlineUnorderedList } from "react-icons/ai"
@@ -12,14 +12,18 @@ import { CategorySimpleForm } from ".."
 import { Link } from "react-router-dom"
 
 const CategorySimpleView = props => {
-  const { categoryId, categoryName } = props
-  const { dispatch, setShowCSF, setShowTSF } = usePlannerContext()
+  const { categoryId, categoryName, data } = props
+  const { dispatch, setShowCSF, setShowTSF, state } = usePlannerContext()
   const { editCategory, deleteCategory } = useCategoryActions()
   const { hideComponent } = usePlannerActions()
   const [editedCategoryName, setEditedCategoryName] = useState(categoryName)
   const [editable, setEditable] = useState(false)
   const [focused, setFocused] = useState(false)
 
+  useEffect(() => {
+    setFocused(state?.currentCategory && categoryId === state?.currentCategory?.categoryId ? true : false)
+  }, [categoryId, state?.currentCategory])
+  
   return (
     <>
       <Link to={`/categories/${categoryId}`}>
@@ -32,7 +36,6 @@ const CategorySimpleView = props => {
                 payload: { categoryId },
               })
               setShowTSF(true)
-              setFocused(!focused)
             }}>
             <div className="d-flex align-center justify-center">
               <IconWrapper color="white">

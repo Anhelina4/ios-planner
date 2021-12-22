@@ -12,7 +12,7 @@ import {
 import { MdAddCircleOutline } from "react-icons/md"
 import { usePlannerActions, usePlannerContext } from "../../contexts/hooks"
 
-const Sider = () => {
+const Sider = props => {
   const { switchComponent } = usePlannerActions()
   const { showcsf, setShowCSF } = usePlannerContext()
 
