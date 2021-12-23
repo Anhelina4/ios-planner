@@ -4,12 +4,15 @@ import TaskListWrapper from "./TaskList.style"
 import { Col } from "../../../../components"
 import { usePlannerContext } from "../../../../contexts/hooks"
 import { useTaskActions } from "../../hooks"
+import { v4 as uuidv4 } from "uuid"
 
 const TaskList = () => {
   const { state, showtsf, taskName, taskNotes, setTaskName, setTaskNotes } =
     usePlannerContext()
   const { createTask } = useTaskActions()
   // console.log(state.currentCategory.tasksList);
+  const taskId = uuidv4()
+
   return (
     <TaskListWrapper>
       <Col>
@@ -38,7 +41,12 @@ const TaskList = () => {
             valueNotes={taskNotes}
             onChangeTask={e => setTaskName(e.target.value)}
             onChangeNotes={e => setTaskNotes(e.target.value)}
-            onKeyDown={createTask}
+            onKeyDown={e => {
+              if (e.key === "Enter" && taskName !== "") {
+                createTask(taskName, taskNotes, taskId)
+                console.log(taskId)
+              }
+            }}
           />
         ) : null}
       </Col>

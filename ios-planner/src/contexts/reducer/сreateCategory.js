@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from "uuid"
 
 const сreateCategory = (state, payload) => {
   const newState = JSON.parse(JSON.stringify(state))
@@ -6,7 +5,7 @@ const сreateCategory = (state, payload) => {
     ...newState.categories,
     {
       categoryName: payload.categoryName,
-      categoryId: uuidv4(),
+      categoryId: payload.categoryId,
       tasksList: [],
     },
   ]
