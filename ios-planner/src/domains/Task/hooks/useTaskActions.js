@@ -1,9 +1,8 @@
 import { usePlannerContext } from "../../../contexts/hooks"
 
 const useTaskActions = () => {
-  const { dispatch, setTaskName, setTaskNotes, taskName, taskNotes } =
+  const { dispatch, setTaskName, setTaskNotes, taskName, taskNotes, deletedTaskId } =
     usePlannerContext()
-
   const createTask = e => {
     if (e.key === "Enter" && taskName !== "") {
       dispatch({ type: "createTask", payload: { taskName, taskNotes } })
@@ -13,7 +12,7 @@ const useTaskActions = () => {
   }
 
   const deleteTask = taskId => {
-    dispatch({ type: "deleteTask", payload: { taskId } })
+    dispatch({ type: "deleteTask", payload: { taskId, deletedTaskId } })
   }
 
   const editTask = (editedTaskName, taskId, editedTaskNotes) => {
@@ -31,7 +30,29 @@ const useTaskActions = () => {
     dispatch({ type: "flagTask", payload: { taskId, flag } })
   }
 
-  return { createTask, deleteTask, editTask, checkTask, flagTask }
+  const filterAll = (children, id, deletedTaskId) => {
+    dispatch({
+      type: "filterAll",
+      payload: { children, id, deletedTaskId },
+    })
+  }
+
+  const filterFlagged = () => {
+    dispatch({
+      type: "filterFlagged",
+      payload: { children: "Flagged", id: "/withflag" },
+    })
+  }
+
+  return {
+    createTask,
+    deleteTask,
+    editTask,
+    checkTask,
+    flagTask,
+    filterAll,
+    filterFlagged,
+  }
 }
 
 export default useTaskActions

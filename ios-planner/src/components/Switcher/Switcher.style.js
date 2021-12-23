@@ -11,6 +11,7 @@ const switcherVariants = {
 
 // styles
 export const SwitcherWrapper = styled.div`
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;

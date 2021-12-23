@@ -12,6 +12,7 @@ const PlannerProvider = ({ children }) => {
   const [taskNotes, setTaskNotes] = useState("")
   const [showtsf, setShowTSF] = useState(false)
   const [showcsf, setShowCSF] = useState(false)
+  const [deletedTaskId, setDeletedTaskId] = useState()
   return (
     <PlannerContext.Provider
       value={{
@@ -27,6 +28,8 @@ const PlannerProvider = ({ children }) => {
         setTaskNotes,
         showcsf,
         setShowCSF,
+        deletedTaskId,
+        setDeletedTaskId,
       }}>
       {children}
     </PlannerContext.Provider>

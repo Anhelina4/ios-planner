@@ -1,7 +1,6 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import SiderWrapper from "./Sider.style"
-import { SearchInput, Button, Switcher, Title } from ".."
-import { Container, Row, Col } from ".."
+import { SearchInput, Button, Switcher, Title, Container, Row, Col } from ".."
 import { CategoryList } from "../../domains/Category/components"
 import { AiOutlineSearch, AiFillCloseCircle, AiFillFlag } from "react-icons/ai"
 import {
@@ -12,10 +11,30 @@ import {
 } from "react-icons/bs"
 import { MdAddCircleOutline } from "react-icons/md"
 import { usePlannerActions, usePlannerContext } from "../../contexts/hooks"
+import { useTaskActions } from "../../domains/Task/hooks"
 
 const Sider = () => {
   const { switchComponent } = usePlannerActions()
-  const { state, showcsf, setShowCSF } = usePlannerContext()
+  const { showcsf, setShowCSF, state } = usePlannerContext()
+  const { filterAll, filterFlagged } = useTaskActions()
+  const [counter, setCounter] = useState()
+  const [counterFlag, setCounterFlag] = useState()
+  let sum = 0
+  let flaggedSum = 0
+
+  useEffect(() => {
+    state.categories.map(item => {
+      item.tasksList.map(elem => {
+        if (elem.flag) {
+          ++flaggedSum
+        }
+        ++sum
+      })
+    })
+    setCounter(sum)
+    setCounterFlag(flaggedSum)
+  }, [state])
+  console.log(flaggedSum)
 
   return (
     <Container height="100%">
@@ -38,13 +57,21 @@ const Sider = () => {
         </Row>
         <Row>
           <Col className="mr-xl mt-xxl">
-            <Switcher icon={<BsCalendar3 />} variant="blue" children="Today" />
+            <Switcher
+            id="/today"
+              icon={<BsCalendar3 />}
+              variant="blue"
+              children="Today"
+              path="/today"
+            />
           </Col>
           <Col className="mt-xxl">
             <Switcher
+            id="/scheduled"
               icon={<BsCalendarDate />}
               variant="red"
               children="Scheduled"
+              path="/scheduled"
             />
           </Col>
         </Row>
@@ -52,21 +79,29 @@ const Sider = () => {
           <Col className="mr-xl mt-xl">
             <Switcher
               icon={<BsInboxFill />}
+              id="/all"
               variant="darkGrey"
               children="All"
+              path="/all"
+              counter={counter}
+              filter={filterAll}
             />
           </Col>
           <Col className="mt-xl">
             <Switcher
+            id="/withflag"
               icon={<AiFillFlag />}
               variant="orange"
               children="With flag"
+              path="/withflag"
+              counter={counterFlag}
+              filter={filterFlagged}
             />
           </Col>
         </Row>
         <Row>
           <Col>
-            <Title size="sm" children="My lists" variant="secondary" onClick={()=>console.log(state)}/>
+            <Title size="sm" children="My lists" variant="secondary" />
           </Col>
         </Row>
         <Row height="380px">
