@@ -6,12 +6,6 @@ const deleteTask = (state, payload) => {
       return item.taskId !== payload.taskId
     }
   )
-  newState.categories.map(item=>{
-    item.tasksList.filter(elem=>{
-      return elem.id !== payload.deletedTaskId
-    })
-    return {...newState}
-  })
 
   return { ...newState }
 }

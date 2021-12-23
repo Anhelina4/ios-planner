@@ -252,5 +252,8 @@
 .decoration-none{
   text-decoration: none;
 }
+.cursor-pointer{
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=helpers.css.map */

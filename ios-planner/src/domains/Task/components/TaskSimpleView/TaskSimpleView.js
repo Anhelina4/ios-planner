@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import TaskSimpleViewWrapper from "./TaskSimpleView.style"
-import { Checkbox, Button } from "../../../../components"
+import { Checkbox, Button, Text } from "../../../../components"
 import { Row, Col } from "../../../../components/Grid"
 import { AiFillFlag } from "react-icons/ai"
 import { MdClose } from "react-icons/md"
@@ -23,7 +23,7 @@ const TaskSimpleView = props => {
     onClick,
   } = props
   const { deleteTask, editTask, checkTask, flagTask } = useTaskActions()
-  const { setShowTSF, deletedTaskId, setDeletedTaskId } = usePlannerContext()
+  const { setShowTSF, setDeletedTaskId } = usePlannerContext()
   const { hideComponent } = usePlannerActions()
   const [editedTaskName, setEditedTaskName] = useState(taskName)
   const [editedTaskNotes, setEditedTaskNotes] = useState(taskNotes)
@@ -44,18 +44,21 @@ const TaskSimpleView = props => {
               />
             </Col>
             <Col>
-              <Row className="direction-col">
-                <Col
-                  className="pl-md pr-md text-md"
-                  onClick={e => {
-                    setEditable(true)
-                    e.stopPropagation()
-                    setEditedTaskName(taskName)
-                    hideComponent(setShowTSF)
-                  }}>
-                  {children[0]}
+              <Row className="d-flex direction-col justify-start">
+                <Col className=" pl-md pr-md text-md" cw="auto">
+                  <Text
+                    className="pb-none pt-none pl-none pr-none text-md"
+                    onClick={e => {
+                      setEditable(true)
+                      setEditedTaskName(taskName)
+                      hideComponent(setShowTSF)
+                    }}>
+                    {children[0]}
+                  </Text>
                 </Col>
-                <Col className="pl-md pr-md text-sm">{children[1]}</Col>
+                <Col cw="auto" className="pl-md pr-md text-sm cursor-pointery" >
+                  {children[1]}
+                </Col>
               </Row>
             </Col>
             <Col cw="auto" className="d-flex align-start">
