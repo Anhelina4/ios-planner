@@ -10,7 +10,6 @@ const TaskList = () => {
   const { state, showtsf, taskName, taskNotes, setTaskName, setTaskNotes } =
     usePlannerContext()
   const { createTask } = useTaskActions()
-  // console.log(state.currentCategory.tasksList);
   const taskId = uuidv4()
 
   return (
@@ -44,7 +43,6 @@ const TaskList = () => {
             onKeyDown={e => {
               if (e.key === "Enter" && taskName !== "") {
                 createTask(taskName, taskNotes, taskId)
-                console.log(taskId)
               }
             }}
           />
