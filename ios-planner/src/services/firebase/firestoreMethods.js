@@ -25,7 +25,6 @@ const firebaseConfig = {
 }
 
 initializeApp(firebaseConfig)
-
 const db = getFirestore()
 
 const createDocument = async (collectionPath, id, documentData) => {
@@ -87,7 +86,7 @@ const firestoreService = {
   queryDocuments,
   deleteDocument,
   getTimestamp,
-  getId
+  getId,
 }
 
 export default firestoreService
