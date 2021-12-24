@@ -23,8 +23,8 @@ const Sider = () => {
   let flaggedSum = 0
 
   useEffect(() => {
-    state.categories.map(item => {
-      item.tasksList.map(elem => {
+    state?.categories.map(item => {
+      item?.tasksList.map(elem => {
         if (elem.flag) {
           ++flaggedSum
         }
@@ -34,7 +34,7 @@ const Sider = () => {
     setCounter(sum)
     setCounterFlag(flaggedSum)
   }, [state])
-  console.log(flaggedSum)
+  // console.log(flaggedSum)
 
   return (
     <Container height="100%">
