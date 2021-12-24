@@ -40,6 +40,16 @@ const useTaskActions = () => {
       type: "editTask",
       payload: { editedTaskName, taskId, editedTaskNotes },
     })
+    firestoreService.updateDocument("task", taskId, {
+      taskName: editedTaskName ? editedTaskName : taskName,
+      taskNotes: editedTaskNotes ? editedTaskNotes: taskNotes,
+      taskId: taskId,
+      parentId: state.currentCategory.categoryId,
+      flag: false,
+      status: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    })
   }
 
   const checkTask = (taskId, status) => {
