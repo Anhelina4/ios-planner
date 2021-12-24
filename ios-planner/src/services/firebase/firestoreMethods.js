@@ -87,6 +87,20 @@ const firestoreService = {
   deleteDocument,
   getTimestamp,
   getId,
+  getFirestore,
+  collection,
+  doc,
+  setDoc,
+  query,
+  getDoc,
+  getDocs,
+  orderBy,
+  limit,
+  where,
+  deleteDoc,
+  updateDoc,
+  serverTimestamp,
+  db
 }
 
 export default firestoreService
