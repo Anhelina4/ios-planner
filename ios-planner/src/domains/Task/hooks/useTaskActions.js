@@ -1,18 +1,38 @@
 import { usePlannerContext } from "../../../contexts/hooks"
+import firestoreService from "../../../services/firebase/firestoreMethods"
 
 const useTaskActions = () => {
-  const { dispatch, setTaskName, setTaskNotes, taskName, taskNotes, deletedTaskId } =
-    usePlannerContext()
-  const createTask = e => {
-    if (e.key === "Enter" && taskName !== "") {
-      dispatch({ type: "createTask", payload: { taskName, taskNotes } })
-      setTaskName("")
-      setTaskNotes("")
-    }
+  
+  const {
+    state,
+    dispatch,
+    setTaskName,
+    setTaskNotes,
+    taskName,
+    taskNotes,
+    deletedTaskId,
+  } = usePlannerContext()
+
+  const createTask = (taskName, taskNotes, taskId) => {
+    dispatch({ type: "createTask", payload: { taskName, taskNotes, taskId } })
+    setTaskName("")
+    setTaskNotes("")
+    firestoreService.createDocument("task", taskId, {
+      taskName: taskName,
+      taskNotes: taskNotes,
+      taskId: taskId,
+      parentId: state.currentCategory.categoryId,
+      flag: false,
+      status: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    })
   }
 
   const deleteTask = taskId => {
-    dispatch({ type: "deleteTask", payload: { taskId, deletedTaskId } })
+    dispatch({ type: "deleteTask", payload: { taskId } })
+    console.log(taskId)
+    firestoreService.deleteDocument("task", taskId)
   }
 
   const editTask = (editedTaskName, taskId, editedTaskNotes) => {

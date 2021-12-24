@@ -4,11 +4,12 @@ import { Col } from "../../../../components"
 import CategoryListWrapper from "./CategoryList.style"
 import { usePlannerContext } from "../../../../contexts/hooks"
 import { useCategoryActions } from "../../hooks"
-
+import { v4 as uuidv4 } from "uuid"
 const CategoryList = props => {
   const { state, categoryName, setCategoryName } = usePlannerContext()
   const { createCategory } = useCategoryActions()
   const { display } = props
+  const categoryId = uuidv4()
   return (
     <CategoryListWrapper>
       <Col>
@@ -27,7 +28,11 @@ const CategoryList = props => {
         <CategorySimpleForm
           value={categoryName}
           onChange={e => setCategoryName(e.target.value)}
-          onKeyDown={createCategory}
+          onKeyDown={e => {
+            if (e.key === "Enter" && categoryName !== "") {
+              createCategory(categoryName, categoryId)
+            }
+          }}
         />
       ) : null}
     </CategoryListWrapper>

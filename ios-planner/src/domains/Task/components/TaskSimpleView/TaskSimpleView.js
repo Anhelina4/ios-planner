@@ -23,7 +23,7 @@ const TaskSimpleView = props => {
     onClick,
   } = props
   const { deleteTask, editTask, checkTask, flagTask } = useTaskActions()
-  const { setShowTSF, setDeletedTaskId } = usePlannerContext()
+  const { setShowTSF,} = usePlannerContext()
   const { hideComponent } = usePlannerActions()
   const [editedTaskName, setEditedTaskName] = useState(taskName)
   const [editedTaskNotes, setEditedTaskNotes] = useState(taskNotes)
@@ -56,7 +56,7 @@ const TaskSimpleView = props => {
                     {children[0]}
                   </Text>
                 </Col>
-                <Col cw="auto" className="pl-md pr-md text-sm cursor-pointery" >
+                <Col cw="auto" className="pl-md pr-md text-sm cursor-pointer" >
                   {children[1]}
                 </Col>
               </Row>
@@ -73,7 +73,7 @@ const TaskSimpleView = props => {
                 active
                 onClick={() => {
                   deleteTask(taskId)
-                  setDeletedTaskId(taskId)
+                  console.log(taskId)
                 }}>
                 {<MdClose />}
               </Button>
@@ -93,7 +93,8 @@ const TaskSimpleView = props => {
               setEditable(false)
             }
           }}
-          onDelete={() => deleteTask(taskId)}></TaskSimpleForm>
+          // onDelete={() => deleteTask(taskId)}
+          ></TaskSimpleForm>
       )}
     </>
   )
