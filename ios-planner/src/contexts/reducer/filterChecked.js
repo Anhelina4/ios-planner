@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const filterChecked = (state, payload) => {
     const newState = JSON.parse(JSON.stringify(state))

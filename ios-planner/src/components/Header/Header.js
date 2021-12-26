@@ -15,9 +15,10 @@ const Header = props => {
   const { children, color, variant } = props
   const { showtsf, setShowTSF, state } = usePlannerContext()
   const { switchComponent } = usePlannerActions()
-  const { filterChecked } = useTaskActions()
+  const { filterChecked, clearAll } = useTaskActions()
   const [btnState, setBtnState] = useState("Hide")
-  console.log( state)
+  const [clear, setClear] = useState(false)
+  console.log(state)
   return (
     <>
       <ButtonWrapper>
@@ -45,7 +46,18 @@ const Header = props => {
           <Button variant="disabled" size="sm">
             0 done
           </Button>
-          <Button color={color} size="sm" active>
+          <Button
+            color={color}
+            size="sm"
+            active
+            onClick={() => {
+              setClear(true)
+              clearAll(
+                state.currentCategory.categoryName,
+                state.currentCategory.categoryId,
+                clear
+              )
+            }}>
             &bull; Clear
           </Button>
         </div>
@@ -56,7 +68,8 @@ const Header = props => {
           onClick={() => {
             filterChecked(
               state.currentCategory.categoryName,
-              state.currentCategory.categoryId, btnState
+              state.currentCategory.categoryId,
+              btnState
             )
             setBtnState(btnState === "Hide" ? "Show" : "Hide")
           }}>

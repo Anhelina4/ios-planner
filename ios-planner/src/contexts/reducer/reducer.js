@@ -11,6 +11,7 @@ import filterAll from "./filterAll"
 import filterFlagged from "./filterFlagged"
 import updateData from "./updateData"
 import { filterChecked } from "./filterChecked"
+import { clearAll } from "./clearAll"
 
 const reducer = (state, action) => {
   const { type, payload } = action
@@ -28,7 +29,8 @@ const reducer = (state, action) => {
     filterAll,
     filterFlagged,
     updateData,
-    filterChecked
+    filterChecked,
+    clearAll
   }
 
   return actionsMap[type](state, payload)

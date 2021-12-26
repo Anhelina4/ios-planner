@@ -74,10 +74,20 @@ const useTaskActions = () => {
   }
 
   const filterChecked = (categoryName, categoryId, permission) => {
-    dispatch({ type: "filterChecked", payload: { categoryName, categoryId, permission } })
+    dispatch({
+      type: "filterChecked",
+      payload: { categoryName, categoryId, permission },
+    })
     console.log(permission)
   }
 
+  const clearAll = (categoryName, categoryId, permission) => {
+    dispatch({
+      type: "clearAll",
+      payload: { categoryName, categoryId, permission },
+    })
+    console.log("clear")
+  }
   return {
     createTask,
     deleteTask,
@@ -87,6 +97,7 @@ const useTaskActions = () => {
     filterAll,
     filterFlagged,
     filterChecked,
+    clearAll,
   }
 }
 
