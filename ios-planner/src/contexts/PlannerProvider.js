@@ -26,16 +26,16 @@ const PlannerProvider = ({ children }) => {
       
       setDBCategory(categories)
       setDBTask(tasks)
-      dispatch({type:"updateData", payload: categories})
+      dispatch({type:"updateData", payload: {categories, tasks}})
       
       // fetchDocuments("category")
     }
     getData()
     
   }, [])
-  console.log("dbCategory->", dbCategory)
-  console.log("dbTask->", dbTask)
-  console.log("state->", state)
+  // console.log("dbCategory->", dbCategory)
+  // console.log("dbTask->", dbTask)
+  // console.log("state->", state)
 
   return (
     <PlannerContext.Provider

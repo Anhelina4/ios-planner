@@ -5,15 +5,10 @@ const deleteTask = (state, payload) => {
       return item.taskId !== payload.taskId
     }
   )
-  const updatedCategory = newState.currentCategory.tasksList
-  const parentId = newState.currentCategory.tasksList[0].parentId
-  newState.categories.filter(item => {
-    return item.categoryId === parentId ? (item = updatedCategory) : null
-  })
 
-  console.log("parentId", parentId)
-  console.log("updated category", updatedCategory)
-  console.log(newState.categories)
+  // console.log("parentId", parentId)
+  // console.log("updated category", updatedCategory)
+  // console.log(newState.categories)
   return { ...newState }
 }
 export default deleteTask

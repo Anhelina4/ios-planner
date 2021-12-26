@@ -24,16 +24,18 @@ const Sider = () => {
 
   useEffect(() => {
     state?.categories.map(item => {
-      item?.tasksList.map(elem => {
-        if (elem.flag) {
-          ++flaggedSum
-        }
-        ++sum
-      })
+      if (item) {
+        item?.tasksList.map(elem => {
+          if (elem.flag) {
+            ++flaggedSum
+          }
+          ++sum
+        })
+      }
     })
     setCounter(sum)
     setCounterFlag(flaggedSum)
-  }, [state])
+  }, [state, flaggedSum, sum])
   // console.log(flaggedSum)
 
   return (
@@ -58,7 +60,7 @@ const Sider = () => {
         <Row>
           <Col className="mr-xl mt-xxl">
             <Switcher
-            id="/today"
+              id="/today"
               icon={<BsCalendar3 />}
               variant="blue"
               children="Today"
@@ -67,7 +69,7 @@ const Sider = () => {
           </Col>
           <Col className="mt-xxl">
             <Switcher
-            id="/scheduled"
+              id="/scheduled"
               icon={<BsCalendarDate />}
               variant="red"
               children="Scheduled"
@@ -89,7 +91,7 @@ const Sider = () => {
           </Col>
           <Col className="mt-xl">
             <Switcher
-            id="/withflag"
+              id="/withflag"
               icon={<AiFillFlag />}
               variant="orange"
               children="With flag"

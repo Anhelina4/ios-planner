@@ -12,6 +12,11 @@ const editTask = (state, payload) => {
         : { ...item }
     }
   )
+  const updatedCategory = newState.currentCategory.tasksList
+  const parentId = newState.currentCategory.tasksList[0].parentId
+  newState.categories.filter(item => {
+    return item.categoryId === parentId ? (item = updatedCategory) : null
+  })
   return { ...newState }
 }
 
