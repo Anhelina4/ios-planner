@@ -9,11 +9,14 @@ import { Text, Button } from ".."
 import { AiOutlinePlus } from "react-icons/ai"
 import { usePlannerContext } from "../../contexts/hooks"
 import { usePlannerActions } from "../../contexts/hooks"
+import { useTaskActions } from "../../domains/Task/hooks"
 
 const Header = props => {
   const { children, color, variant } = props
-  const { showtsf, setShowTSF } = usePlannerContext()
+  const { showtsf, setShowTSF, state } = usePlannerContext()
   const { switchComponent } = usePlannerActions()
+  const {filterChecked} = useTaskActions()
+  console.log(state.currentCategory)
   return (
     <>
       <ButtonWrapper>
@@ -45,8 +48,8 @@ const Header = props => {
             &bull; Clear
           </Button>
         </div>
-        <Button color={color} size="sm" active>
-          Show
+        <Button color={color} size="sm" active onClick={()=>filterChecked(state.currentCategory.categoryName, state.currentCategory.categoryId )}>
+          Hide
         </Button>
       </SubtitleWrapper>
     </>

@@ -21,7 +21,6 @@ const TaskSimpleForm = props => {
     valueTask,
     setEditedTaskName,
   } = props
-  console.log(valueTask, valueNotes)
   return (
     <TaskSimpleFormWrapper>
       <Row>

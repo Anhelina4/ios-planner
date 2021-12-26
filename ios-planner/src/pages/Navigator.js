@@ -74,7 +74,7 @@ const Navigator = () => {
                 right={
                   <TasksAll
                     color="blue"
-                    title={state?.currentCategory.categoryName}
+                    title={state?.currentCategory.categoryName || "New List"}
                   />
                 }></AppLayout>
             }></Route>
