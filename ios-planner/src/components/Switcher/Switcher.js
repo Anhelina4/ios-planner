@@ -7,18 +7,22 @@ import { usePlannerContext } from "../../contexts/hooks"
 
 const Switcher = props => {
   let navigate = useNavigate()
-  const { deletedTaskId } = usePlannerContext()
+  const { deletedTaskId, switcherId, setSwitcherId } = usePlannerContext()
   const { icon, variant, children, path, id, counter, filter } = props
   const [active, setActive] = useState(false)
+  console.log(switcherId, id)
 
-
+  useEffect(() => {
+    setActive(switcherId === id ? true : false)
+  }, [switcherId])
   return (
     <SwitcherWrapper
       active={active}
       variant={variant}
       id={id}
       onClick={() => {
-        setActive(!active)
+        setSwitcherId(id)
+        // setActive(!active)
         navigate(path)
         if (filter) {
           filter(children, id, deletedTaskId)

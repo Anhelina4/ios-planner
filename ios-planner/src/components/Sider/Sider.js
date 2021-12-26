@@ -19,6 +19,7 @@ const Sider = () => {
   const { filterAll, filterFlagged } = useTaskActions()
   const [counter, setCounter] = useState()
   const [counterFlag, setCounterFlag] = useState()
+  
   let sum = 0
   let flaggedSum = 0
 

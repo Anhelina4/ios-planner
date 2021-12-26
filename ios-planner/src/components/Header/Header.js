@@ -27,7 +27,7 @@ const Header = props => {
     state?.categories?.map(item => {
       if (item.categoryId === state.currentCategory.categoryId) {
         item.tasksList.map(elem => {
-          if (elem.status) {
+          if (elem.status===true) {
             ++sum
           }
           ++sumAll
