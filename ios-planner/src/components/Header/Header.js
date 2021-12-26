@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {
   HeaderWrapper,
   ContainerWrapper,
@@ -15,8 +15,9 @@ const Header = props => {
   const { children, color, variant } = props
   const { showtsf, setShowTSF, state } = usePlannerContext()
   const { switchComponent } = usePlannerActions()
-  const {filterChecked} = useTaskActions()
-  console.log(state.currentCategory)
+  const { filterChecked } = useTaskActions()
+  const [btnState, setBtnState] = useState("Hide")
+  console.log( state)
   return (
     <>
       <ButtonWrapper>
@@ -48,8 +49,18 @@ const Header = props => {
             &bull; Clear
           </Button>
         </div>
-        <Button color={color} size="sm" active onClick={()=>filterChecked(state.currentCategory.categoryName, state.currentCategory.categoryId )}>
-          Hide
+        <Button
+          color={color}
+          size="sm"
+          active
+          onClick={() => {
+            filterChecked(
+              state.currentCategory.categoryName,
+              state.currentCategory.categoryId, btnState
+            )
+            setBtnState(btnState === "Hide" ? "Show" : "Hide")
+          }}>
+          {btnState}
         </Button>
       </SubtitleWrapper>
     </>

@@ -39,8 +39,8 @@ const useTaskActions = () => {
       payload: { editedTaskName, taskId, editedTaskNotes },
     })
     firestoreService.updateDocument("task", taskId, {
-      taskName: editedTaskName  ? editedTaskName : taskName,
-      taskNotes: editedTaskNotes  ? editedTaskNotes : taskNotes,
+      taskName: editedTaskName ? editedTaskName : taskName,
+      taskNotes: editedTaskNotes ? editedTaskNotes : taskNotes,
     })
   }
 
@@ -73,8 +73,9 @@ const useTaskActions = () => {
     })
   }
 
-  const filterChecked=(categoryName, categoryId)=>{
-    dispatch({type:"filterChecked", payload:{categoryName, categoryId, }})
+  const filterChecked = (categoryName, categoryId, permission) => {
+    dispatch({ type: "filterChecked", payload: { categoryName, categoryId, permission } })
+    console.log(permission)
   }
 
   return {
