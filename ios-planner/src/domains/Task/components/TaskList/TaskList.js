@@ -7,11 +7,10 @@ import { useTaskActions } from "../../hooks"
 import { v4 as uuidv4 } from "uuid"
 
 const TaskList = () => {
-  const { state, showtsf, taskName, taskNotes, setTaskName, setTaskNotes } =
+  const { state, showtsf, taskName, taskNotes, setTaskName, setTaskNotes, } =
     usePlannerContext()
   const { createTask } = useTaskActions()
   const taskId = uuidv4()
-
   return (
     <TaskListWrapper>
       <Col>
@@ -23,7 +22,9 @@ const TaskList = () => {
                   taskId={item.taskId}
                   key={index}
                   taskStatus={item.status}
-                  taskFlag={item.flag}>
+                  taskFlag={item.flag}
+                  taskName={item.taskName}
+                  taskNotes={item.taskNotes}>
                   {item.taskName}
                   {item.taskNotes}
                 </TaskSimpleView>

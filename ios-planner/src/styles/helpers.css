@@ -255,5 +255,7 @@
 .cursor-pointer{
   cursor: pointer;
 }
-
+.lh-md{
+  line-height:var(--lh-md) !important;
+}
 /*# sourceMappingURL=helpers.css.map */

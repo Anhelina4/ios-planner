@@ -41,12 +41,6 @@ const useTaskActions = () => {
     firestoreService.updateDocument("task", taskId, {
       taskName: editedTaskName  ? editedTaskName : taskName,
       taskNotes: editedTaskNotes  ? editedTaskNotes : taskNotes,
-      taskId: taskId,
-      parentId: state.currentCategory.categoryId,
-      flag: false,
-      status:  false,
-      createdAt: new Date(),
-      updatedAt: new Date(),
     })
   }
 
@@ -54,28 +48,14 @@ const useTaskActions = () => {
     console.log(taskName, taskNotes)
     dispatch({ type: "checkTask", payload: { taskId, status } })
     firestoreService.updateDocument("task", taskId, {
-      taskName: taskName,
-      taskNotes: taskNotes,
-      taskId: taskId,
-      parentId: state.currentCategory.categoryId,
-      flag: false,
       status: status ? status : false,
-      createdAt: new Date(),
-      updatedAt: new Date(),
     })
   }
 
   const flagTask = (taskId, flag) => {
     dispatch({ type: "flagTask", payload: { taskId, flag } })
     firestoreService.updateDocument("task", taskId, {
-      taskName: taskName,
-      taskNotes: taskNotes,
-      taskId: taskId,
-      parentId: state.currentCategory.categoryId,
       flag: flag ? flag : false,
-      status: false,
-      createdAt: new Date(),
-      updatedAt: new Date(),
     })
   }
 

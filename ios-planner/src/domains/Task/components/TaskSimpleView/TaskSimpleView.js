@@ -29,6 +29,7 @@ const TaskSimpleView = props => {
   const [editedTaskNotes, setEditedTaskNotes] = useState(taskNotes)
   const [editable, setEditable] = useState(false)
   console.log("change taskStatus->", taskStatus)
+  console.log("taskName", taskName)
   return (
     <>
       {!editable ? (
@@ -82,6 +83,8 @@ const TaskSimpleView = props => {
         </TaskSimpleViewWrapper>
       ) : (
         <TaskSimpleForm
+          status={taskStatus}
+          flag={taskFlag}
           variant="secondary"
           onChangeTask={e => setEditedTaskName(e.target.value)}
           onChangeNotes={e => setEditedTaskNotes(e.target.value)}
