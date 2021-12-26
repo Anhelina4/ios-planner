@@ -25,7 +25,6 @@ const firebaseConfig = {
 }
 
 initializeApp(firebaseConfig)
-
 const db = getFirestore()
 
 const createDocument = async (collectionPath, id, documentData) => {
@@ -87,7 +86,21 @@ const firestoreService = {
   queryDocuments,
   deleteDocument,
   getTimestamp,
-  getId
+  getId,
+  getFirestore,
+  collection,
+  doc,
+  setDoc,
+  query,
+  getDoc,
+  getDocs,
+  orderBy,
+  limit,
+  where,
+  deleteDoc,
+  updateDoc,
+  serverTimestamp,
+  db
 }
 
 export default firestoreService

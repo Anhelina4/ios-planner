@@ -10,6 +10,7 @@ import {
 } from "../../../../contexts/hooks"
 import { CategorySimpleForm } from ".."
 import { Link } from "react-router-dom"
+import { useNavigate } from "react-router"
 
 const CategorySimpleView = props => {
   const { categoryId, categoryName } = props
@@ -19,7 +20,7 @@ const CategorySimpleView = props => {
   const [editedCategoryName, setEditedCategoryName] = useState(categoryName)
   const [editable, setEditable] = useState(false)
   const [focused, setFocused] = useState(false)
-
+  let navigate = useNavigate()
   useEffect(() => {
     setFocused(
       state?.currentCategory &&
@@ -58,13 +59,15 @@ const CategorySimpleView = props => {
                 {categoryName}
               </Text>
             </div>
-            <Button
-              active
-              onClick={() => {
-                deleteCategory(categoryId)
-              }}>
-              {<MdClose />}
-            </Button>
+            <Link to="/categories">
+              <Button
+                active
+                onClick={() => {
+                  deleteCategory(categoryId)
+                }}>
+                {<MdClose />}
+              </Button>
+            </Link>
           </CategoryWrapper>
         ) : (
           <CategorySimpleForm

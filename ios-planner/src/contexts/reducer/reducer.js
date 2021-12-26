@@ -9,6 +9,7 @@ import flagTask from "./flagTask"
 import checkTask from "./checkTask"
 import filterAll from "./filterAll"
 import filterFlagged from "./filterFlagged"
+import updateData from "./updateData"
 
 const reducer = (state, action) => {
   const { type, payload } = action
@@ -25,6 +26,7 @@ const reducer = (state, action) => {
     checkTask,
     filterAll,
     filterFlagged,
+    updateData,
   }
 
   return actionsMap[type](state, payload)
