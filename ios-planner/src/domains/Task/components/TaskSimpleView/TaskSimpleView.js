@@ -23,13 +23,12 @@ const TaskSimpleView = props => {
     onClick,
   } = props
   const { deleteTask, editTask, checkTask, flagTask } = useTaskActions()
-  const { setShowTSF,} = usePlannerContext()
+  const { setShowTSF, setTaskName, setTaskNotes } = usePlannerContext()
   const { hideComponent } = usePlannerActions()
   const [editedTaskName, setEditedTaskName] = useState(taskName)
   const [editedTaskNotes, setEditedTaskNotes] = useState(taskNotes)
   const [editable, setEditable] = useState(false)
   console.log("change taskStatus->", taskStatus)
-
   return (
     <>
       {!editable ? (
@@ -56,7 +55,7 @@ const TaskSimpleView = props => {
                     {children[0]}
                   </Text>
                 </Col>
-                <Col cw="auto" className="pl-md pr-md text-sm cursor-pointer" >
+                <Col cw="auto" className="pl-md pr-md text-sm cursor-pointer">
                   {children[1]}
                 </Col>
               </Row>
@@ -65,7 +64,9 @@ const TaskSimpleView = props => {
               <Button
                 checked={taskFlag}
                 variant={variant}
-                onClick={() => flagTask(taskId, !taskFlag)}>
+                onClick={() => {
+                  flagTask(taskId, !taskFlag)
+                }}>
                 {<AiFillFlag />}
               </Button>
               <Button
@@ -73,7 +74,6 @@ const TaskSimpleView = props => {
                 active
                 onClick={() => {
                   deleteTask(taskId)
-                  console.log(taskId)
                 }}>
                 {<MdClose />}
               </Button>
@@ -94,7 +94,7 @@ const TaskSimpleView = props => {
             }
           }}
           // onDelete={() => deleteTask(taskId)}
-          ></TaskSimpleForm>
+        ></TaskSimpleForm>
       )}
     </>
   )

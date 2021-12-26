@@ -1,8 +1,6 @@
 import { usePlannerContext } from "../../../contexts/hooks"
 import firestoreService from "../../../services/firebase/firestoreMethods"
-
 const useTaskActions = () => {
-  
   const {
     state,
     dispatch,
@@ -41,23 +39,44 @@ const useTaskActions = () => {
       payload: { editedTaskName, taskId, editedTaskNotes },
     })
     firestoreService.updateDocument("task", taskId, {
-      taskName: editedTaskName ? editedTaskName : taskName,
-      taskNotes: editedTaskNotes ? editedTaskNotes: taskNotes,
+      taskName: editedTaskName  ? editedTaskName : taskName,
+      taskNotes: editedTaskNotes  ? editedTaskNotes : taskNotes,
       taskId: taskId,
       parentId: state.currentCategory.categoryId,
       flag: false,
-      status: false,
+      status:  false,
       createdAt: new Date(),
       updatedAt: new Date(),
     })
   }
 
   const checkTask = (taskId, status) => {
+    console.log(taskName, taskNotes)
     dispatch({ type: "checkTask", payload: { taskId, status } })
+    firestoreService.updateDocument("task", taskId, {
+      taskName: taskName,
+      taskNotes: taskNotes,
+      taskId: taskId,
+      parentId: state.currentCategory.categoryId,
+      flag: false,
+      status: status ? status : false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    })
   }
 
   const flagTask = (taskId, flag) => {
     dispatch({ type: "flagTask", payload: { taskId, flag } })
+    firestoreService.updateDocument("task", taskId, {
+      taskName: taskName,
+      taskNotes: taskNotes,
+      taskId: taskId,
+      parentId: state.currentCategory.categoryId,
+      flag: flag ? flag : false,
+      status: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    })
   }
 
   const filterAll = (children, id, deletedTaskId) => {
