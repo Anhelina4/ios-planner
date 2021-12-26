@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import {
   HeaderWrapper,
   ContainerWrapper,
@@ -18,7 +18,26 @@ const Header = props => {
   const { filterChecked, clearAll } = useTaskActions()
   const [btnState, setBtnState] = useState("Hide")
   const [clear, setClear] = useState(false)
+  const [counterDone, setCounterDone] = useState()
+  const [counterAll, setCounterAll] = useState()
   console.log(state)
+  let sum = 0
+  let sumAll = 0
+  useEffect(() => {
+    state?.categories?.map(item => {
+      if (item.categoryId === state.currentCategory.categoryId) {
+        item.tasksList.map(elem => {
+          if (elem.status) {
+            ++sum
+          }
+          ++sumAll
+        })
+      }
+      setCounterDone(sum)
+      setCounterAll(sumAll)
+    })
+  }, [state, sum])
+
   return (
     <>
       <ButtonWrapper>
@@ -34,7 +53,7 @@ const Header = props => {
           {children}
         </HeaderWrapper>
         <Text
-          children="0"
+          children={counterAll-counterDone}
           size="xxl"
           color={color}
           variant={variant}
@@ -44,7 +63,7 @@ const Header = props => {
       <SubtitleWrapper className="pb-lg">
         <div className="d-flex ">
           <Button variant="disabled" size="sm">
-            0 done
+            {counterDone} done
           </Button>
           <Button
             color={color}

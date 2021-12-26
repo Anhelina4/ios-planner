@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { SwitcherWrapper, IconWrapper } from "./Switcher.style"
 import { Text } from "../../components"
 import { Col, Row, Container } from "../../components/Grid"
@@ -7,13 +7,18 @@ import { usePlannerContext } from "../../contexts/hooks"
 
 const Switcher = props => {
   let navigate = useNavigate()
-  const {deletedTaskId} = usePlannerContext()
+  const { deletedTaskId } = usePlannerContext()
   const { icon, variant, children, path, id, counter, filter } = props
+  const [active, setActive] = useState(false)
+
+
   return (
     <SwitcherWrapper
+      active={active}
       variant={variant}
       id={id}
       onClick={() => {
+        setActive(!active)
         navigate(path)
         if (filter) {
           filter(children, id, deletedTaskId)
@@ -22,12 +27,13 @@ const Switcher = props => {
       <Container>
         <Row className="justify-between">
           <Col className="mb-none pb-none mt-none pt-none">
-            <IconWrapper  variant={variant}>
+            <IconWrapper variant={variant} active={active}>
               {icon}
             </IconWrapper>
           </Col>
           <Col cw="auto" className="mb-none pb-none mt-none pt-none">
             <Text
+              color={active ? "white" : null}
               size="lg"
               children={counter || "0"}
               className="text-semibold"
@@ -37,6 +43,7 @@ const Switcher = props => {
         <Row className="mt-none">
           <Col className="mt-none pt-none mb-none pb-none">
             <Text
+              color={active ? "white" : null}
               size="md"
               children={children}
               className="text-semibold"

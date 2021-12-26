@@ -36,7 +36,6 @@ const Sider = () => {
     setCounter(sum)
     setCounterFlag(flaggedSum)
   }, [state, flaggedSum, sum])
-  // console.log(flaggedSum)
 
   return (
     <Container height="100%">
@@ -48,7 +47,6 @@ const Sider = () => {
             <BsCircleFill color="#68cf19" size="12px" />
           </Col>
         </Row>
-
         <Row>
           <Col cw="12">
             <SearchInput
