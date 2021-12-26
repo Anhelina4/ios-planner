@@ -14,13 +14,12 @@ import { useNavigate } from "react-router"
 
 const CategorySimpleView = props => {
   const { categoryId, categoryName } = props
-  const { dispatch, setShowCSF, setShowTSF, state } = usePlannerContext()
+  const { dispatch, setShowCSF, setShowTSF, state, switcherId, setSwitcherId } = usePlannerContext()
   const { editCategory, deleteCategory } = useCategoryActions()
   const { hideComponent } = usePlannerActions()
   const [editedCategoryName, setEditedCategoryName] = useState(categoryName)
   const [editable, setEditable] = useState(false)
   const [focused, setFocused] = useState(false)
-  let navigate = useNavigate()
   useEffect(() => {
     setFocused(
       state?.currentCategory &&
@@ -42,6 +41,7 @@ const CategorySimpleView = props => {
                 payload: { categoryId },
               })
               setShowTSF(true)
+              setSwitcherId("hey")
             }}>
             <div className="d-flex align-center justify-center">
               <IconWrapper color="white">

@@ -28,8 +28,8 @@ const TaskSimpleView = props => {
   const [editedTaskName, setEditedTaskName] = useState(taskName)
   const [editedTaskNotes, setEditedTaskNotes] = useState(taskNotes)
   const [editable, setEditable] = useState(false)
-  console.log("change taskStatus->", taskStatus)
-  console.log("taskName", taskName)
+  // console.log("change taskStatus->", taskStatus)
+  // console.log("taskName", taskName)
   return (
     <>
       {!editable ? (

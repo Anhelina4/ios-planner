@@ -13,21 +13,21 @@ import { useTaskActions } from "../../domains/Task/hooks"
 
 const Header = props => {
   const { children, color, variant } = props
-  const { showtsf, setShowTSF, state } = usePlannerContext()
+  const { showtsf, setShowTSF, state} = usePlannerContext()
   const { switchComponent } = usePlannerActions()
   const { filterChecked, clearAll } = useTaskActions()
   const [btnState, setBtnState] = useState("Hide")
   const [clear, setClear] = useState(false)
   const [counterDone, setCounterDone] = useState()
   const [counterAll, setCounterAll] = useState()
-  console.log(state)
+  // console.log(state)
   let sum = 0
   let sumAll = 0
   useEffect(() => {
     state?.categories?.map(item => {
-      if (item.categoryId === state.currentCategory.categoryId) {
-        item.tasksList.map(elem => {
-          if (elem.status===true) {
+      if (item?.categoryId === state?.currentCategory?.categoryId) {
+        item?.tasksList.map(elem => {
+          if (elem.status === true) {
             ++sum
           }
           ++sumAll
@@ -37,7 +37,6 @@ const Header = props => {
       setCounterAll(sumAll)
     })
   }, [state, sum])
-
   return (
     <>
       <ButtonWrapper>
@@ -53,7 +52,7 @@ const Header = props => {
           {children}
         </HeaderWrapper>
         <Text
-          children={counterAll-counterDone}
+          children={counterAll - counterDone}
           size="xxl"
           color={color}
           variant={variant}

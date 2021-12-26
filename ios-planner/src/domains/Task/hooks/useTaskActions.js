@@ -69,7 +69,7 @@ const useTaskActions = () => {
   const filterFlagged = () => {
     dispatch({
       type: "filterFlagged",
-      payload: { children: "Flagged", id: "/withflag" },
+      payload: { children: "With flag", id: "/withflag" },
     })
   }
 

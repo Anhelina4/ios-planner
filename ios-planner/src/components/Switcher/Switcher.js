@@ -10,7 +10,7 @@ const Switcher = props => {
   const { deletedTaskId, switcherId, setSwitcherId } = usePlannerContext()
   const { icon, variant, children, path, id, counter, filter } = props
   const [active, setActive] = useState(false)
-  console.log(switcherId, id)
+  // console.log(switcherId, id)
 
   useEffect(() => {
     setActive(switcherId === id ? true : false)
@@ -22,7 +22,6 @@ const Switcher = props => {
       id={id}
       onClick={() => {
         setSwitcherId(id)
-        // setActive(!active)
         navigate(path)
         if (filter) {
           filter(children, id, deletedTaskId)
