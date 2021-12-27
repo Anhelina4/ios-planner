@@ -15,6 +15,7 @@ const Switcher = props => {
   useEffect(() => {
     setActive(switcherId === id ? true : false)
   }, [switcherId])
+  
   return (
     <SwitcherWrapper
       active={active}

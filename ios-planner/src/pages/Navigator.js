@@ -13,6 +13,7 @@ import { usePlannerContext } from "../contexts/hooks"
 const Navigator = () => {
   const { state, value } = usePlannerContext()
 
+
   return (
     <>
       <Router>
@@ -74,17 +75,8 @@ const Navigator = () => {
                 right={
                   <TasksAll
                     color="blue"
-                    title={state?.currentCategory.categoryName || "New List"}
+                    // title={state?.currentCategory.categoryName || "New List"}
                   />
-                }></AppLayout>
-            }></Route>
-          <Route
-            path="/categories/:search"
-            element={
-              <AppLayout
-                left={<Sider />}
-                right={
-                  <TasksAll />
                 }></AppLayout>
             }></Route>
         </Routes>

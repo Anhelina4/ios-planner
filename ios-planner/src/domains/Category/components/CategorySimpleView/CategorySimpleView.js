@@ -10,16 +10,19 @@ import {
 } from "../../../../contexts/hooks"
 import { CategorySimpleForm } from ".."
 import { Link } from "react-router-dom"
-import { useNavigate } from "react-router"
+import { useNavigate, useParams } from "react-router"
 
 const CategorySimpleView = props => {
   const { categoryId, categoryName } = props
-  const { dispatch, setShowCSF, setShowTSF, state, switcherId, setSwitcherId } = usePlannerContext()
+  const { dispatch, setShowCSF, setShowTSF, state, switcherId, setSwitcherId } =
+    usePlannerContext()
   const { editCategory, deleteCategory } = useCategoryActions()
   const { hideComponent } = usePlannerActions()
   const [editedCategoryName, setEditedCategoryName] = useState(categoryName)
   const [editable, setEditable] = useState(false)
   const [focused, setFocused] = useState(false)
+  let params = useParams()
+  let navigate = useNavigate()
   useEffect(() => {
     setFocused(
       state?.currentCategory &&
@@ -28,10 +31,9 @@ const CategorySimpleView = props => {
         : false
     )
   }, [categoryId, state?.currentCategory])
-
   return (
     <>
-      <Link to={`/categories/${categoryId}`} className="decoration-none">
+      {/* <Link to={`/categories/${categoryId}`} className="decoration-none"> */}
         {!editable ? (
           <CategoryWrapper
             focused={focused}
@@ -40,6 +42,7 @@ const CategorySimpleView = props => {
                 type: "defineCurrentCategory",
                 payload: { categoryId },
               })
+              navigate(`/categories/${categoryId}`)
               setShowTSF(true)
               setSwitcherId("hey")
             }}>
@@ -81,7 +84,7 @@ const CategorySimpleView = props => {
             }}
             onDelete={() => deleteCategory(categoryId)}></CategorySimpleForm>
         )}
-      </Link>
+      {/* </Link> */}
     </>
   )
 }

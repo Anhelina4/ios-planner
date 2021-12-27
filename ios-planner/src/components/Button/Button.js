@@ -12,7 +12,7 @@ const Button = props => {
     icon,
     className,
     onClick,
-    checked
+    checked,
   } = props
 
   return (
