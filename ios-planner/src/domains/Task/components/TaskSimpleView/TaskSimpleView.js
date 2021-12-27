@@ -22,14 +22,14 @@ const TaskSimpleView = props => {
     taskNotes,
     onClick,
   } = props
+
   const { deleteTask, editTask, checkTask, flagTask } = useTaskActions()
-  const { setShowTSF, setTaskName, setTaskNotes } = usePlannerContext()
+  const { setShowTSF } = usePlannerContext()
   const { hideComponent } = usePlannerActions()
   const [editedTaskName, setEditedTaskName] = useState(taskName)
   const [editedTaskNotes, setEditedTaskNotes] = useState(taskNotes)
   const [editable, setEditable] = useState(false)
-  // console.log("change taskStatus->", taskStatus)
-  // console.log("taskName", taskName)
+
   return (
     <>
       {!editable ? (

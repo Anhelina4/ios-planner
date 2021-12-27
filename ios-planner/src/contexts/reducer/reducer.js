@@ -32,7 +32,7 @@ const reducer = (state, action) => {
     updateData,
     filterChecked,
     clearAll,
-    searchTask
+    searchTask,
   }
 
   return actionsMap[type](state, payload)

@@ -20,11 +20,11 @@ export const CategoryWrapper = styled.div`
   font-size: var(--text-sm);
   line-height: var(--lh-sm);
   box-sizing: border-box;
-    ${props =>
-      props.focused &&
-      css`
-        background: var(--color-blue-lighten);
-      `}
+  ${props =>
+    props.focused &&
+    css`
+      background: var(--color-blue-lighten);
+    `}
 `
 
 export const IconWrapper = styled.div`

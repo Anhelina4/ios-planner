@@ -2,7 +2,8 @@ import React from "react"
 import { CheckboxWrapper, LabelWrapper } from "./Checkbox.style"
 
 const Checkbox = props => {
-  const { checked, color, variant, className, onClick, onCheckedChanged } = props
+  const { checked, color, variant, className, onClick, onCheckedChanged } =
+    props
 
   return (
     <>

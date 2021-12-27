@@ -7,7 +7,6 @@ import { MdClose } from "react-icons/md"
 
 const TaskSimpleForm = props => {
   const {
-    checked,
     color,
     variant,
     onDelete,
@@ -19,8 +18,8 @@ const TaskSimpleForm = props => {
     flag,
     valueNotes,
     valueTask,
-    setEditedTaskName,
   } = props
+
   return (
     <TaskSimpleFormWrapper>
       <Row>
@@ -39,7 +38,7 @@ const TaskSimpleForm = props => {
             placeholder="Task"
           />
           <InputWrapper
-          style={{height:"16px"}}
+            style={{ height: "16px" }}
             className="pt-none pb-none"
             type="text"
             value={valueNotes}

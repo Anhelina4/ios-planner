@@ -10,7 +10,6 @@ export const CategoryWrapper = styled.div`
   font-size: var(--text-sm);
   line-height: var(--lh-sm);
   box-sizing: border-box;
-  
 `
 
 export const IconWrapper = styled.div`

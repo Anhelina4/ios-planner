@@ -1,5 +1,3 @@
-import React from "react"
-
 const updateData = (state, payload) => {
   console.log("Payload", payload)
   const newState = JSON.parse(JSON.stringify(state))
@@ -8,18 +6,16 @@ const updateData = (state, payload) => {
 
   let arr = newState.categories.map(category => {
     payload.tasks.map(task =>
-      category.categoryId === task.parentId 
+      category.categoryId === task.parentId
         ? category.tasksList.push(task)
         : null
     )
     return category
   })
-  arr.map(i=>{
-      return i.tasksList =  Array.from(new Set(i.tasksList))
+  arr.map(i => {
+    return (i.tasksList = Array.from(new Set(i.tasksList)))
   })
   console.log("arr", arr)
-  
-  
   return { ...newState }
 }
 

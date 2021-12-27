@@ -2,7 +2,7 @@ import { usePlannerContext } from "../../../contexts/hooks"
 import firestoreService from "../../../services/firebase/firestoreMethods"
 
 const useCategoryActions = () => {
-  const { dispatch, categoryName, setCategoryName } = usePlannerContext()
+  const { dispatch, setCategoryName } = usePlannerContext()
 
   const createCategory = (categoryName, categoryId) => {
     dispatch({ type: "createCategory", payload: { categoryName, categoryId } })
@@ -11,7 +11,6 @@ const useCategoryActions = () => {
       categoryName: categoryName,
       tasksList: [],
     })
-
     setCategoryName("")
   }
 

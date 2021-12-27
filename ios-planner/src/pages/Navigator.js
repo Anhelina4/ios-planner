@@ -11,7 +11,7 @@ import { AppLayout } from "../components"
 import { usePlannerContext } from "../contexts/hooks"
 
 const Navigator = () => {
-  const { state, value } = usePlannerContext()
+  const { state } = usePlannerContext()
 
   return (
     <>
@@ -31,7 +31,7 @@ const Navigator = () => {
               />
             }></Route>
           <Route
-            path="/today"
+            path="/categories/today"
             exact
             element={
               <AppLayout
@@ -40,7 +40,7 @@ const Navigator = () => {
               />
             }></Route>
           <Route
-            path="/scheduled"
+            path="/categories/scheduled"
             exact
             element={
               <AppLayout
@@ -49,7 +49,7 @@ const Navigator = () => {
               />
             }></Route>
           <Route
-            path="/all"
+            path="/categories/all"
             exact
             element={
               <AppLayout
@@ -58,7 +58,7 @@ const Navigator = () => {
               />
             }></Route>
           <Route
-            path="/withflag"
+            path="/categories/withflag"
             exact
             element={
               <AppLayout
@@ -71,7 +71,12 @@ const Navigator = () => {
             element={
               <AppLayout
                 left={<Sider />}
-                right={<TasksAll color="blue"  title={state.currentCategory.categoryName || "New List"}/>}></AppLayout>
+                right={
+                  <TasksAll
+                    color="blue"
+                    title={state.currentCategory.categoryName || "New List"}
+                  />
+                }></AppLayout>
             }></Route>
           <Route
             path="/categories/search"

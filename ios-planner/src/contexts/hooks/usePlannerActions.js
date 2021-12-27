@@ -1,4 +1,4 @@
-const usePlannerActions = (dispatch) => {
+const usePlannerActions = dispatch => {
   const switchComponent = (fn, value) => {
     fn(!value)
   }
@@ -11,8 +11,8 @@ const usePlannerActions = (dispatch) => {
     fn(true)
   }
 
-  const searchTask=(value)=>{
-    dispatch({type:"searchTask", payload:{value}})
+  const searchTask = value => {
+    dispatch({ type: "searchTask", payload: { value } })
   }
 
   return { switchComponent, hideComponent, showComponent, searchTask }

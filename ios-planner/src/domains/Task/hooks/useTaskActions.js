@@ -1,15 +1,9 @@
 import { usePlannerContext } from "../../../contexts/hooks"
 import firestoreService from "../../../services/firebase/firestoreMethods"
+
 const useTaskActions = () => {
-  const {
-    state,
-    dispatch,
-    setTaskName,
-    setTaskNotes,
-    taskName,
-    taskNotes,
-    deletedTaskId,
-  } = usePlannerContext()
+  const { state, dispatch, setTaskName, setTaskNotes, taskName, taskNotes } =
+    usePlannerContext()
 
   const createTask = (taskName, taskNotes, taskId) => {
     dispatch({ type: "createTask", payload: { taskName, taskNotes, taskId } })

@@ -17,7 +17,6 @@ const PlannerProvider = ({ children }) => {
   const [dbCategory, setDBCategory] = useState([])
   const [dbTask, setDBTask] = useState([])
   const [switcherId, setSwitcherId] = useState()
-  // const fetchDocuments = useFetchDocuments(dispatch)
 
   useEffect(() => {
     const getData = async () => {
@@ -27,14 +26,9 @@ const PlannerProvider = ({ children }) => {
       setDBCategory(categories)
       setDBTask(tasks)
       dispatch({ type: "updateData", payload: { categories, tasks } })
-
-      // fetchDocuments("category")
     }
     getData()
   }, [])
-  // console.log("dbCategory->", dbCategory)
-  // console.log("dbTask->", dbTask)
-  // console.log("state->", state)
 
   return (
     <PlannerContext.Provider

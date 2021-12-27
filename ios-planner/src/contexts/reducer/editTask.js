@@ -6,10 +6,12 @@ const editTask = (state, payload) => {
       return item.taskId === payload.taskId
         ? {
             ...item,
-            taskName: payload.editedTaskName ? payload.editedTaskName : item.taskName,
-            taskNotes: payload.editedTaskNotes ? payload.editedTaskNotes : item.taskNotes,
-            // flag : payload.taskFlag ? payload.taskFlag : item.flag,
-            // status: payload.taskStatus ? payload.taskStatus : item.status
+            taskName: payload.editedTaskName
+              ? payload.editedTaskName
+              : item.taskName,
+            taskNotes: payload.editedTaskNotes
+              ? payload.editedTaskNotes
+              : item.taskNotes,
           }
         : { ...item }
     }
