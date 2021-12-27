@@ -10,23 +10,23 @@ const SearchInput = props => {
   const { searchTask } = usePlannerActions(dispatch)
   const navigate = useNavigate()
   const history = createBrowserHistory()
-  
+
   return (
-    <Link to="/categories/search" className="decoration-none">
     <InputWrapper>
-      <InputStyled
-        value={value}
-        className={className}
-        onChange={e => {
-          setValue(e.target.value)
-          searchTask(e.target.value)
-          navigate(`/categories/search?name=${e.target.value}`)
-        }}
-      />
+      <Link to="/categories/search" className="decoration-none">
+        <InputStyled
+          value={value}
+          className={className}
+          onChange={e => {
+            setValue(e.target.value)
+            searchTask(e.target.value)
+            navigate(`/categories/search?name=${e.target.value}`)
+          }}
+        />
+      </Link>
       <Prefix>{prefix}</Prefix>
       <Sufix onClick={() => setValue("")}>{sufix}</Sufix>
     </InputWrapper>
-    </Link>
   )
 }
 

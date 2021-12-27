@@ -36,7 +36,7 @@ const Header = props => {
       setCounterDone(sum)
       setCounterAll(sumAll)
     })
-  }, [state, sum])
+  }, [state, sum, sumAll])
   return (
     <>
       <ButtonWrapper>
