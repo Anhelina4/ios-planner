@@ -27,18 +27,21 @@ const TasksAll = props => {
         type: "filterFlagged",
         payload: { id: params?.id, children: "With flag" },
       })
-
-    params?.id === "today" ||
-      (params?.id === "scheduled" &&
-        dispatch({
-          type: "clearAll",
-          payload: { id: "none", categoryName: "New List", permission: true },
-        }))
+    if (params?.id === "today" || params?.id === "scheduled") {
+      dispatch({
+        type: "clearAll",
+        payload: {
+          id: "none",
+          categoryName: params?.id === "today" ? "Today" : "Scheduled",
+          permission: true,
+        },
+      })
+    }
 
     params?.id === "search" &&
       dispatch({
         type: "searchTask",
-        payload: { value:"" },
+        payload: { value: "" },
       })
   }, [dispatch, params?.id])
 
