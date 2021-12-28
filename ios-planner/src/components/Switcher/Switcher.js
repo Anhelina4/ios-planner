@@ -12,20 +12,19 @@ const Switcher = props => {
   const [active, setActive] = useState(false)
 
   useEffect(() => {
-    setSwitcherId(id)
     setActive(switcherId === id ? true : false)
   }, [id, setSwitcherId, switcherId])
-
+  console.log("switcherId", switcherId, id)
   return (
     <SwitcherWrapper
       active={active}
       variant={variant}
       id={id}
       onClick={() => {
-        // setSwitcherId(id)
+        setSwitcherId(id)
         navigate(path)
         if (filter) {
-          filter(children, id, deletedTaskId)
+          filter(children, id)
         }
       }}>
       <Container>
