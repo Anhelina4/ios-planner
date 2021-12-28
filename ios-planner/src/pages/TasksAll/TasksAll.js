@@ -27,6 +27,7 @@ const TasksAll = props => {
         type: "filterFlagged",
         payload: { id: params?.id, children: "With flag" },
       })
+      
     if (params?.id === "today" || params?.id === "scheduled") {
       dispatch({
         type: "clearAll",

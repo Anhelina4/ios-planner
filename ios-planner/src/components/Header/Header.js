@@ -25,18 +25,17 @@ const Header = props => {
   let sumAll = 0
 
   useEffect(() => {
-    state?.categories?.map(item => {
-      if (item?.categoryId === state?.currentCategory?.categoryId) {
-        item?.tasksList.map(elem => {
-          if (elem.status === true) {
-            ++sum
-          }
-          ++sumAll
-        })
+    state?.currentCategory?.tasksList?.forEach(elem => {
+      if (elem.status === true) {
+        ++sum
       }
-      setCounterDone(sum)
-      setCounterAll(sumAll)
+      if (elem.status === false) {
+        ++sumAll
+      }
+      setCounterDone(sum ? sum : "0")
+      setCounterAll(sumAll ? sumAll : "0")
     })
+    console.log(sum, sumAll)
   }, [state, sum, sumAll])
 
   return (
@@ -54,7 +53,7 @@ const Header = props => {
           {children}
         </HeaderWrapper>
         <Text
-          children={counterAll - counterDone}
+          children={counterAll}
           size="xxl"
           color={color}
           variant={variant}
