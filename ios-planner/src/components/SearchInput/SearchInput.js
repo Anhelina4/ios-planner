@@ -18,7 +18,7 @@ const SearchInput = props => {
           className={className}
           onChange={e => {
             setValue(e.target.value)
-            searchTask(e.target.value)
+            setTimeout(() => searchTask(e.target.value), 300)
             navigate(`/categories/search?name=${e.target.value}`)
           }}
         />
