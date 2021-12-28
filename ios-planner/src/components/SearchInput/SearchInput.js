@@ -5,8 +5,8 @@ import { Link, useNavigate } from "react-router-dom"
 
 const SearchInput = props => {
   const { prefix, sufix, className } = props
-  const [value, setValue] = useState()
-  const { dispatch } = usePlannerContext()
+  
+  const { dispatch, value, setValue } = usePlannerContext()
   const { searchTask } = usePlannerActions(dispatch)
   const navigate = useNavigate()
 
@@ -24,7 +24,13 @@ const SearchInput = props => {
         />
       </Link>
       <Prefix>{prefix}</Prefix>
-      <Sufix onClick={() => setValue("")}>{sufix}</Sufix>
+      <Sufix
+        onClick={() => {
+          setValue("")
+          navigate(`/categories/search?name=`)
+        }}>
+        {sufix}
+      </Sufix>
     </InputWrapper>
   )
 }

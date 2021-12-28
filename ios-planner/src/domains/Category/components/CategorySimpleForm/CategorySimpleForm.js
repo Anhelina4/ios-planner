@@ -23,7 +23,7 @@ const CategorySimpleForm = props => {
         <Text size="md" color="white">
           0
         </Text>
-        <Button onClick={onDelete}>{<MdClose />}</Button>
+        <Button color="white" onClick={onDelete}>{<MdClose />}</Button>
       </div>
     </CategoryWrapper>
   )

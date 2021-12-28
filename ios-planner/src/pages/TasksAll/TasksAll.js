@@ -6,7 +6,7 @@ import { usePlannerContext } from "../../contexts/hooks"
 
 const TasksAll = props => {
   const { title, color, variant } = props
-  const { state, dispatch } = usePlannerContext()
+  const { state, dispatch, value } = usePlannerContext()
   let params = useParams()
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const TasksAll = props => {
         type: "filterFlagged",
         payload: { id: params?.id, children: "With flag" },
       })
-      
+
     if (params?.id === "today" || params?.id === "scheduled") {
       dispatch({
         type: "clearAll",
@@ -42,9 +42,9 @@ const TasksAll = props => {
     params?.id === "search" &&
       dispatch({
         type: "searchTask",
-        payload: { value: "" },
+        payload: { value: value },
       })
-  }, [dispatch, params?.id])
+  }, [dispatch, params?.id, value])
 
   return (
     <PageLayout

@@ -2,7 +2,7 @@ export const filterChecked = (state, payload) => {
   const newState = JSON.parse(JSON.stringify(state))
   let filteredChecked = []
   if (payload.permission === "Hide") {
-    newState.currentCategory.tasksList.map(item => {
+    newState?.currentCategory.tasksList.map(item => {
       return !item.status ? filteredChecked.push(item) : null
     })
 

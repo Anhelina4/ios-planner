@@ -17,6 +17,7 @@ const PlannerProvider = ({ children }) => {
   const [dbCategory, setDBCategory] = useState([])
   const [dbTask, setDBTask] = useState([])
   const [switcherId, setSwitcherId] = useState()
+  const [value, setValue] = useState()
 
   useEffect(() => {
     const getData = async () => {
@@ -30,7 +31,7 @@ const PlannerProvider = ({ children }) => {
     getData()
   }, [])
 
-  console.log('Global context ------>', state)
+  console.log("Global context ------>", state)
 
   return (
     <PlannerContext.Provider
@@ -55,6 +56,8 @@ const PlannerProvider = ({ children }) => {
         setDBTask,
         switcherId,
         setSwitcherId,
+        value,
+        setValue,
       }}>
       {children}
     </PlannerContext.Provider>
