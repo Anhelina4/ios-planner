@@ -31,13 +31,14 @@ const CategorySimpleView = props => {
         ? true
         : false
     )
-    console.log('params id', params?.id)
-    if(categoryId !== params.id ) {
-    params?.id && dispatch({
-      type: "defineCurrentCategory",
-      payload: { categoryId : params?.id },
-    })
-  }
+    console.log("params id", params?.id)
+    if (categoryId !== params.id) {
+      params?.id &&
+        dispatch({
+          type: "defineCurrentCategory",
+          payload: { categoryId: params?.id },
+        })
+    }
   }, [categoryId, dispatch, navigate, params.id, state?.currentCategory])
 
   return (
@@ -70,9 +71,15 @@ const CategorySimpleView = props => {
               {categoryName}
             </Text>
           </div>
-          <Link to="/categories">
+
+          <Link
+            to="/categories"
+            className="d-flex align-center decoration-none">
+            <Text color={focused ? "white" : null} variant="primary">
+              0
+            </Text>
             <Button
-              active
+              color={focused ? "white" : null}
               onClick={() => {
                 deleteCategory(categoryId)
               }}>

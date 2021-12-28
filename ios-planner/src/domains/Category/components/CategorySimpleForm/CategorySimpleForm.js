@@ -9,22 +9,22 @@ const CategorySimpleForm = props => {
 
   return (
     <CategoryWrapper>
-      <div className="d-flex align-center">
-        <IconWrapper color="white">{<AiOutlineUnorderedList />}</IconWrapper>
-        <input
-          autoFocus
-          type="text"
-          className="pl-md pr-md mr-md ml-md"
-          value={value}
-          onClick={onClick}
-          onChange={onChange}
-          onKeyDown={onKeyDown}
-        />
+      <IconWrapper color="white">{<AiOutlineUnorderedList />}</IconWrapper>
+      <input
+        autoFocus
+        type="text"
+        className="pl-md pr-md mr-md ml-md"
+        value={value}
+        onClick={onClick}
+        onChange={onChange}
+        onKeyDown={onKeyDown}
+      />
+      <div className="d-flex justify-end">
         <Text size="md" color="white">
           0
         </Text>
+        <Button onClick={onDelete}>{<MdClose />}</Button>
       </div>
-      <Button onClick={onDelete}>{<MdClose />}</Button>
     </CategoryWrapper>
   )
 }
