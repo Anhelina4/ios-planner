@@ -10,7 +10,6 @@ import checkTask from "./checkTask"
 import filterAll from "./filterAll"
 import filterFlagged from "./filterFlagged"
 import updateData from "./updateData"
-import { filterChecked } from "./filterChecked"
 import { clearAll } from "./clearAll"
 import searchTask from "./searchTask"
 
@@ -30,7 +29,6 @@ const reducer = (state, action) => {
     filterAll,
     filterFlagged,
     updateData,
-    filterChecked,
     clearAll,
     searchTask,
   }

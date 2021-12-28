@@ -6,7 +6,8 @@ import { usePlannerContext } from "../../../../contexts/hooks"
 import { useTaskActions } from "../../hooks"
 import { v4 as uuidv4 } from "uuid"
 
-const TaskList = () => {
+const TaskList = props => {
+  const { display } = props
   const { state, showtsf, taskName, taskNotes, setTaskName, setTaskNotes } =
     usePlannerContext()
   const { createTask } = useTaskActions()
@@ -15,8 +16,9 @@ const TaskList = () => {
   return (
     <TaskListWrapper>
       <Col>
-        {state?.currentCategory?.tasksList?.length > 0
-          ? state.currentCategory.tasksList.map((item, index) => {
+        {state?.currentCategory?.tasksList?.length > 0 &&
+          state?.currentCategory?.tasksList.map((item, index) => {
+            if ((display === "Show" && !item.status) || display === "Hide") {
               return (
                 <TaskSimpleView
                   variant="secondary"
@@ -30,8 +32,8 @@ const TaskList = () => {
                   {item.taskNotes}
                 </TaskSimpleView>
               )
-            })
-          : null}
+            }
+          })}
       </Col>
       <Col>
         {showtsf ? (

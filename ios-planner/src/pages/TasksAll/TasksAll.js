@@ -1,34 +1,46 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { TaskList } from "../../domains/Task/components"
 import { Header, PageLayout } from "../../components"
 import { useParams } from "react-router-dom"
 import { usePlannerContext } from "../../contexts/hooks"
 
 const TasksAll = props => {
-  const { title, color, variant } = props
+  const { title, variant } = props
+  const [accentColor, setAccentColor] = useState()
   const { state, dispatch, value } = usePlannerContext()
   let params = useParams()
-
+  const [displayBtn, setDisplayBtn] = useState("Hide")
+  console.log("displayBtn", displayBtn)
   useEffect(() => {
-    params?.id &&
+    if(params?.id) {
+
       dispatch({
         type: "defineCurrentCategory",
         payload: { categoryId: params?.id },
       })
+      setAccentColor("blue")
+    }
 
-    params?.id === "all" &&
+    if (params?.id === "all") {
+      setAccentColor('grey')
       dispatch({
         type: "filterAll",
         payload: { id: params?.id, children: "All" },
       })
+      
+    }
 
-    params?.id === "withflag" &&
+    if(params?.id === "withflag"){
+      setAccentColor('orange')
       dispatch({
         type: "filterFlagged",
         payload: { id: params?.id, children: "With flag" },
       })
+      
+    }
 
     if (params?.id === "today" || params?.id === "scheduled") {
+      setAccentColor(params?.id === "today" ? "blue" : "red")
       dispatch({
         type: "clearAll",
         payload: {
@@ -48,8 +60,16 @@ const TasksAll = props => {
 
   return (
     <PageLayout
-      header={<Header children={title} color={color} variant={variant} />}
-      content={<TaskList />}
+      header={
+        <Header
+          children={title}
+          color={accentColor}
+          variant={variant}
+          displayBtn={displayBtn}
+          setDisplayBtn={setDisplayBtn}
+        />
+      }
+      content={<TaskList display={displayBtn} />}
     />
   )
 }

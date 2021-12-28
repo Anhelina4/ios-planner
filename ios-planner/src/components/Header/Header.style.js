@@ -5,6 +5,7 @@ const Colors = {
   red: "var(--color-red)",
   orange: "var(--color-orange)",
   white: "var(--color-white)",
+  grey: "var(--color-dark-lighten0)",
 }
 
 const titleVariants = {

@@ -18,6 +18,7 @@ const PlannerProvider = ({ children }) => {
   const [dbTask, setDBTask] = useState([])
   const [switcherId, setSwitcherId] = useState()
   const [value, setValue] = useState()
+  const [undoneTasksCounter, setUndoneTasksCounter] = useState()
 
   useEffect(() => {
     const getData = async () => {

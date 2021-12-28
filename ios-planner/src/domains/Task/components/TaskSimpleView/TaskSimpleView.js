@@ -21,6 +21,7 @@ const TaskSimpleView = props => {
     taskFlag,
     taskNotes,
     onClick,
+    tasksAmount
   } = props
 
   const { deleteTask, editTask, checkTask, flagTask } = useTaskActions()

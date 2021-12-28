@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { usePlannerActions, usePlannerContext } from "../../contexts/hooks"
 import { InputWrapper, InputStyled, Prefix, Sufix } from "./Input.style"
 import { Link, useNavigate } from "react-router-dom"

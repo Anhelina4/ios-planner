@@ -12,31 +12,41 @@ import { usePlannerActions } from "../../contexts/hooks"
 import { useTaskActions } from "../../domains/Task/hooks"
 
 const Header = props => {
-  const { children, color, variant } = props
-  const { showtsf, setShowTSF, state } = usePlannerContext()
+  const { children, color, variant, displayBtn, setDisplayBtn } = props
+  const {
+    showtsf,
+    setShowTSF,
+    state,
+  } = usePlannerContext()
   const { switchComponent } = usePlannerActions()
   const { filterChecked, clearAll } = useTaskActions()
-  const [btnState, setBtnState] = useState("Hide")
   const [clear, setClear] = useState(false)
   const [counterDone, setCounterDone] = useState()
-  const [counterAll, setCounterAll] = useState()
+  const [counterUndone, setCounterUndone] = useState()
 
   let sum = 0
-  let sumAll = 0
+  let sumUndone = 0
 
   useEffect(() => {
-    state?.currentCategory?.tasksList?.forEach(elem => {
+    state?.currentCategory?.tasksList?.map(elem => {
       if (elem.status === true) {
         ++sum
       }
       if (elem.status === false) {
-        ++sumAll
+        ++sumUndone
       }
-      setCounterDone(sum ? sum : "0")
-      setCounterAll(sumAll ? sumAll : "0")
+     
     })
-    console.log(sum, sumAll)
-  }, [state, sum, sumAll])
+    setCounterDone(sum)
+    setCounterUndone(sumUndone)
+    // console.log(sum, sumAll)
+  }, [
+    setCounterDone,
+    setCounterUndone,
+    state?.currentCategory?.tasksList,
+    sum,
+    sumUndone,
+  ])
 
   return (
     <>
@@ -53,7 +63,7 @@ const Header = props => {
           {children}
         </HeaderWrapper>
         <Text
-          children={counterAll}
+          children={counterUndone}
           size="xxl"
           color={color}
           variant={variant}
@@ -65,18 +75,7 @@ const Header = props => {
           <Button variant="disabled" size="sm">
             {counterDone} done
           </Button>
-          <Button
-            color={color}
-            size="sm"
-            active
-            onClick={() => {
-              setClear(true)
-              clearAll(
-                state.currentCategory.categoryName,
-                state.currentCategory.categoryId,
-                clear
-              )
-            }}>
+          <Button color={color} size="sm" active>
             &bull; Clear
           </Button>
         </div>
@@ -85,14 +84,9 @@ const Header = props => {
           size="sm"
           active
           onClick={() => {
-            filterChecked(
-              state.currentCategory.categoryName,
-              state.currentCategory.categoryId,
-              btnState
-            )
-            setBtnState(btnState === "Hide" ? "Show" : "Hide")
+            setDisplayBtn(displayBtn === "Hide" ? "Show" : "Hide")
           }}>
-          {btnState}
+          {displayBtn}
         </Button>
       </SubtitleWrapper>
     </>

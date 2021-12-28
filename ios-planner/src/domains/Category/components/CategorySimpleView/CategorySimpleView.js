@@ -31,7 +31,7 @@ const CategorySimpleView = props => {
         ? true
         : false
     )
-    console.log("params id", params?.id)
+    // console.log("params id", params?.id)
     if (categoryId !== params.id) {
       params?.id &&
         dispatch({
@@ -74,7 +74,7 @@ const CategorySimpleView = props => {
 
           <Link
             to="/categories"
-            className="d-flex align-center decoration-none">
+            className="d-flex align-center justify-center decoration-none">
             <Text color={focused ? "white" : null} variant="primary">
               0
             </Text>
