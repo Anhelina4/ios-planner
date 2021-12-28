@@ -10,7 +10,7 @@ import {
 } from "../../../../contexts/hooks"
 import { CategorySimpleForm } from ".."
 import { Link } from "react-router-dom"
-import { useNavigate } from "react-router"
+import { useNavigate, useParams } from "react-router"
 
 const CategorySimpleView = props => {
   const { categoryId, categoryName } = props
@@ -22,6 +22,7 @@ const CategorySimpleView = props => {
   const [editable, setEditable] = useState(false)
   const [focused, setFocused] = useState(false)
   let navigate = useNavigate()
+  let params = useParams()
 
   useEffect(() => {
     setFocused(
@@ -30,7 +31,14 @@ const CategorySimpleView = props => {
         ? true
         : false
     )
-  }, [categoryId, state?.currentCategory])
+    console.log('params id', params?.id)
+    if(categoryId !== params.id ) {
+    params?.id && dispatch({
+      type: "defineCurrentCategory",
+      payload: { categoryId : params?.id },
+    })
+  }
+  }, [categoryId, dispatch, navigate, params.id, state?.currentCategory])
 
   return (
     <>

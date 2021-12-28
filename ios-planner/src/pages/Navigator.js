@@ -30,7 +30,7 @@ const Navigator = () => {
                 right={<TasksAll color="blue" title="New List" />}
               />
             }></Route>
-          <Route
+          {/* <Route
             path="/categories/today"
             exact
             element={
@@ -65,7 +65,7 @@ const Navigator = () => {
                 left={<Sider />}
                 right={<TasksAll color="orange" title="With flag" />}
               />
-            }></Route>
+            }></Route> */}
           <Route
             path="/categories/:id"
             element={

@@ -12,8 +12,9 @@ const Switcher = props => {
   const [active, setActive] = useState(false)
 
   useEffect(() => {
+    setSwitcherId(id)
     setActive(switcherId === id ? true : false)
-  }, [switcherId])
+  }, [id, setSwitcherId, switcherId])
 
   return (
     <SwitcherWrapper
@@ -21,7 +22,7 @@ const Switcher = props => {
       variant={variant}
       id={id}
       onClick={() => {
-        setSwitcherId(id)
+        // setSwitcherId(id)
         navigate(path)
         if (filter) {
           filter(children, id, deletedTaskId)

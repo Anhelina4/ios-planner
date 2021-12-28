@@ -30,6 +30,8 @@ const PlannerProvider = ({ children }) => {
     getData()
   }, [])
 
+  console.log('Global context ------>', state)
+
   return (
     <PlannerContext.Provider
       value={{
