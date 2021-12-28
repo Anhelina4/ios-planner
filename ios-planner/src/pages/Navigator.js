@@ -30,42 +30,6 @@ const Navigator = () => {
                 right={<TasksAll color="blue" title="New List" />}
               />
             }></Route>
-          {/* <Route
-            path="/categories/today"
-            exact
-            element={
-              <AppLayout
-                left={<Sider />}
-                right={<TasksAll color="blue" title="Today" />}
-              />
-            }></Route>
-          <Route
-            path="/categories/scheduled"
-            exact
-            element={
-              <AppLayout
-                left={<Sider />}
-                right={<TasksAll color="red" title="Scheduled" />}
-              />
-            }></Route>
-          <Route
-            path="/categories/all"
-            exact
-            element={
-              <AppLayout
-                left={<Sider />}
-                right={<TasksAll variant="primary" title="All" />}
-              />
-            }></Route>
-          <Route
-            path="/categories/withflag"
-            exact
-            element={
-              <AppLayout
-                left={<Sider />}
-                right={<TasksAll color="orange" title="With flag" />}
-              />
-            }></Route> */}
           <Route
             path="/categories/:id"
             element={
@@ -78,7 +42,7 @@ const Navigator = () => {
                   />
                 }></AppLayout>
             }></Route>
-          <Route
+          {/* <Route
             path="/categories/search"
             element={
               <AppLayout
@@ -89,7 +53,7 @@ const Navigator = () => {
                     title={state.currentCategory.categoryName || "New List"}
                   />
                 }></AppLayout>
-            }></Route>
+            }></Route> */}
         </Routes>
       </Router>
     </>

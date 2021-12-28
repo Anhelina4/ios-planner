@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { SwitcherWrapper, IconWrapper } from "./Switcher.style"
 import { Text } from "../../components"
 import { Col, Row, Container } from "../../components/Grid"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { usePlannerContext } from "../../contexts/hooks"
 
 const Switcher = props => {
@@ -10,11 +10,12 @@ const Switcher = props => {
   const { deletedTaskId, switcherId, setSwitcherId } = usePlannerContext()
   const { icon, variant, children, path, id, counter, filter } = props
   const [active, setActive] = useState(false)
-
+  const params = useParams()
   useEffect(() => {
-    setActive(switcherId === id ? true : false)
-  }, [id, setSwitcherId, switcherId])
-  console.log("switcherId", switcherId, id)
+    setActive(params?.id === id ? true : false)
+  }, [id, params?.id, setSwitcherId, switcherId])
+  // console.log("switcherId", switcherId, id)
+
   return (
     <SwitcherWrapper
       active={active}

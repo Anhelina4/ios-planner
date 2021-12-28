@@ -10,8 +10,6 @@ const TasksAll = props => {
   let params = useParams()
 
   useEffect(() => {
-    console.log("console", params.id)
-
     params?.id &&
       dispatch({
         type: "defineCurrentCategory",
@@ -29,22 +27,24 @@ const TasksAll = props => {
         type: "filterFlagged",
         payload: { id: params?.id, children: "With flag" },
       })
+
+    params?.id === "today" ||
+      (params?.id === "scheduled" &&
+        dispatch({
+          type: "clearAll",
+          payload: { id: "none", categoryName: "New List", permission: true },
+        }))
+
+    params?.id === "search" &&
+      dispatch({
+        type: "searchTask",
+        payload: { value:"" },
+      })
   }, [dispatch, params?.id])
 
   return (
     <PageLayout
-      header={
-        <Header
-          children={
-            title ||
-            state.currentCategory.map(el =>
-              el.categoryId === params.id ? el.categoryName : null
-            )
-          }
-          color={color}
-          variant={variant}
-        />
-      }
+      header={<Header children={title} color={color} variant={variant} />}
       content={<TaskList />}
     />
   )
