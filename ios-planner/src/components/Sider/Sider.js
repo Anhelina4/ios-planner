@@ -19,22 +19,21 @@ const Sider = () => {
   const { filterAll, filterFlagged } = useTaskActions()
   const [counter, setCounter] = useState()
   const [counterFlag, setCounterFlag] = useState()
+
   let sum = 0
   let flaggedSum = 0
 
   useEffect(() => {
     state?.categories.map(item => {
-      item?.tasksList.map(elem => {
-        if (elem.flag) {
-          ++flaggedSum
-        }
-        ++sum
-      })
+      if (item) {
+        item?.tasksList.map(elem => {
+          elem.flag ? ++flaggedSum : ++sum
+        })
+      }
     })
     setCounter(sum)
     setCounterFlag(flaggedSum)
-  }, [state])
-  // console.log(flaggedSum)
+  }, [state, flaggedSum, sum])
 
   return (
     <Container height="100%">
@@ -46,7 +45,6 @@ const Sider = () => {
             <BsCircleFill color="#68cf19" size="12px" />
           </Col>
         </Row>
-
         <Row>
           <Col cw="12">
             <SearchInput
@@ -58,20 +56,20 @@ const Sider = () => {
         <Row>
           <Col className="mr-xl mt-xxl">
             <Switcher
-            id="/today"
+              id="today"
               icon={<BsCalendar3 />}
               variant="blue"
               children="Today"
-              path="/today"
+              path="/categories/today"
             />
           </Col>
           <Col className="mt-xxl">
             <Switcher
-            id="/scheduled"
+              id="scheduled"
               icon={<BsCalendarDate />}
               variant="red"
               children="Scheduled"
-              path="/scheduled"
+              path="/categories/scheduled"
             />
           </Col>
         </Row>
@@ -79,21 +77,21 @@ const Sider = () => {
           <Col className="mr-xl mt-xl">
             <Switcher
               icon={<BsInboxFill />}
-              id="/all"
+              id="all"
               variant="darkGrey"
               children="All"
-              path="/all"
+              path="/categories/all"
               counter={counter}
               filter={filterAll}
             />
           </Col>
           <Col className="mt-xl">
             <Switcher
-            id="/withflag"
+              id="withflag"
               icon={<AiFillFlag />}
               variant="orange"
               children="With flag"
-              path="/withflag"
+              path="/categories/withflag"
               counter={counterFlag}
               filter={filterFlagged}
             />

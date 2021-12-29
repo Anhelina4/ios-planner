@@ -10,6 +10,8 @@ import checkTask from "./checkTask"
 import filterAll from "./filterAll"
 import filterFlagged from "./filterFlagged"
 import updateData from "./updateData"
+import { clearAll } from "./clearAll"
+import searchTask from "./searchTask"
 
 const reducer = (state, action) => {
   const { type, payload } = action
@@ -27,6 +29,8 @@ const reducer = (state, action) => {
     filterAll,
     filterFlagged,
     updateData,
+    clearAll,
+    searchTask,
   }
 
   return actionsMap[type](state, payload)

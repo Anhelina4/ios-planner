@@ -16,26 +16,23 @@ const PlannerProvider = ({ children }) => {
   const [deletedTaskId, setDeletedTaskId] = useState()
   const [dbCategory, setDBCategory] = useState([])
   const [dbTask, setDBTask] = useState([])
-  // const fetchDocuments = useFetchDocuments(dispatch)
+  const [switcherId, setSwitcherId] = useState()
+  const [value, setValue] = useState()
+  const [undoneTasksCounter, setUndoneTasksCounter] = useState()
 
   useEffect(() => {
-    
     const getData = async () => {
       const categories = await firestoreService.queryDocuments("category")
       const tasks = await firestoreService.queryDocuments("task")
-      
+
       setDBCategory(categories)
       setDBTask(tasks)
-      dispatch({type:"updateData", payload: categories})
-      
-      // fetchDocuments("category")
+      dispatch({ type: "updateData", payload: { categories, tasks } })
     }
     getData()
-    
   }, [])
-  console.log("dbCategory->", dbCategory)
-  console.log("dbTask->", dbTask)
-  console.log("state->", state)
+
+  console.log("Global context ------>", state)
 
   return (
     <PlannerContext.Provider
@@ -58,6 +55,10 @@ const PlannerProvider = ({ children }) => {
         setDBCategory,
         dbTask,
         setDBTask,
+        switcherId,
+        setSwitcherId,
+        value,
+        setValue,
       }}>
       {children}
     </PlannerContext.Provider>

@@ -4,7 +4,6 @@ const filterAll = (state, payload) => {
   let filteredAll = []
   newState.categories.map(item =>
     item.tasksList.map(task => filteredAll.push(task))
-    
   )
   console.log("filteredAll", filteredAll)
   newState.currentCategory.categoryName = payload.children

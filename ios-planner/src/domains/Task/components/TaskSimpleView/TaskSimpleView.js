@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import TaskSimpleViewWrapper from "./TaskSimpleView.style"
 import { Checkbox, Button, Text } from "../../../../components"
 import { Row, Col } from "../../../../components/Grid"
@@ -22,13 +22,13 @@ const TaskSimpleView = props => {
     taskNotes,
     onClick,
   } = props
+
   const { deleteTask, editTask, checkTask, flagTask } = useTaskActions()
-  const { setShowTSF,} = usePlannerContext()
+  const { setShowTSF } = usePlannerContext()
   const { hideComponent } = usePlannerActions()
   const [editedTaskName, setEditedTaskName] = useState(taskName)
   const [editedTaskNotes, setEditedTaskNotes] = useState(taskNotes)
   const [editable, setEditable] = useState(false)
-  console.log("change taskStatus->", taskStatus)
 
   return (
     <>
@@ -56,7 +56,7 @@ const TaskSimpleView = props => {
                     {children[0]}
                   </Text>
                 </Col>
-                <Col cw="auto" className="pl-md pr-md text-sm cursor-pointer" >
+                <Col cw="auto" className="pl-md pr-md text-sm cursor-pointer">
                   {children[1]}
                 </Col>
               </Row>
@@ -65,7 +65,9 @@ const TaskSimpleView = props => {
               <Button
                 checked={taskFlag}
                 variant={variant}
-                onClick={() => flagTask(taskId, !taskFlag)}>
+                onClick={() => {
+                  flagTask(taskId, !taskFlag)
+                }}>
                 {<AiFillFlag />}
               </Button>
               <Button
@@ -73,7 +75,6 @@ const TaskSimpleView = props => {
                 active
                 onClick={() => {
                   deleteTask(taskId)
-                  console.log(taskId)
                 }}>
                 {<MdClose />}
               </Button>
@@ -82,6 +83,8 @@ const TaskSimpleView = props => {
         </TaskSimpleViewWrapper>
       ) : (
         <TaskSimpleForm
+          status={taskStatus}
+          flag={taskFlag}
           variant="secondary"
           onChangeTask={e => setEditedTaskName(e.target.value)}
           onChangeNotes={e => setEditedTaskNotes(e.target.value)}
@@ -92,9 +95,7 @@ const TaskSimpleView = props => {
               editTask(editedTaskName, taskId, editedTaskNotes)
               setEditable(false)
             }
-          }}
-          // onDelete={() => deleteTask(taskId)}
-          ></TaskSimpleForm>
+          }}></TaskSimpleForm>
       )}
     </>
   )

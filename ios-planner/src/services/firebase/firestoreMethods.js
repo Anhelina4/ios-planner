@@ -100,7 +100,7 @@ const firestoreService = {
   deleteDoc,
   updateDoc,
   serverTimestamp,
-  db
+  db,
 }
 
 export default firestoreService

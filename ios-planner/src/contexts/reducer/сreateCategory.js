@@ -1,4 +1,3 @@
-
 const сreateCategory = (state, payload) => {
   const newState = JSON.parse(JSON.stringify(state))
   newState.categories = [

@@ -210,11 +210,11 @@
 }
 
 /*text-sizes*/
-.text-sm{
+.text-sm {
   font-size: var(--text-sm);
 }
-.text-md{
-  font-size: var(--text-md)!important;
+.text-md {
+  font-size: var(--text-md) !important;
 }
 
 /* display */
@@ -249,11 +249,13 @@
 .direction-col {
   flex-direction: column;
 }
-.decoration-none{
+.decoration-none {
   text-decoration: none;
 }
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
 }
-
+.lh-md {
+  line-height: var(--lh-md) !important;
+}
 /*# sourceMappingURL=helpers.css.map */

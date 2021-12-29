@@ -1,5 +1,3 @@
-
-
 const сreateTask = (state, payload) => {
   const newState = JSON.parse(JSON.stringify(state))
 

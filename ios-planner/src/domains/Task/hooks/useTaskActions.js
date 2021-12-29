@@ -2,16 +2,8 @@ import { usePlannerContext } from "../../../contexts/hooks"
 import firestoreService from "../../../services/firebase/firestoreMethods"
 
 const useTaskActions = () => {
-  
-  const {
-    state,
-    dispatch,
-    setTaskName,
-    setTaskNotes,
-    taskName,
-    taskNotes,
-    deletedTaskId,
-  } = usePlannerContext()
+  const { state, dispatch, setTaskName, setTaskNotes, taskName, taskNotes } =
+    usePlannerContext()
 
   const createTask = (taskName, taskNotes, taskId) => {
     dispatch({ type: "createTask", payload: { taskName, taskNotes, taskId } })
@@ -42,22 +34,23 @@ const useTaskActions = () => {
     })
     firestoreService.updateDocument("task", taskId, {
       taskName: editedTaskName ? editedTaskName : taskName,
-      taskNotes: editedTaskNotes ? editedTaskNotes: taskNotes,
-      taskId: taskId,
-      parentId: state.currentCategory.categoryId,
-      flag: false,
-      status: false,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      taskNotes: editedTaskNotes ? editedTaskNotes : taskNotes,
     })
   }
 
   const checkTask = (taskId, status) => {
+    console.log(taskName, taskNotes)
     dispatch({ type: "checkTask", payload: { taskId, status } })
+    firestoreService.updateDocument("task", taskId, {
+      status: status ? status : false,
+    })
   }
 
   const flagTask = (taskId, flag) => {
     dispatch({ type: "flagTask", payload: { taskId, flag } })
+    firestoreService.updateDocument("task", taskId, {
+      flag: flag ? flag : false,
+    })
   }
 
   const filterAll = (children, id, deletedTaskId) => {
@@ -70,8 +63,24 @@ const useTaskActions = () => {
   const filterFlagged = () => {
     dispatch({
       type: "filterFlagged",
-      payload: { children: "Flagged", id: "/withflag" },
+      payload: { children: "With flag", id: "/withflag" },
     })
+  }
+
+  const filterChecked = (categoryName, categoryId, permission) => {
+    dispatch({
+      type: "filterChecked",
+      payload: { categoryName, categoryId, permission },
+    })
+    console.log(permission)
+  }
+
+  const clearAll = (categoryName, categoryId, permission) => {
+    dispatch({
+      type: "clearAll",
+      payload: { categoryName, categoryId, permission },
+    })
+    console.log("clear")
   }
 
   return {
@@ -82,6 +91,8 @@ const useTaskActions = () => {
     flagTask,
     filterAll,
     filterFlagged,
+    filterChecked,
+    clearAll,
   }
 }
 

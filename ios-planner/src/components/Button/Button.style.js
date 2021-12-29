@@ -7,6 +7,7 @@ const Colors = {
   blueLighten1: "var(--color-blue-lighten1)",
   red: "var(--color-red)",
   orange: "var(--color-orange)",
+  white: "var(--color-white)",
 }
 
 const btnVariants = {
