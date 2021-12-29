@@ -42,18 +42,6 @@ const Navigator = () => {
                   />
                 }></AppLayout>
             }></Route>
-          {/* <Route
-            path="/categories/search"
-            element={
-              <AppLayout
-                left={<Sider />}
-                right={
-                  <TasksAll
-                    color="blue"
-                    title={state.currentCategory.categoryName || "New List"}
-                  />
-                }></AppLayout>
-            }></Route> */}
         </Routes>
       </Router>
     </>

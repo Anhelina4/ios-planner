@@ -82,6 +82,7 @@ const useTaskActions = () => {
     })
     console.log("clear")
   }
+
   return {
     createTask,
     deleteTask,

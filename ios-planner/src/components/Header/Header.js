@@ -9,18 +9,11 @@ import { Text, Button } from ".."
 import { AiOutlinePlus } from "react-icons/ai"
 import { usePlannerContext } from "../../contexts/hooks"
 import { usePlannerActions } from "../../contexts/hooks"
-import { useTaskActions } from "../../domains/Task/hooks"
 
 const Header = props => {
   const { children, color, variant, displayBtn, setDisplayBtn } = props
-  const {
-    showtsf,
-    setShowTSF,
-    state,
-  } = usePlannerContext()
+  const { showtsf, setShowTSF, state } = usePlannerContext()
   const { switchComponent } = usePlannerActions()
-  const { filterChecked, clearAll } = useTaskActions()
-  const [clear, setClear] = useState(false)
   const [counterDone, setCounterDone] = useState()
   const [counterUndone, setCounterUndone] = useState()
 
@@ -29,17 +22,10 @@ const Header = props => {
 
   useEffect(() => {
     state?.currentCategory?.tasksList?.map(elem => {
-      if (elem.status === true) {
-        ++sum
-      }
-      if (elem.status === false) {
-        ++sumUndone
-      }
-     
+      elem.status ? ++sum : ++sumUndone
     })
     setCounterDone(sum)
     setCounterUndone(sumUndone)
-    // console.log(sum, sumAll)
   }, [
     setCounterDone,
     setCounterUndone,

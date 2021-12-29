@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom"
 
 const SearchInput = props => {
   const { prefix, sufix, className } = props
-  
+
   const { dispatch, value, setValue } = usePlannerContext()
   const { searchTask } = usePlannerActions(dispatch)
   const navigate = useNavigate()

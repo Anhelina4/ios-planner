@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import TaskSimpleViewWrapper from "./TaskSimpleView.style"
 import { Checkbox, Button, Text } from "../../../../components"
 import { Row, Col } from "../../../../components/Grid"
@@ -21,7 +21,6 @@ const TaskSimpleView = props => {
     taskFlag,
     taskNotes,
     onClick,
-    tasksAmount
   } = props
 
   const { deleteTask, editTask, checkTask, flagTask } = useTaskActions()
@@ -96,9 +95,7 @@ const TaskSimpleView = props => {
               editTask(editedTaskName, taskId, editedTaskNotes)
               setEditable(false)
             }
-          }}
-          // onDelete={() => deleteTask(taskId)}
-        ></TaskSimpleForm>
+          }}></TaskSimpleForm>
       )}
     </>
   )

@@ -7,13 +7,12 @@ import { usePlannerContext } from "../../contexts/hooks"
 const TasksAll = props => {
   const { title, variant } = props
   const [accentColor, setAccentColor] = useState()
-  const { state, dispatch, value } = usePlannerContext()
+  const { dispatch, value } = usePlannerContext()
   let params = useParams()
   const [displayBtn, setDisplayBtn] = useState("Hide")
   console.log("displayBtn", displayBtn)
   useEffect(() => {
-    if(params?.id) {
-
+    if (params?.id) {
       dispatch({
         type: "defineCurrentCategory",
         payload: { categoryId: params?.id },
@@ -22,21 +21,19 @@ const TasksAll = props => {
     }
 
     if (params?.id === "all") {
-      setAccentColor('grey')
+      setAccentColor("grey")
       dispatch({
         type: "filterAll",
         payload: { id: params?.id, children: "All" },
       })
-      
     }
 
-    if(params?.id === "withflag"){
-      setAccentColor('orange')
+    if (params?.id === "withflag") {
+      setAccentColor("orange")
       dispatch({
         type: "filterFlagged",
         payload: { id: params?.id, children: "With flag" },
       })
-      
     }
 
     if (params?.id === "today" || params?.id === "scheduled") {

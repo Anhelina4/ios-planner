@@ -27,10 +27,7 @@ const Sider = () => {
     state?.categories.map(item => {
       if (item) {
         item?.tasksList.map(elem => {
-          if (elem.flag) {
-            ++flaggedSum
-          }
-          ++sum
+          elem.flag ? ++flaggedSum : ++sum
         })
       }
     })

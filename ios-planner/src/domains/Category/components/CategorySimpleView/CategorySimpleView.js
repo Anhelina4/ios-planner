@@ -9,8 +9,7 @@ import {
   usePlannerActions,
 } from "../../../../contexts/hooks"
 import { CategorySimpleForm } from ".."
-import { Link } from "react-router-dom"
-import { useNavigate, useParams } from "react-router"
+import { Link, useNavigate, useParams } from "react-router-dom"
 
 const CategorySimpleView = props => {
   const { categoryId, categoryName } = props
@@ -31,7 +30,6 @@ const CategorySimpleView = props => {
         ? true
         : false
     )
-    // console.log("params id", params?.id)
     if (categoryId !== params.id) {
       params?.id &&
         dispatch({
